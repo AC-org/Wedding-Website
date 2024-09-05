@@ -1,5 +1,4 @@
 import './App.css';
-
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home';
 import RSVP from './pages/RSVP';
@@ -7,7 +6,7 @@ import HITTAHIT from './pages/HITTAHIT';
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/rsvp" element={<RSVP />} />
