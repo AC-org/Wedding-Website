@@ -2,6 +2,7 @@
   "name": "wedding-website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ac-org.github.io/Wedding-Website/",
   "dependencies": {
     "@supabase/supabase-js": "^2.45.3",
     "@testing-library/jest-dom": "^5.17.0",
@@ -45,5 +46,7 @@
   },
   "devDependencies": {
     "gh-pages": "^6.1.1"
-  }
+  } 
 }
+
+
