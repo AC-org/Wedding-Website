@@ -1,0 +1,70 @@
+.hittahit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: 
+      linear-gradient(
+        to bottom right,
+        rgba(156, 64, 18, 0.5),  /* Cornflower Blue with 50% opacity */
+        rgba(109, 44, 4, 0.5)   /* Light Pink with 50% opacity */
+      ),
+      url('https://ligyyhhxuvbnvyfnurpi.supabase.co/storage/v1/object/public/Images/wedding-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+  }
+  
+  .hittahit-columns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .hittahit-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 32px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    width: 500px;
+    text-align: center;
+  }
+  
+  .hittahit-title {
+    color: #6f4e37; /* Dark Chocolate */
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+  
+  .hittahit-subtitle {
+    color: #8b4513; /* Saddle Brown */
+    font-family: 'Lavender Essence', cursive;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .hittahit-map-container {
+    margin-bottom: 16px;
+  }
+  
+  .hittahit-info {
+    font-size: 16px;
+    color: #8b4513; /* Saddle Brown */
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 1024px) {
+    .hittahit-columns {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .hittahit-card {
+      width: 100%;
+    }
+  }
+  

@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lavender+Essence&display=swap');
+
+.rsvp-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: 
+      linear-gradient(
+        to bottom right,
+        rgba(156, 64, 18, 0.5),  /* Cornflower Blue with 50% opacity */
+        rgba(109, 44, 4, 0.5)   /* Light Pink with 50% opacity */
+      ),
+      url('https://ligyyhhxuvbnvyfnurpi.supabase.co/storage/v1/object/public/Images/wedding-bg.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+.rsvp-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 48px;
+  width: 500px;
+  text-align: center;
+}
+
+.rsvp-title {
+  color: #6f4e37; /* Dark Chocolate */
+  font-family: 'Great Vibes', serif;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.rsvp-subtitle {
+  color: #8b4513; /* Saddle Brown */
+  font-family: 'Lavender Essence', cursive;
+  font-size: 24px;
+  margin-bottom: 32px;
+}
+
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rsvp-input {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 18px;
+  font-family: 'Cormorant Garamond', serif;
+  padding: 16px;
+}
+
+.rsvp-checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.rsvp-checkbox-label {
+  font-size: 18px;
+  color: #8b4513; /* Saddle Brown */
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.rsvp-checkbox {
+  width: 24px;
+  height: 24px;
+}
+
+.rsvp-button {
+  background-color: #8b4513; /* Saddle Brown */
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: 'Cormorant Garamond', serif;
+  padding: 16px 32px;
+  transition: background-color 0.3s ease;
+}
+
+.rsvp-button:hover {
+  background-color: #a0522d; /* Sienna */
+}
+
+.rsvp-success-message {
+  font-size: 24px;
+  color: #8b4513; /* Saddle Brown */
+  font-family: 'Lavender Essence', cursive;
+}
+
+.rsvp-error-message {
+  font-size: 18px;
+  color: #8b0000; /* Dark Red */
+  font-family: 'Cormorant Garamond', serif;
+}
