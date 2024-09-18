@@ -123,6 +123,7 @@
   text-align: center;
   padding: 20px 0;
   background-color: #f4f4f4; /* Optional: change background to match your theme */
+  
 }
 
 .countdown-timer {
@@ -137,4 +138,54 @@
 }
 
 
-  
+/* Mobile Responsive Styles */
+@media (max-width: 500px) {
+  .hero-overlay {
+    transform: scale(1);
+    padding: 20px;
+    top: 10vh;
+  }
+
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 120%;
+    height: 100%;
+    transform: translateX(-20%);
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+    list-style-type: none;
+    flex-wrap: nowrap; /* This ensures the menu stays horizontal */
+    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+  }
+
+  .nav-list a {
+    font-size: 24px;
+  }
+
+  .image-gallery .gallery img {
+    max-width: 90%;
+  }
+
+  .countdown-timer {
+    font-size: 1.5rem;
+  }
+
+  .countdown-timer span {
+    margin: 0 5px;
+  }
+
+  .rsvp-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
