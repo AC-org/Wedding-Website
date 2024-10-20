@@ -1,70 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lora:wght@400;700&display=swap');
+
+.navbar-fixed {
+  font-family: 'Dancing Script', cursive;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end; /* Aligns the menu items to the right */
+  /* background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background for slight blur effect */
+  z-index: 3; /* Ensure navbar is above hero section and overlay */
+}
+
 .hittahit-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: 
-      linear-gradient(
-        to bottom right,
-        rgba(156, 64, 18, 0.5),  /* Cornflower Blue with 50% opacity */
-        rgba(109, 44, 4, 0.5)   /* Light Pink with 50% opacity */
-      ),
-      url('https://ligyyhhxuvbnvyfnurpi.supabase.co/storage/v1/object/public/Images/wedding-bg.jpg');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-image: 
+    linear-gradient(
+      to bottom right,
+      rgba(156, 64, 18, 0.5),
+      rgba(109, 44, 4, 0.5)
+    ),
+    url('https://ligyyhhxuvbnvyfnurpi.supabase.co/storage/v1/object/public/Images/wedding-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.hittahit-columns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.hittahit-card {
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 32px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  margin: 20px;
+  box-sizing: border-box;
+  transform: translateY(10%);
+}
+
+@media (max-width: 1026px) {
+  .hittahit-container {
+    background-attachment: scroll;
+    padding-bottom: 70px;
+  }
+
+  .hittahit-container::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
     background-size: cover;
     background-position: center;
-    padding: 20px;
+    filter: blur(5px);
+    z-index: -1;
   }
-  
+
   .hittahit-columns {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
   }
-  
+
   .hittahit-card {
-    background-color: rgba(255, 255, 255, 0.9);
-    border-radius: 32px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    padding: 24px;
-    width: 500px;
-    text-align: center;
+    width: 90%;
+    max-width: 90%;
+    padding: 16px;
+    border-radius: 16px;
+    margin: 10px 0;
   }
-  
+}
+
+@media (max-width: 480px) {
+  .hittahit-container::before {
+    filter: blur(3px);
+  }
+
+  .hittahit-card {
+    width: 95%;
+    padding: 12px;
+    border-radius: 12px;
+  }
+
   .hittahit-title {
-    color: #6f4e37; /* Dark Chocolate */
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 8px;
+    font-size: 28px;
   }
-  
+
   .hittahit-subtitle {
-    color: #8b4513; /* Saddle Brown */
-    font-family: 'Lavender Essence', cursive;
-    font-size: 20px;
-    margin-bottom: 16px;
+    font-size: 18px;
   }
-  
-  .hittahit-map-container {
-    margin-bottom: 16px;
-  }
-  
+
   .hittahit-info {
-    font-size: 16px;
-    color: #8b4513; /* Saddle Brown */
-    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
   }
-  
-  /* Responsive adjustments */
-  @media (max-width: 1024px) {
-    .hittahit-columns {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .hittahit-card {
-      width: 100%;
-    }
+}
+
+.hittahit-title {
+  color: #6f4e37; /* Dark Chocolate */
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.hittahit-subtitle {
+  color: #8b4513; /* Saddle Brown */
+  font-family: 'Lavender Essence', cursive;
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.hittahit-map-container {
+  margin-bottom: 16px;
+}
+
+.hittahit-info {
+  font-size: 16px;
+  color: #8b4513; /* Saddle Brown */
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .hittahit-columns {
+    flex-direction: column;
+    align-items: center;
   }
-  
+
+  .hittahit-card {
+    width: 100%;
+  }
+}

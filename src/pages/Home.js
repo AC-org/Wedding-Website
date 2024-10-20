@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function Home() {
   const calculateTimeLeft = () => {
-    const weddingDate = new Date("2026-08-15T12:00:00"); // Set your wedding date here
+    const weddingDate = new Date("2026-08-08T14:00:00"); // Set your wedding date here
     const now = new Date();
     const difference = weddingDate - now;
 
@@ -65,8 +65,9 @@ function Home() {
           playsInline
         />
         <div className="hero-overlay">
-          <h1>Välkommen till Arthur & Amandas bröllop!</h1>
-          <p>Fira med oss BÄSTA DAGEN 2026!!!</p>
+          <p style={{ fontSize: '3rem', margin: '0' }}>❤</p>
+          <h1 style={{fontSize: '3rem', margin: '0'}}>Välkommen till Arthur & Amandas bröllop!</h1>
+          <h2>Vi är så glada om just du vill vara med och fira vår dag med oss</h2>
         </div>
       </header>
 
@@ -74,7 +75,7 @@ function Home() {
       {/* Countdown Timer Section */}
       <section className="countdown-section">
         <div className="countdown-timer">
-          {timerComponents.length ? timerComponents : <span>Time's up!</span>}
+          {timerComponents.length ? timerComponents : <span>Bröllopsdags!</span>}
         </div>
         <Link to="/rsvp">
           <button className="rsvp-button">OSA</button>
