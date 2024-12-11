@@ -65,12 +65,20 @@ function Home() {
           playsInline
         />
         <div className="hero-overlay">
-          <p style={{ fontSize: '3rem', margin: '0' }}>❤</p>
           <h1 style={{fontSize: '3rem', margin: '0'}}>Välkommen till Arthur & Amandas bröllop!</h1>
-          <h2>Vi är så glada om just du vill vara med och fira vår dag med oss</h2>
+          <p style={{ fontSize: '3rem', margin: '0' }}>❤</p>
         </div>
       </header>
 
+    <div>
+      <p className="main-info">
+        Vi firar 10 år tillsammans och den 8 augusti 2026 blir vi Man och Fru och vore oerhört tacksamma om just du vill vara med och fira denna dag!
+      </p>
+      <p className="main-info-sub">
+        Dagen kommer att börja med att vi möts på XX kl XX. Efter det kommer en buss ta er till XX för cermonin. Bussen avgår kl XX från området. 
+        Cermonin kommer att hållas i Vendels kyrka och börjar kl XX. Efter cermonin blir ni upplockade av bussen som kommer att ta er till Orangeriet där middagen kommer att vara.
+      </p>
+    </div>
 
       {/* Countdown Timer Section */}
       <section className="countdown-section">

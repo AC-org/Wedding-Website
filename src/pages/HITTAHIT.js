@@ -50,7 +50,7 @@ function HittaHit() {
               ></iframe>
             </div>
             <p className="hittahit-info">
-            <strong>Fun fact: </strong>Turinge kyrkas äldsta del är från 1100-talet! Denna vackra lilla kyrka blickar ut över Vidbynäs och Nykvarn.
+            <strong>Fun fact: </strong>Turinge kyrkas äldsta del är från 1100-talet! Denna vackra lilla kyrkan blickar ut över Vidbynäs och Nykvarn.
             </p>
           </div>
         </div>
