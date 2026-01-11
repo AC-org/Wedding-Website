@@ -1,19 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lavender+Essence&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lavender+Essence&family=Tangerine:wght@400;700&family=Sacramento&display=swap');
 
 .rsvp-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: 
+    background-image:
       linear-gradient(
-        to bottom right,
-        rgba(156, 64, 18, 0.5),  /* Cornflower Blue with 50% opacity */
-        rgba(109, 44, 4, 0.5)   /* Light Pink with 50% opacity */
+        rgba(139, 69, 19, 0.4),
+        rgba(139, 69, 19, 0.4)
       ),
-      url('https://ligyyhhxuvbnvyfnurpi.supabase.co/storage/v1/object/public/Images/wedding-bg.jpg');
+      url('https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/wedding-bg.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvd2VkZGluZy1iZy5qcGciLCJpYXQiOjE3NjgxNDYzODAsImV4cCI6MTc5OTY4MjM4MH0.8bydIgdiFdxWE2ksrebRIN2v8MzxrcWvxtsosXC-gG8');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
   }
 
 .rsvp-card {
@@ -44,7 +43,7 @@
 
 .rsvp-title {
   color: #6f4e37; /* Dark Chocolate */
-  font-family: 'Great Vibes', serif;
+  font-family: 'Tangerine', cursive;
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 8px;
@@ -52,7 +51,7 @@
 
 .rsvp-subtitle {
   color: #8b4513; /* Saddle Brown */
-  font-family: 'Lavender Essence', cursive;
+  font-family: 'Sacramento', cursive;
   font-size: 24px;
   margin-bottom: 32px;
 }

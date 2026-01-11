@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# Wedding-Website 💒
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En interaktiv bröllopwebbplats för Arthur & Amandas bröllop den **8 augusti 2026**.
 
-## Available Scripts
+**Live Site:** https://ac-org.github.io/Wedding-Website/
 
-In the project directory, you can run:
+## Om projektet
 
-### `npm start`
+Denna webbplats tillhandahåller gäster med:
+- 📅 Countdown timer till bröllopet
+- 📝 OSA-formulär för gästanmälan
+- 🗺️ Väginstruktioner och Google Maps till ceremoni- och festplatsen
+- 📱 Fullt responsiv design för mobil, tablet och desktop
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Teknisk stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Frontend:** React 18, React Router
+- **Backend:** Supabase (PostgreSQL + Storage)
+- **Deployment:** GitHub Pages
+- **Build:** Create React App
 
-### `npm test`
+## Quick Start
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation
+```bash
+npm install
+```
 
-### `npm run build`
+### Utveckling
+```bash
+npm start
+```
+Öppnar appen på http://localhost:3000
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Build för produktion
+```bash
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Deploy till GitHub Pages
+```bash
+npm run deploy
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Projektstruktur
 
-### `npm run eject`
+```
+src/
+├── pages/
+│   ├── Home.js          # Hemsida med countdown
+│   ├── RSVP.js          # OSA-formulär
+│   └── HITTAHIT.js      # Väginstruktioner
+├── App.js               # Routing & navigation
+├── supabaseClient.js    # Databaskonfiguration
+└── styles/              # CSS-filer
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Sidor
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 🏠 Home
+- Hero-sektion med bakgrundsvideo
+- Animerad countdown timer
+- Huvudinformation om bröllopsdagen
+- Navigation till andra sidor
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 📝 RSVP
+- Gästanmälanformulär
+- Sparar svar i Supabase-databas
+- Felhantering och bekräftelse
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 🗺️ Hitta hit
+- Google Maps till både ceremoni- och festplats
+- Information om Örbyhus slott och Vendels kyrka
+- Väginstruktioner och fun facts
 
-## Learn More
+## Supabase Setup
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Databasen använder Supabase för:
+- Lagring av RSVP-svar (tabell: `RSVP`)
+- Lagring av media (videos, bilder)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Miljövariabler** är konfigurerade i `src/supabaseClient.js`
 
-### Code Splitting
+## För mer information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Se **CLAUDE.md** för detaljerad teknisk dokumentation, arkitektur och framtida improvements.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+*Denna webbplats är skapad med React och deployad på GitHub Pages.*

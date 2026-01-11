@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lavender+Essence&family=Tangerine:wght@400;700&family=Sacramento&display=swap');
+
+.foton-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    background-image:
+      linear-gradient(
+        rgba(139, 69, 19, 0.4),
+        rgba(139, 69, 19, 0.4)
+      ),
+      url('https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/wedding-bg.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvd2VkZGluZy1iZy5qcGciLCJpYXQiOjE3NjgxNDYzODAsImV4cCI6MTc5OTY4MjM4MH0.8bydIgdiFdxWE2ksrebRIN2v8MzxrcWvxtsosXC-gG8');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    padding-top: 80px;
+}
+
+.foton-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 48px;
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  margin: 40px 20px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .foton-card {
+    width: 95%;
+    padding: 32px;
+    margin: 40px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .foton-card {
+    width: 100%;
+    padding: 24px;
+    margin: 40px 0;
+  }
+}
+
+.foton-title {
+  color: #6f4e37;
+  font-family: 'Tangerine', cursive;
+  font-size: 56px;
+  font-weight: bold;
+  margin: 0 0 8px 0;
+}
+
+.foton-subtitle {
+  color: #8b4513;
+  font-family: 'Sacramento', cursive;
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+/* Instructions Section */
+.foton-instructions {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.foton-instructions h2 {
+  color: #6f4e37;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.instructions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.instruction-item {
+  background-color: rgba(139, 69, 19, 0.08);
+  padding: 24px;
+  border-radius: 12px;
+  border: 2px solid #a0826d;
+  text-align: center;
+}
+
+.instruction-number {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-color: #8b4513;
+  color: white;
+  border-radius: 50%;
+  line-height: 50px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.instruction-item h3 {
+  color: #6f4e37;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  margin: 12px 0;
+}
+
+.instruction-item p {
+  color: #333;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Google Drive Link */
+.drive-link-container {
+  background: linear-gradient(135deg, #8b4513 0%, #a0826d 100%);
+  padding: 32px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.drive-link-text {
+  color: white;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.drive-link-button {
+  display: inline-block;
+  background-color: white;
+  color: #8b4513;
+  padding: 16px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.drive-link-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  background-color: #f9f9f9;
+}
+
+/* Tips Section */
+.foton-tips {
+  background-color: rgba(255, 253, 208, 0.6);
+  padding: 24px;
+  border-radius: 12px;
+  border-left: 4px solid #f0c674;
+  text-align: left;
+}
+
+.foton-tips h3 {
+  color: #6f4e37;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.foton-tips ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.foton-tips li {
+  color: #333;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  padding: 10px 0;
+  line-height: 1.6;
+}
+
+/* Gallery Section */
+.foton-gallery-section {
+  margin-top: 40px;
+  padding-top: 40px;
+  border-top: 2px solid #e0e0e0;
+  text-align: left;
+}
+
+.foton-gallery-section h2 {
+  color: #6f4e37;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.gallery-description {
+  color: #8b4513;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 32px;
+  font-style: italic;
+}
+
+.foton-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.gallery-item {
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-placeholder {
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 2px solid #a0826d;
+}
+
+.placeholder-icon {
+  font-size: 60px;
+  opacity: 0.6;
+}
+
+.gallery-info {
+  padding: 16px;
+  text-align: center;
+}
+
+.gallery-info h3 {
+  color: #6f4e37;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  margin: 0 0 8px 0;
+}
+
+.gallery-info p {
+  color: #8b4513;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* Info Section */
+.foton-info {
+  background-color: rgba(139, 69, 19, 0.08);
+  padding: 24px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  text-align: left;
+}
+
+.foton-info h3 {
+  color: #6f4e37;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  margin-top: 0;
+  text-align: center;
+}
+
+.foton-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.foton-info li {
+  color: #333;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 15px;
+  padding: 12px 0;
+  line-height: 1.6;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.foton-info li:last-child {
+  border-bottom: none;
+}
+
+.foton-info strong {
+  color: #6f4e37;
+}
+
+/* Navbar Styling */
+.navbar {
+    font-family: 'Dancing Script', cursive;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    background: transparent;
+    z-index: 100;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: flex-end;
+  background: transparent;
+  padding: 20px 40px;
+  z-index: 100;
+  gap: 30px;
+  margin: 0;
+  list-style-type: none;
+}
+
+.nav-list li {
+    display: inline;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #a0826d;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .foton-card {
+    padding: 24px;
+  }
+
+  .foton-title {
+    font-size: 48px;
+  }
+
+  .foton-subtitle {
+    font-size: 20px;
+  }
+
+  .instructions-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .foton-gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .gallery-placeholder {
+    height: 150px;
+  }
+
+  .nav-list {
+    padding: 15px 20px;
+    gap: 15px;
+  }
+
+  .nav-list a {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 500px) {
+  .foton-container {
+    padding-top: 60px;
+  }
+
+  .foton-card {
+    padding: 16px;
+    margin: 40px 0;
+  }
+
+  .foton-title {
+    font-size: 40px;
+  }
+
+  .foton-subtitle {
+    font-size: 18px;
+  }
+
+  .instructions-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instruction-item {
+    padding: 16px;
+  }
+
+  .foton-gallery {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .gallery-placeholder {
+    height: 200px;
+  }
+
+  .nav-list {
+    padding: 10px 15px;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-list a {
+    font-size: 16px;
+  }
+
+  .foton-instructions h2,
+  .foton-gallery-section h2 {
+    font-size: 24px;
+  }
+
+  .foton-tips h3,
+  .foton-info h3 {
+    font-size: 18px;
+  }
+
+  .foton-tips li,
+  .foton-info li {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+}

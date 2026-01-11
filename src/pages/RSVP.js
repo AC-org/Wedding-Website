@@ -7,6 +7,7 @@ function RSVP() {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [text, setText] = useState('');
+  const [allergies, setAllergies] = useState('');
   const [attending, setAttending] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -15,12 +16,12 @@ function RSVP() {
     e.preventDefault();
 
     // Log the data to be sent
-    console.log('Submitting RSVP with:', { email, name, text, attending });
+    console.log('Submitting RSVP with:', { email, name, text, attending, allergies });
 
     try {
       const { data, error } = await supabase
-        .from('RSVP')
-        .insert([{ name, email, text, attending }]);
+        .from('rsvp')
+        .insert([{ name, email, text, attending, allergies }]);
 
       if (error) {
         throw error;
@@ -46,6 +47,8 @@ function RSVP() {
           <li><Link to="/">Hem</Link></li>
           <li><Link to="/rsvp">OSA</Link></li>
           <li><Link to="/hitta-hit">Hitta hit</Link></li>
+          <li><Link to="/schema">Schema</Link></li>
+          <li><Link to="/foton">Foton</Link></li>
         </ul>
       </nav>
 
@@ -79,6 +82,13 @@ function RSVP() {
                 onChange={(e) => setText(e.target.value)}
                 className="rsvp-input"
               />
+              <input
+                type="text"
+                placeholder="Allergier (frivilligt)"
+                value={allergies}
+                onChange={(e) => setAllergies(e.target.value)}
+                className="rsvp-input"
+              />
               <div className="rsvp-checkbox-container">
                 <label className="rsvp-checkbox-label">
                   Jag/vi kommer: 
@@ -95,7 +105,7 @@ function RSVP() {
             {errorMessage && <p className="rsvp-error-message">{errorMessage}</p>}
           </>
         ) : (
-          <p className="rsvp-success-message">Thank you for your RSVP!</p>
+          <p className="rsvp-success-message">Tack, hoppas vi ses i augusti!!</p>
         )}
       </div>
     </div>

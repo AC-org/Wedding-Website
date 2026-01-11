@@ -43,12 +43,12 @@ html, body {
 }
 
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(58, 29, 12, 0);
   padding: 30px; /* Increase padding for a larger box */
   position: relative;
   z-index: 2; /* Ensure hero overlay is above hero section but below the navbar */
   top: 20vh; /* Adjust the position to move it lower on the page */
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5); /* Feathered shadow */
+  box-shadow: 0 0 10px 10px rgba(58, 29, 12, 0); /* Feathered shadow */
   transition: all 0.3s ease-in-out; /* Smooth transition for any changes */
 }
 

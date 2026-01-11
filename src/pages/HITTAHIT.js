@@ -11,6 +11,8 @@ function HittaHit() {
           <li><Link to="/">Hem</Link></li>
           <li><Link to="/rsvp">OSA</Link></li>
           <li><Link to="/hitta-hit">Hitta hit</Link></li>
+          <li><Link to="/schema">Schema</Link></li>
+          <li><Link to="/foton">Foton</Link></li>
         </ul>
       </nav>
       
@@ -39,7 +41,7 @@ function HittaHit() {
             <h1 className="hittahit-title">Hitta till Vendels Kyrka</h1>
             <p className="hittahit-subtitle">Här kommer ceremonin att äga rum!</p>
             <div className="hittahit-map-container">
-              <iframe title="turinge"
+              <iframe title="vendels"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2476.125990256487!2d17.598422677618522!3d60.16357817502902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466081dc6998a097%3A0x452b6f0c0d855b7!2sVendels%20kyrka!5e1!3m2!1ssv!2sse!4v1729422675691!5m2!1ssv!2sse"
                 width="100%"
                 height="400"
@@ -50,7 +52,7 @@ function HittaHit() {
               ></iframe>
             </div>
             <p className="hittahit-info">
-            <strong>Fun fact: </strong>Turinge kyrkas äldsta del är från 1100-talet! Denna vackra lilla kyrkan blickar ut över Vidbynäs och Nykvarn.
+            <strong>Fun fact: </strong>Vendels kyrkas äldsta del är från sent 1200-talet!
             </p>
           </div>
         </div>
