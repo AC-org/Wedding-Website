@@ -60,6 +60,10 @@
   margin-bottom: 32px;
 }
 
+.schema-day-section {
+  margin-bottom: 32px;
+}
+
 .schema-content {
   display: flex;
   flex-direction: column;
@@ -96,17 +100,27 @@
   color: #333;
 }
 
+.schema-day-title{
+  font-family: 'Tangerine', bold;
+  font-size: 32px;
+  color: #6f4e37;
+  margin: 0 0 16px 0;
+  text-align: left;
+}
+
 .schema-info {
   background-color: rgba(255, 255, 255, 0.8);
   padding: 24px;
   border-radius: 8px;
   border: 1px solid #ccc;
+  text-align: left;
+  margin-top: 32px;
 }
 
 .schema-info h2 {
   color: #6f4e37;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
+  font-family: 'Tangerine', cursive;
+  font-size: 42px;
   margin-top: 0;
   margin-bottom: 16px;
 }
@@ -127,6 +141,13 @@
 
 .schema-info li:last-child {
   border-bottom: none;
+}
+
+.email-info {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  color: #6f4e37;
+  margin-top: 16px;
 }
 
 /* Navbar Styling - Fixed for Schema page */
