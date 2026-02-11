@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 function Home() {
   const calculateTimeLeft = () => {
@@ -46,16 +47,7 @@ function Home() {
 
   return (
     <div className="home-container">
-      {/* Navigation Menu */}
-      <nav className="navbar">
-        <ul className="nav-list">
-          <li><Link to="/">Hem</Link></li>
-          <li><Link to="/rsvp">OSA</Link></li>
-          <li><Link to="/hitta-hit">Hitta hit</Link></li>
-          <li><Link to="/schema">Schema</Link></li>
-          <li><Link to="/foton">Foton</Link></li>
-        </ul>
-      </nav>
+      <Navbar />
 
       <header className="hero-section">
       <video

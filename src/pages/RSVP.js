@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import supabase from '../supabaseClient';
-import { Link } from 'react-router-dom';
 import './RSVP.css';
+import Navbar from '../components/Navbar';
 
 function RSVP() {
   const [email, setEmail] = useState('');
@@ -41,16 +41,7 @@ function RSVP() {
 
   return (
     <div className="rsvp-container">
-      {/* Navigation Menu */}
-      <nav className="navbar">
-        <ul className="nav-list">
-          <li><Link to="/">Hem</Link></li>
-          <li><Link to="/rsvp">OSA</Link></li>
-          <li><Link to="/hitta-hit">Hitta hit</Link></li>
-          <li><Link to="/schema">Schema</Link></li>
-          <li><Link to="/foton">Foton</Link></li>
-        </ul>
-      </nav>
+      <Navbar />
 
       <div className="rsvp-card">
         {!submitted ? (

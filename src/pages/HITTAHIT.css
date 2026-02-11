@@ -1,16 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lora:wght@400;700&display=swap');
 
-.navbar-fixed {
-  font-family: 'Dancing Script', cursive;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: flex-end; /* Aligns the menu items to the right */
-  /* background: rgba(255, 255, 255, 0.2); /* Semi-transparent white background for slight blur effect */
-  z-index: 3; /* Ensure navbar is above hero section and overlay */
-}
-
 .hittahit-container {
   display: flex;
   justify-content: center;

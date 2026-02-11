@@ -150,45 +150,6 @@
   margin-top: 16px;
 }
 
-/* Navbar Styling - Fixed for Schema page */
-.navbar {
-    font-family: 'Dancing Script', cursive;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    background: transparent;
-    z-index: 100;
-}
-
-.nav-list {
-  display: flex;
-  justify-content: flex-end;
-  background: transparent;
-  padding: 20px 40px;
-  z-index: 100;
-  gap: 30px;
-  margin: 0;
-  list-style-type: none;
-}
-
-.nav-list li {
-    display: inline;
-}
-
-.nav-list a {
-    text-decoration: none;
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.nav-list a:hover {
-    color: #a0826d;
-}
-
 /* Responsive Styles */
 @media (max-width: 768px) {
   .schema-card {

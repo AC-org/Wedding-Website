@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lavender+Essence&family=Tangerine:wght@400;700&family=Sacramento&display=swap');
+
+.overnattning-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-image:
+    linear-gradient(
+      rgba(139, 69, 19, 0.4),
+      rgba(139, 69, 19, 0.4)
+    ),
+    url('https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/wedding-bg.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvd2VkZGluZy1iZy5qcGciLCJpYXQiOjE3NjgxNDYzODAsImV4cCI6MTc5OTY4MjM4MH0.8bydIgdiFdxWE2ksrebRIN2v8MzxrcWvxtsosXC-gG8');
+  background-size: cover;
+  background-position: center top;
+  padding: 40px 20px;
+}
+
+.overnattning-content {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.overnattning-title {
+  color: #6f4e37;
+  font-family: 'Tangerine', cursive;
+  font-size: 64px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  margin-top: 40px;
+}
+
+.overnattning-subtitle {
+  color: #8b4513;
+  font-family: 'Sacramento', cursive;
+  font-size: 28px;
+  margin-bottom: 48px;
+}
+
+.accommodations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-bottom: 60px;
+}
+
+@media (max-width: 1026px) {
+  .accommodations-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .accommodations-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.accommodation-card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 32px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accommodation-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.accommodation-name {
+  color: #6f4e37;
+  font-family: 'Tangerine', cursive;
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.accommodation-description {
+  color: #8b4513;
+  font-family: 'Sacramento', cursive;
+  font-size: 18px;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.accommodation-details {
+  background-color: rgba(139, 69, 19, 0.05);
+  border-left: 4px solid #8b4513;
+  padding: 16px;
+  margin-bottom: 24px;
+  border-radius: 4px;
+}
+
+.accommodation-details p {
+  color: #6f4e37;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  margin: 8px 0;
+}
+
+.accommodation-details strong {
+  color: #8b4513;
+}
+
+.accommodation-link {
+  display: inline-block;
+  background-color: #8b4513;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.accommodation-link:hover {
+  background-color: #a0522d;
+}
+
+@media (max-width: 480px) {
+  .overnattning-title {
+    font-size: 48px;
+  }
+
+  .overnattning-subtitle {
+    font-size: 20px;
+  }
+
+  .accommodation-card {
+    padding: 24px;
+  }
+
+  .accommodation-name {
+    font-size: 28px;
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Schema.css';
-import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 function Schema() {
   const schedules = {
@@ -41,16 +41,7 @@ function Schema() {
 
   return (
     <div className="schema-container">
-      {/* Navigation Menu */}
-      <nav className="navbar">
-        <ul className="nav-list">
-          <li><Link to="/">Hem</Link></li>
-          <li><Link to="/rsvp">OSA</Link></li>
-          <li><Link to="/hitta-hit">Hitta hit</Link></li>
-          <li><Link to="/schema">Schema</Link></li>
-          <li><Link to="/foton">Foton</Link></li>
-        </ul>
-      </nav>
+      <Navbar />
 
       <div className="schema-card">
         <h1 className="schema-title">Schema för dagen</h1>

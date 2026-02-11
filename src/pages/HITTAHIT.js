@@ -1,20 +1,11 @@
 import React from 'react';
 import './HITTAHIT.css';
-import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 function HittaHit() {
   return (
     <div className="hittahit-container">
-      {/* Fixed Navigation Menu */}
-      <nav className="navbar-fixed">
-        <ul className="nav-list">
-          <li><Link to="/">Hem</Link></li>
-          <li><Link to="/rsvp">OSA</Link></li>
-          <li><Link to="/hitta-hit">Hitta hit</Link></li>
-          <li><Link to="/schema">Schema</Link></li>
-          <li><Link to="/foton">Foton</Link></li>
-        </ul>
-      </nav>
+      <Navbar />
       
       <div className="hittahit-content">
         <div className="hittahit-columns">

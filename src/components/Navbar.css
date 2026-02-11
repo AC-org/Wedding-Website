@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+/* Navbar Styling */
+.navbar {
+    font-family: 'Dancing Script', cursive;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end; /* Aligns the menu items to the right */
+    background: transparent; /* Transparent background to show background */
+    z-index: 3; /* Ensure navbar is above all sections */
+    padding: 0;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: flex-end; /* Aligns the menu items to the right */
+  background: transparent; /* Transparent background */
+  padding: 20px 40px;
+  z-index: 3;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+}
+
+.nav-list li {
+    display: inline;
+    margin: 0;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white;  /* Ensure the color contrasts */
+    font-size: 36px;  /* Font size for the navbar */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+    color: #a7846b;  /* Hover effect */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .nav-list {
+    padding: 10px 20px;
+  }
+
+  .nav-list a {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 500px) {
+  .nav-list {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 0;
+    list-style-type: none;
+    flex-wrap: nowrap; /* This ensures the menu stays horizontal */
+    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+  }
+
+  .nav-list a {
+    font-size: 24px;
+  }
+}

@@ -96,42 +96,6 @@ html, body {
     background-color: #1578b5;
 }
 
-/* Navbar Styling */
-.navbar {
-    font-family: 'Dancing Script', cursive;
-    position: absolute; /* Make navbar float over hero section */
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end; /* Aligns the menu items to the right */
-    background: transparent; /* Transparent background to show hero image */
-    z-index: 3; /* Ensure navbar is above hero section and overlay */
-}
-
-.nav-list {
-  display: flex;
-  justify-content: flex-end; /* Aligns the menu items to the right */
-  background: transparent; /* Transparent background to show hero image */
-  padding: 20px 40px; 
-  z-index: 3; /* Ensure navbar is above hero section and overlay */
-  gap: 20px;
-}
-
-.nav-list li {
-    display: inline;
-}
-
-.nav-list a {
-    text-decoration: none;
-    color: white;  /* Ensure the color contrasts with the hero background */
-    font-size: 36px;  /* Font size for the navbar */
-    font-weight: bold;
-}
-
-.nav-list a:hover {
-    color: #cbc4c4;  /* Hover effect for a subtle change */
-}
-
 .countdown-section {
   text-align: center;
   padding: 20px 0;
@@ -172,14 +136,6 @@ html, body {
     transform: scale(1);
   }
 
-  .nav-list {
-    padding: 10px 20px;
-  }
-
-  .nav-list a {
-    font-size: 28px;
-  }
-
   .image-gallery .gallery img {
     max-width: 45%;
   }
@@ -214,20 +170,6 @@ html, body {
     transform: translateX(-50%); /* Change this */
     object-fit: cover;
     z-index: 1;
-  }
-
-  .nav-list {
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-    margin: 0;
-    list-style-type: none;
-    flex-wrap: nowrap; /* This ensures the menu stays horizontal */
-    overflow-x: auto; /* Allows horizontal scrolling on small screens */
-  }
-
-  .nav-list a {
-    font-size: 24px;
   }
 
   .image-gallery .gallery img {
