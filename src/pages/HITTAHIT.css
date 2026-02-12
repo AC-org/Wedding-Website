@@ -1,12 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lora:wght@400;700&display=swap');
 
+.hittahit-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .hittahit-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
   min-height: 100vh;
   width: 100%;
-  background-image: 
+  background-image:
     linear-gradient(
       to bottom right,
       rgba(156, 64, 18, 0.4),
@@ -102,7 +109,7 @@
 
 .hittahit-title {
   color: #6f4e37; /* Dark Chocolate */
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Tangerine', cursive;
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 8px;
@@ -111,7 +118,7 @@
 .hittahit-subtitle {
   color: #8b4513; /* Saddle Brown */
   font-family: 'Lavender Essence', cursive;
-  font-size: 20px;
+  font-size: 16px;
   margin-bottom: 16px;
 }
 

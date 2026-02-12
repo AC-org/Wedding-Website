@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Homemade+Apple&display=swap');
+
+.info-container {
+  font-family: 'Arial, sans-serif';
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-image:
+    linear-gradient(
+      to bottom right,
+      rgba(156, 64, 18, 0.4),
+      rgba(109, 44, 4, 0.4)
+    ),
+    url('https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/wedding-bg.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvd2VkZGluZy1iZy5qcGciLCJpYXQiOjE3NjgxNDYzODAsImV4cCI6MTc5OTY4MjM4MH0.8bydIgdiFdxWE2ksrebRIN2v8MzxrcWvxtsosXC-gG8');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  flex: 1;
+}
+
+.info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 32px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.main-info {
+  font-family: 'Homemade Apple';
+  font-weight: 600;
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 40px 50px;
+  max-width: 800px;
+  margin: 0;
+}
+
+.main-info-sub {
+  font-family: 'Homemade Apple';
+  font-size: 1.2rem;
+  text-align: justify;
+  padding: 0px 50px 40px 50px;
+  max-width: 800px;
+  margin: 0;
+}
+
+.countdown-footer-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  border-top: 2px solid #8b4513;
+}
+
+.countdown-footer-timer {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.countdown-footer-timer span {
+  margin: 0 15px;
+  color: #8b4513;
+}
+
+.countdown-footer {
+  font-family: 'Dancing Script', cursive;
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 24px;
+  margin: 0;
+  border-top: 3px solid #8b4513;
+}
+
+.countdown-footer p {
+  margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .main-info {
+    font-size: 1.3rem;
+    padding: 30px 30px;
+  }
+
+  .main-info-sub {
+    font-size: 1rem;
+    padding: 0px 30px 30px 30px;
+  }
+
+  .countdown-footer-timer {
+    font-size: 2rem;
+  }
+
+  .countdown-footer-timer span {
+    margin: 0 10px;
+  }
+
+  .countdown-footer-section {
+    padding: 30px 15px;
+  }
+
+  .countdown-footer {
+    padding: 12px 0;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-card {
+    padding: 20px 10px;
+  }
+
+  .main-info {
+    font-size: 1.1rem;
+    padding: 15px 10px;
+  }
+
+  .main-info-sub {
+    font-size: 0.9rem;
+    padding: 0px 10px 15px 10px;
+  }
+
+  .countdown-footer-timer {
+    font-size: 1.5rem;
+  }
+
+  .countdown-footer-timer span {
+    margin: 0 5px;
+  }
+
+  .countdown-footer-section {
+    padding: 20px 10px;
+  }
+
+  .countdown-footer {
+    padding: 10px 0;
+    font-size: 16px;
+  }
+}

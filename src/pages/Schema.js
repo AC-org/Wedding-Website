@@ -1,6 +1,7 @@
 import React from 'react';
 import './Schema.css';
 import Navbar from '../components/Navbar';
+import CountdownFooter from '../components/CountdownFooter';
 
 function Schema() {
   const schedules = {
@@ -40,27 +41,31 @@ function Schema() {
   );
 
   return (
-    <div className="schema-container">
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Navbar />
 
-      <div className="schema-card">
-        <h1 className="schema-title">Schema för dagen</h1>
-        <p className="schema-subtitle">Här är en översikt över bröllopsdagens tidplan. Tiderna är uppskattade och kan variera något.</p>
+      <div className="schema-container">
+        <div className="schema-card">
+          <h1 className="schema-title">Schema för dagen</h1>
+          <p className="schema-subtitle">Här är en översikt över bröllopets tidplan för både lördag och söndag. Tiderna är uppskattade och kan variera något.</p>
 
-        {Object.entries(schedules).map(([day, events]) => renderSchedule(day, events))}
+          {Object.entries(schedules).map(([day, events]) => renderSchedule(day, events))}
 
-        <div className="schema-info">
-          <h2 className="schema-info-title">Viktig information</h2>
-          <ul>
-            <li><strong>Bussresa:</strong> Det ingår busshämtning från mötesstället till kyrkan och vidare till Orangeriet för er som bor på Wärdshuset Gammel Tammen och Vandrarhem Annexet. Bussar avgår enligt schemat. Ni som bor på Örbyhus Golfklubb ombes att köra själva till kyrkan och tillbaka.</li>
-            <li><strong>Parkering:</strong> Parkering finns tillgänglig på båda platserna.</li>
-            <li><strong>Mat & Dryck:</strong> Vegetariska alternativ och specialdietkost kan bokas vid OSA:n.</li>
-            <li><strong>Klädkod:</strong> Fin kavaj/klänning rekommenderas för en vacker dag!</li>
-            <li><strong>Frågor?</strong> Tveka inte att kontakta oss om du har några frågor!</li>
-            <li><strong>Kontakt:</strong> <a href="mailto:arthur.ohman@gmail.com" className="email-info">arthur.ohman@gmail.com</a> & <a href="mailto:amanda.carp97@gmail.com" className="email-info">amanda.carp97@gmail.com</a></li>
-          </ul>
+          <div className="schema-info">
+            <h2 className="schema-info-title">Viktig information</h2>
+            <ul>
+              <li><strong>Bussresa:</strong> Bussar avgår enligt schemat mellan platserna. Ni som bor på Örbyhus Golfklubb ombes att köra själva till kyrkan och tillbaka.</li>
+              <li><strong>Parkering:</strong> Parkering finns tillgänglig på båda platserna.</li>
+              <li><strong>Mat & Dryck:</strong> Vegetariska alternativ och specialdietkost kan bokas vid OSA:n.</li>
+              <li><strong>Klädkod:</strong> Fin kavaj/klänning rekommenderas för en vacker dag!</li>
+              <li><strong>Frågor?</strong> Tveka inte att kontakta oss om du har några frågor!</li>
+              <li><strong>Kontakt:</strong> <a href="mailto:arthur.ohman@gmail.com" className="email-info">arthur.ohman@gmail.com</a> & <a href="mailto:amanda.carp97@gmail.com" className="email-info">amanda.carp97@gmail.com</a></li>
+            </ul>
+          </div>
         </div>
       </div>
+
+      <CountdownFooter />
     </div>
   );
 }

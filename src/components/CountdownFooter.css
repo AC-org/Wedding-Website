@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+.countdown-footer-section {
+  text-align: center;
+  background-color: #f4f4f4;
+}
+
+.countdown-footer-timer {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+.countdown-footer-timer span {
+  margin: 0 15px;
+  color: #8b4513;
+}
+
+.countdown-footer {
+  font-family: 'Dancing Script', cursive;
+  background: #333;
+  color: white;
+  text-align: center;
+  font-size: 24px;
+  margin: 0;
+}
+
+.countdown-footer p {
+  margin: 0;
+}
+

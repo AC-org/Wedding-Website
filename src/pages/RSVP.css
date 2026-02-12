@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lavender+Essence&family=Tangerine:wght@400;700&family=Sacramento&display=swap');
 
+.rsvp-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .rsvp-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    flex: 1;
+    min-height: 100vh;
     background-image:
       linear-gradient(
         rgba(139, 69, 19, 0.4),
@@ -51,9 +58,9 @@
 
 .rsvp-subtitle {
   color: #8b4513; /* Saddle Brown */
-  font-family: 'Sacramento', cursive;
+  font-family: 'Apple Chancery', cursive;
   font-size: 24px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .rsvp-form {
@@ -68,6 +75,12 @@
   font-size: 18px;
   font-family: 'Cormorant Garamond', serif;
   padding: 16px;
+}
+
+.rsvp-input:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
 }
 
 .rsvp-checkbox-container {

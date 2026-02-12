@@ -1,11 +1,13 @@
 import React from 'react';
 import './HITTAHIT.css';
 import Navbar from '../components/Navbar';
+import CountdownFooter from '../components/CountdownFooter';
 
 function HittaHit() {
   return (
-    <div className="hittahit-container">
-      <Navbar />
+    <div className="hittahit-wrapper">
+      <div className="hittahit-container">
+        <Navbar />
       
       <div className="hittahit-content">
         <div className="hittahit-columns">
@@ -48,6 +50,9 @@ function HittaHit() {
           </div>
         </div>
       </div>
+      </div>
+
+      <CountdownFooter />
     </div>
   );
 }
