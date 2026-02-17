@@ -39,6 +39,12 @@
   }
 }
 
+@media (max-width: 600px) {
+  .schema-container {
+    padding-top: 70px;
+  }
+}
+
 @media (max-width: 480px) {
   .schema-card {
     width: 100%;

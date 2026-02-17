@@ -90,6 +90,12 @@
   }
 }
 
+@media (max-width: 600px) {
+  .foton-container {
+    padding-top: 70px;
+  }
+}
+
 .instruction-item {
   text-align: center;
   background-color: rgba(139, 69, 19, 0.2);

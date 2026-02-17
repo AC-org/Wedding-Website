@@ -29,6 +29,14 @@ function CountdownFooter() {
     return () => clearTimeout(timer);
   });
 
+  const getSwedishLabel = (interval) => {
+    const labels = {
+      days: 'dagar',
+      hours: 'timmar',
+    };
+    return labels[interval] || interval;
+  };
+
   const timerComponents = [];
 
   Object.keys(timeLeft).forEach((interval) => {
@@ -38,7 +46,7 @@ function CountdownFooter() {
 
     timerComponents.push(
       <span key={interval}>
-        {timeLeft[interval]} {interval}{" "}
+        {timeLeft[interval]} {getSwedishLabel(interval)}{" "}
       </span>
     );
   });

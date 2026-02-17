@@ -9,7 +9,7 @@
 .rsvp-container {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex: 1;
     min-height: 100vh;
     background-image:
@@ -20,6 +20,7 @@
       url('https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/wedding-bg.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvd2VkZGluZy1iZy5qcGciLCJpYXQiOjE3NjgxNDYzODAsImV4cCI6MTc5OTY4MjM4MH0.8bydIgdiFdxWE2ksrebRIN2v8MzxrcWvxtsosXC-gG8');
     background-size: cover;
     background-position: center top;
+    padding-top: 80px;
   }
 
 .rsvp-card {
@@ -38,6 +39,12 @@
   .rsvp-card {
     width: 95%;
     padding: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .rsvp-container {
+    padding-top: 70px;
   }
 }
 

@@ -7,16 +7,50 @@
     top: 0;
     width: 100%;
     display: flex;
-    justify-content: flex-end; /* Aligns the menu items to the right */
-    background: transparent; /* Transparent background to show background */
-    z-index: 3; /* Ensure navbar is above all sections */
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 3;
     padding: 0;
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(4px);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+    pointer-events: none;
+    z-index: -1;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 15px 20px;
+  z-index: 4;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
 }
 
 .nav-list {
   display: flex;
-  justify-content: flex-end; /* Aligns the menu items to the right */
-  background: transparent; /* Transparent background */
+  justify-content: flex-end;
+  background: transparent;
   padding: 20px 40px;
   z-index: 3;
   gap: 30px;
@@ -31,20 +65,21 @@
 
 .nav-list a {
     text-decoration: none;
-    color: white;  /* Ensure the color contrasts */
-    font-size: 36px;  /* Font size for the navbar */
+    color: white;
+    font-size: 36px;
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 .nav-list a:hover {
-    color: #a7846b;  /* Hover effect */
+    color: #a7846b;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
   .nav-list {
     padding: 10px 20px;
+    gap: 20px;
   }
 
   .nav-list a {
@@ -52,18 +87,24 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+  .hamburger {
+    display: none;
+  }
+
   .nav-list {
-    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    padding: 10px;
-    margin: 0;
-    list-style-type: none;
-    flex-wrap: nowrap; /* This ensures the menu stays horizontal */
-    overflow-x: auto; /* Allows horizontal scrolling on small screens */
+    padding: 15px 20px;
+    gap: 20px;
+  }
+
+  .nav-list li {
+    display: block;
+    flex: 0 0 calc(33.333% - 10px);
   }
 
   .nav-list a {
-    font-size: 24px;
+    font-size: 20px;
   }
 }

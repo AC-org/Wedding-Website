@@ -1,17 +1,33 @@
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import './Navbar.css';
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
-      <ul className="nav-list">
-        <li><Link to="/"> Hem </Link></li>
+      <button className="hamburger" onClick={handleMenuToggle}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul className={`nav-list ${menuOpen ? 'open' : ''}`}>
+        <li><Link to="/" onClick={handleLinkClick}> Hem </Link></li>
         {/* <li><Link to="/info"> Info </Link></li> */}
-        <li><Link to="/hitta-hit">Hitta hit</Link></li>
-        <li><Link to="/schema">Schema</Link></li>
-        <li><Link to="/rsvp">OSA</Link></li>
-        <li><Link to="/foton">Foton</Link></li>
-        <li><Link to="/overnattning">Övernattning</Link></li>
+        <li><Link to="/hitta-hit" onClick={handleLinkClick}>Hitta hit</Link></li>
+        <li><Link to="/schema" onClick={handleLinkClick}>Schema</Link></li>
+        <li><Link to="/rsvp" onClick={handleLinkClick}>OSA</Link></li>
+        <li><Link to="/foton" onClick={handleLinkClick}>Foton</Link></li>
+        <li><Link to="/overnattning" onClick={handleLinkClick}>Övernattning</Link></li>
       </ul>
     </nav>
   );
