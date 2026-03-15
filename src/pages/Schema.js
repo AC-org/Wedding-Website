@@ -51,7 +51,7 @@ function Schema() {
 
           {Object.entries(schedules).map(([day, events]) => renderSchedule(day, events))}
 
-          <div className="schema-info">
+          {/* <div className="schema-info">
             <h2 className="schema-info-title">Viktig information</h2>
             <ul>
               <li><strong>Bussresa:</strong> Bussar avgår enligt schemat mellan platserna. Ni som bor på Örbyhus Golfklubb ombes att köra själva till kyrkan och tillbaka.</li>
@@ -61,7 +61,7 @@ function Schema() {
               <li><strong>Frågor?</strong> Tveka inte att kontakta oss om du har några frågor!</li>
               <li><strong>Kontakt:</strong> <a href="mailto:arthur.ohman@gmail.com" className="email-info">arthur.ohman@gmail.com</a> & <a href="mailto:amanda.carp97@gmail.com" className="email-info">amanda.carp97@gmail.com</a></li>
             </ul>
-          </div>
+          </div> */}
         </div>
       </div>
 

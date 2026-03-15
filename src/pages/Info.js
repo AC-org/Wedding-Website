@@ -38,14 +38,8 @@ function Info() {
               Vi ordnar buss för er! Bussarna avgår från boendena, kör er till <strong>Vendels kyrka</strong> för ceremonin och sedan vidare till <strong>Orangeriet på Örbyhus slott</strong> för middagen och festen.
             </p>
             <p className="info-text">
-              Sent på natten kör bussarna tillbaka till boendena. Exakta avgångstider kommer i inbjudan.
+              Sent på natten kör bussarna tillbaka till boendena.
             </p>
-            <div className="info-highlight">
-              <p className="info-text" style={{ margin: 0 }}>
-                Har du frågor om transport eller annat praktiskt? Kontakta vår toastmaster!
-                <br /><strong>Toastmaster:</strong> Ebba Rovig och Sixten Roström: _____@gmail.com
-              </p>
-            </div>
           </div>
 
           <div className="info-section">
