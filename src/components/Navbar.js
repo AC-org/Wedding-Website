@@ -22,7 +22,7 @@ function Navbar() {
       </button>
       <ul className={`nav-list ${menuOpen ? 'open' : ''}`}>
         <li><Link to="/" onClick={handleLinkClick}> Hem </Link></li>
-        {/* <li><Link to="/info"> Info </Link></li> */}
+        <li><Link to="/info"> Info </Link></li>
         <li><Link to="/hitta-hit" onClick={handleLinkClick}>Hitta hit</Link></li>
         <li><Link to="/schema" onClick={handleLinkClick}>Schema</Link></li>
         <li><Link to="/rsvp" onClick={handleLinkClick}>OSA</Link></li>
