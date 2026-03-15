@@ -2,6 +2,7 @@ import React from 'react';
 import './Foton.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
+import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
 
 function Foton() {
   return (
@@ -61,6 +62,7 @@ function Foton() {
       </div>
 
       <CountdownFooter />
+      <WeddingChatBot />
     </div>
   );
 }

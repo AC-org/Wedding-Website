@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://ac-org.github.io/Wedding-Website/",
   "dependencies": {
+    "@google/genai": "^1.45.0",
     "@supabase/supabase-js": "^2.45.3",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -46,7 +47,5 @@
   },
   "devDependencies": {
     "gh-pages": "^6.1.1"
-  } 
+  }
 }
-
-

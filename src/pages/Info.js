@@ -2,6 +2,7 @@ import './Info.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
 import { Link } from 'react-router-dom';
+import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
 
 function Info() {
   return (
@@ -68,6 +69,7 @@ function Info() {
       </div>
 
       <CountdownFooter />
+      <WeddingChatBot />
     </div>
   );
 }

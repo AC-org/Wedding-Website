@@ -1,6 +1,7 @@
 import './Overnattning.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
+import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
 
 function Overnattning() {
   const accommodations = [
@@ -84,6 +85,7 @@ function Overnattning() {
       </div>
 
       <CountdownFooter />
+      <WeddingChatBot />
     </div>
   );
 }

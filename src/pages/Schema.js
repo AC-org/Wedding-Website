@@ -2,6 +2,7 @@ import React from 'react';
 import './Schema.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
+import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
 
 function Schema() {
   const schedules = {
@@ -66,6 +67,7 @@ function Schema() {
       </div>
 
       <CountdownFooter />
+      <WeddingChatBot />
     </div>
   );
 }

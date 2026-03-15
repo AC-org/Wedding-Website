@@ -2,6 +2,7 @@ import React from 'react';
 import './HITTAHIT.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
+import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
 
 function HittaHit() {
   return (
@@ -53,6 +54,7 @@ function HittaHit() {
       </div>
 
       <CountdownFooter />
+      <WeddingChatBot />
     </div>
   );
 }

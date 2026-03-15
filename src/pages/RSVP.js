@@ -3,6 +3,7 @@ import supabase from '../supabaseClient';
 import './RSVP.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
+import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
 
 function RSVP() {
   const [email, setEmail] = useState('');
@@ -122,6 +123,7 @@ function RSVP() {
       </div>
 
       <CountdownFooter />
+      <WeddingChatBot />
     </div>
   );
 }
