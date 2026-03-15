@@ -32,7 +32,7 @@ function HittaHit() {
 
           <div className="hittahit-card">
             <h1 className="hittahit-title">Hitta till Vendels Kyrka</h1>
-            <p className="hittahit-subtitle">Här kommer ceremonin att äga rum!</p>
+            <p className="hittahit-subtitle">Här kommer ceremonin att äga rum! Vi kommer åka hit via bokade bussar.</p>
             <div className="hittahit-map-container">
               <iframe title="vendels"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2476.125990256487!2d17.598422677618522!3d60.16357817502902!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x466081dc6998a097%3A0x452b6f0c0d855b7!2sVendels%20kyrka!5e1!3m2!1ssv!2sse!4v1729422675691!5m2!1ssv!2sse"

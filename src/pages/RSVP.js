@@ -17,13 +17,18 @@ function RSVP() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Log the data to be sent
-    console.log('Submitting RSVP with:', { email, name, text, attending, hasAllergies, allergies });
-
     try {
+      // Get user's IP address
+      const ipResponse = await fetch('https://api.ipify.org?format=json');
+      const ipData = await ipResponse.json();
+      const ipAddress = ipData.ip;
+
+      // Log the data to be sent
+      console.log('Submitting RSVP with:', { email, name, text, attending, hasAllergies, allergies, ipAddress });
+
       const { data, error } = await supabase
         .from('rsvp')
-        .insert([{ name, email, text, attending, has_allergies: hasAllergies, allergies }]);
+        .insert([{ name, email, text, attending, has_allergies: hasAllergies, allergies, ip_address: ipAddress }]);
 
       if (error) {
         throw error;
