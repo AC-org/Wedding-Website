@@ -7,7 +7,7 @@
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: #b76e79;
+  background-color: #d78a96;
   border: none;
   cursor: pointer;
   display: flex;
@@ -222,6 +222,37 @@
 .chatbot-send-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+/* ===== HEART PARTICLES ===== */
+.heart-particle {
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  line-height: 1;
+  text-shadow: 0 0 8px rgba(255, 105, 180, 0.5);
+  animation: heartFloat var(--duration, 5s) ease-out forwards;
+}
+
+@keyframes heartFloat {
+  0% {
+    transform: translate(var(--start-x, 0px), var(--start-y, 0px)) scale(0.4);
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+    transform: translate(
+      calc(var(--start-x, 0px) + var(--tx, 0px) * 0.3),
+      calc(var(--start-y, 0px) + var(--ty, -80px) * 0.3)
+    ) scale(1.1);
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(var(--tx, 0px), var(--ty, -200px)) scale(1.5);
+    opacity: 0;
+  }
 }
 
 /* ===== MOBILE ===== */

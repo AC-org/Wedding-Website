@@ -12,18 +12,20 @@ REGLER DU ALLTID MÅSTE FÖLJA:
 4. Om någon frågar om något utanför bröllop och kärlek (t.ex. politik, teknik, recept), svara artigt på rim att du bara kan hjälpa med bröllopsrelaterade frågor.
 5. Håll svaren korta och kärnfulla — max 6–8 rader dikt.
 6. Var alltid positiv, varm och festlig i tonen. Du är ett celebrerande dikt-orakel!
-7. Använd hjärtsymboler (❤, 💕) mycket, men inga andra typer av emojis förutom kärleksfulla sådana.
+7. Använd hjärtsymboler (💕) mycket! Inga andra typer av emojis och symboler.
 
 HÄR FÖLJER ALL INFORMATION OM BRÖLLOPET:
 
 ${weddingInfo}`;
 
 const WELCOME_MESSAGE = `Välkommen, vän, till kärlekens hörna
-Där svar alltid blommar som vårens törna! 💕
+Där svar alltid blommar som vårens törna! 
 Fråga om bröllopet, dagen, och mer
-Din poet på rim ett svar alltid ger!`;
+Din poet på rim ett svar alltid ger! 💕`;
 
 const MAX_HISTORY = 10;
+
+const HEART_COLORS = ['#ff69b4', '#ff85c2', '#ff4d8f', '#ffb3d9', '#e75480', '#ff99cc'];
 
 function WeddingChatBot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,9 +33,42 @@ function WeddingChatBot() {
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [hasOpened, setHasOpened] = useState(false);
+  const [hearts, setHearts] = useState([]);
+  const [pendingAIHeart, setPendingAIHeart] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+  const floatBtnRef = useRef(null);
+  const lastAiBubbleRef = useRef(null);
   const conversationHistoryRef = useRef([]);
+
+  const getOrigin = (ref) => {
+    if (!ref.current) return { bottom: 54, right: 54 };
+    const rect = ref.current.getBoundingClientRect();
+    return {
+      bottom: window.innerHeight - rect.bottom + rect.height / 2,
+      right: window.innerWidth - rect.right + rect.width / 2,
+    };
+  };
+
+  const triggerHearts = ({ bottom, right }) => {
+    const newHearts = Array.from({ length: 14 }, (_, i) => ({
+      id: Date.now() + i,
+      bottom,
+      right,
+      tx: Math.random() * 160 - 80,
+      ty: -(140 + Math.random() * 120),
+      startX: Math.random() * 30 - 15,
+      startY: Math.random() * 20 - 10,
+      size: 13 + Math.random() * 16,
+      color: HEART_COLORS[Math.floor(Math.random() * HEART_COLORS.length)],
+      delay: Math.random() * 0.5,
+      duration: 1.3 + Math.random() * 0.8,
+    }));
+    setHearts(prev => [...prev, ...newHearts]);
+    setTimeout(() => {
+      setHearts(prev => prev.filter(h => !newHearts.some(n => n.id === h.id)));
+    }, 3000);
+  };
 
   useEffect(() => {
     if (isOpen && !hasOpened) {
@@ -41,6 +76,20 @@ function WeddingChatBot() {
       setHasOpened(true);
     }
   }, [isOpen, hasOpened]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      triggerHearts(getOrigin(floatBtnRef));
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (pendingAIHeart && lastAiBubbleRef.current) {
+      triggerHearts(getOrigin(lastAiBubbleRef));
+      setPendingAIHeart(false);
+    }
+  }, [pendingAIHeart]); // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (isOpen) {
@@ -94,6 +143,7 @@ function WeddingChatBot() {
       ];
 
       setMessages(prev => [...prev, { role: 'ai', text: replyText }]);
+      setPendingAIHeart(true);
     } catch (err) {
       console.error('WeddingChatBot error:', err);
       setMessages(prev => [
@@ -117,7 +167,29 @@ function WeddingChatBot() {
 
   return (
     <>
+      {hearts.map(heart => (
+        <span
+          key={heart.id}
+          className="heart-particle"
+          style={{
+            fontSize: `${heart.size}px`,
+            color: heart.color,
+            bottom: `${heart.bottom}px`,
+            right: `${heart.right}px`,
+            animationDelay: `${heart.delay}s`,
+            animationDuration: `${heart.duration}s`,
+            '--tx': `${heart.tx}px`,
+            '--ty': `${heart.ty}px`,
+            '--start-x': `${heart.startX}px`,
+            '--start-y': `${heart.startY}px`,
+          }}
+        >
+          ♥
+        </span>
+      ))}
+
       <button
+        ref={floatBtnRef}
         className="chatbot-float-btn"
         onClick={() => setIsOpen(prev => !prev)}
         aria-label="Öppna Kärlekspoeten"
@@ -143,6 +215,7 @@ function WeddingChatBot() {
             {messages.map((msg, i) => (
               <div
                 key={i}
+                ref={msg.role === 'ai' ? lastAiBubbleRef : null}
                 className={`chatbot-bubble ${msg.role === 'ai' ? 'chatbot-bubble-ai' : 'chatbot-bubble-user'}`}
               >
                 {msg.text}
