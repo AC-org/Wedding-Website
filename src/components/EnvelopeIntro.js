@@ -21,6 +21,10 @@ function EnvelopeIntro({ onComplete }) {
       {/* Bottom envelope body */}
       <div className="envelope-bottom" />
 
+      {/* Side panels — visible only on mobile, form the X-shape */}
+      <div className="envelope-left" />
+      <div className="envelope-right" />
+
       {/* Top flap — triangle pointing down */}
       <div className="envelope-top">
         {/* <p className="envelope-text">

@@ -206,3 +206,22 @@ html, body {
   transform: translateY(-1px);
   box-shadow: 0 6px 24px rgba(201, 112, 127, 0.45);
 }
+
+/* ── Page background – applied to all inner-page containers ── */
+.info-container,
+.schema-container,
+.rsvp-container,
+.hittahit-container,
+.overnattning-container,
+.foton-container {
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(201, 112, 127, 0.28),
+      rgba(111, 78, 55, 0.38)
+    ),
+    url('https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/wedding-bg.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvd2VkZGluZy1iZy5qcGciLCJpYXQiOjE3NjgxNDYzODAsImV4cCI6MTc5OTY4MjM4MH0.8bydIgdiFdxWE2ksrebRIN2v8MzxrcWvxtsosXC-gG8');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: scroll;
+}

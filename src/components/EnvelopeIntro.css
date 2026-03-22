@@ -125,6 +125,17 @@
   50%       { opacity: 1;   }
 }
 
+/* ── Side panels (desktop: hidden, mobile: X-shape wings) ─── */
+.envelope-left,
+.envelope-right {
+  display: none;
+  position: fixed;
+  inset: 0;
+  will-change: transform;
+  transition: transform 1.3s cubic-bezier(0.76, 0, 0.24, 1);
+  animation: env-fadein 0.5s ease both;
+}
+
 /* ── Entrance fade-in ─────────────────────────────────────── */
 .envelope-bottom,
 .envelope-top,
@@ -136,4 +147,107 @@
 @keyframes env-fadein {
   from { opacity: 0; }
   to   { opacity: 1; }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE: classic envelope-fold diamond pattern
+   Fold lines run from the left/right edges (at 20% / 80%
+   height) diagonally to the screen centre — creating flat
+   ~31° angles instead of the steep corner-to-corner look.
+   ═══════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+
+  /* ── Top flap ─────────────────────────────────────────────
+     Pentagon: spans full width at the top, V-tip pointing
+     down to the fold meeting point at 50 % centre.
+     Lightest panel — looks like a raised letter flap.      */
+  .envelope-top {
+    height: 100vh;
+    clip-path: polygon(0 0, 100% 0, 100% 20%, 50% 50%, 0 20%);
+    background:
+      radial-gradient(ellipse at 50% 92%, rgba(212, 155, 90, 0.14) 0%, transparent 55%),
+      linear-gradient(180deg,
+        #fefcf6 0%,
+        #faf4ea 28%,
+        #f6eedd 55%,
+        #f0e6d0 80%,
+        #e9ddc4 100%
+      );
+    /* Shadows cast along both diagonal fold edges */
+    filter:
+      drop-shadow(-5px 10px 16px rgba(30, 14, 4, 0.70))
+      drop-shadow( 5px 10px 16px rgba(30, 14, 4, 0.70))
+      drop-shadow(  0px  5px 28px rgba(61, 41, 12, 0.48));
+    z-index: calc(var(--z-envelope, 9999) - 1);
+  }
+
+  /* ── Bottom panel ─────────────────────────────────────────
+     Pentagon: V-tip pointing up to the fold centre,
+     spans full width at the bottom. Warmest tone.         */
+  .envelope-bottom {
+    height: 100vh;
+    clip-path: polygon(0 80%, 50% 50%, 100% 80%, 100% 100%, 0 100%);
+    background:
+      linear-gradient(0deg,
+        #deccaa 0%,
+        #e4d4b2 30%,
+        #ecdabe 60%,
+        #f0e2ca 100%
+      );
+  }
+
+  /* ── Side panels: thin envelope-flap wings ────────────────
+     Slim triangles anchored to the left / right edges,
+     tips meeting the same centre point as top & bottom.   */
+  .envelope-left,
+  .envelope-right {
+    display: block;
+    background: linear-gradient(
+      90deg,
+      #f4e8d4 0%,
+      #ecddc6 55%,
+      #e6d4bc 100%
+    );
+  }
+
+  .envelope-left {
+    clip-path: polygon(0 20%, 50% 50%, 0 80%);
+    filter: drop-shadow(4px 0 10px rgba(33, 20, 2, 0.20));
+  }
+
+  .envelope-right {
+    clip-path: polygon(100% 20%, 100% 80%, 50% 50%);
+    background: linear-gradient(
+      270deg,
+      #f4e8d4 0%,
+      #ecddc6 55%,
+      #e6d4bc 100%
+    );
+    filter: drop-shadow(-4px 0 10px rgba(33, 20, 2, 0.20));
+  }
+
+  /* ── Open: sides + bottom all drop away together ──────── */
+  .envelope-overlay.opening .envelope-left,
+  .envelope-overlay.opening .envelope-right {
+    transform: translateY(110vh);
+  }
+
+  /* ── Stamp: dead-centre on the four-way fold point ─────── */
+  .envelope-stamp-img {
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width:  clamp(150px, 38vw, 210px);
+    height: clamp(150px, 38vw, 210px);
+  }
+
+  .envelope-overlay.opening .envelope-stamp-img {
+    transform: translate(-50%, calc(-50% - 110vh));
+  }
+
+  /* ── Hint text ───────────────────────────────────────────── */
+  .envelope-hint {
+    top: calc(50vh + clamp(75px, 19vw, 106px) + 14px);
+    font-size: clamp(0.85rem, 3.8vw, 1.1rem);
+    white-space: nowrap;
+  }
 }
