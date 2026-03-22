@@ -1,171 +1,166 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lavender+Essence&family=Tangerine:wght@400;700&family=Sacramento&display=swap');
+/* ── Foton page ──────────────────────────────────────────── */
 
 .foton-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 100vh;
-    background-image:
-      linear-gradient(
-        rgba(139, 69, 19, 0.4),
-        rgba(139, 69, 19, 0.4)
-      ),
-      url('https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/wedding-bg.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvd2VkZGluZy1iZy5qcGciLCJpYXQiOjE3NjgxNDYzODAsImV4cCI6MTc5OTY4MjM4MH0.8bydIgdiFdxWE2ksrebRIN2v8MzxrcWvxtsosXC-gG8');
-    background-size: cover;
-    background-position: center top;
-    background-attachment: fixed;
-    padding-top: 80px;
-    flex: 1;
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  min-height: 100vh;
+  padding: var(--navbar-h, 64px) 20px var(--space-xl, 48px);
+  box-sizing: border-box;
+  width: 100%;
+  animation: page-fadein 0.45s ease both;
 }
 
+/* ── Card ───────────────────────────────────────────────────*/
 .foton-card {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  padding: 48px;
+  background: var(--color-white-92, rgba(255, 255, 255, 0.92));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg, 24px);
+  box-shadow: var(--shadow-lg, 0 8px 40px rgba(111, 78, 55, 0.22));
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: var(--space-xl, 48px);
   width: 90%;
-  max-width: 900px;
+  max-width: 820px;
+  margin: 24px auto;
   text-align: center;
-  margin: 40px 20px;
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-  .foton-card {
-    width: 95%;
-    padding: 32px;
-    margin: 40px 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  .foton-card {
-    width: 100%;
-    padding: 24px;
-    margin: 40px 0;
-  }
-}
-
+/* ── Title ──────────────────────────────────────────────────*/
 .foton-title {
-  color: #6f4e37;
-  font-family: 'Tangerine', cursive;
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 8px;
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(28px, 6vw, 44px);
+  font-weight: 400;
+  color: var(--color-brown, #6f4e37);
+  letter-spacing: 0.04em;
+  margin: 0 0 8px 0;
 }
 
 .foton-subtitle {
-  color: #8b4513;
-  font-family: 'Apple Chancery', cursive;
-  font-size: 18px;
-  margin-bottom: 24px;
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-size: clamp(15px, 3.5vw, 18px);
+  color: var(--color-text-mid, #5c4030);
+  margin-bottom: 32px;
 }
 
+/* ── Instructions ───────────────────────────────────────────*/
 .foton-instructions {
   text-align: left;
   margin-bottom: 32px;
-  padding-bottom: 24px;
-  border-bottom: 2px solid #8b4513;
+  padding-bottom: 28px;
+  border-bottom: 1px solid rgba(212, 175, 122, 0.3);
 }
 
 .foton-instructions h2 {
-  color: #6f4e37;
-  font-family: 'Tangerine', cursive;
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 16px;
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(20px, 4vw, 26px);
+  font-weight: 400;
+  color: var(--color-brown, #6f4e37);
+  margin-bottom: 20px;
+  text-align: center;
 }
 
+/* ── Steps grid ─────────────────────────────────────────────*/
 .instructions-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 16px;
   margin-bottom: 32px;
-}
-
-@media (max-width: 768px) {
-  .instructions-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  .foton-container {
-    padding-top: 70px;
-  }
 }
 
 .instruction-item {
   text-align: center;
-  background-color: rgba(139, 69, 19, 0.2);
-  padding: 24px;
-  border-radius: 12px;
+  background: rgba(245, 240, 232, 0.7);
+  border: 1px solid rgba(212, 175, 122, 0.22);
+  padding: 22px 18px;
+  border-radius: var(--radius-md, 20px);
+  transition: background var(--transition-fast, 150ms ease);
+}
+
+.instruction-item:hover {
+  background: rgba(237, 227, 212, 0.85);
 }
 
 .instruction-number {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 48px;
-  height: 48px;
-  background-color: #8b4513;
-  color: white;
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(135deg, var(--color-rose, #d4849a), var(--color-rose-deep, #c9707f));
+  color: #fff;
   border-radius: 50%;
-  font-weight: bold;
-  font-size: 20px;
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: 18px;
+  font-weight: 400;
   margin-bottom: 12px;
+  box-shadow: 0 3px 12px rgba(201, 112, 127, 0.35);
 }
 
 .instruction-item h3 {
-  color: #6f4e37;
-  font-family: 'Tangerine', cursive;
-  font-size: 24px;
-  margin: 12px 0;
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(16px, 3vw, 19px);
+  font-weight: 400;
+  color: var(--color-brown, #6f4e37);
+  margin: 0 0 8px 0;
 }
 
 .instruction-item p {
-  color: #333;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(13px, 3vw, 15px);
+  color: var(--color-text-dark, #3d2b1f);
+  line-height: 1.6;
+  margin: 0;
 }
 
+/* ── Drive link ─────────────────────────────────────────────*/
 .drive-link-container {
   text-align: center;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
 }
 
 .drive-link-text {
-  color: #333;
-  font-family: 'Cormorant Garamond', serif;
-  margin-bottom: 12px;
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(14px, 3vw, 16px);
+  color: var(--color-text-mid, #5c4030);
+  margin-bottom: 14px;
 }
 
 .drive-link-button {
   display: inline-block;
-  background-color: #8b4513;
-  color: white;
-  padding: 12px 24px;
-  border-radius: 8px;
+  background: linear-gradient(135deg, var(--color-rose, #d4849a), var(--color-rose-deep, #c9707f));
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm, 12px);
   text-decoration: none;
-  font-family: 'Cormorant Garamond', serif;
-  transition: background-color 0.3s ease;
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: opacity var(--transition-fast, 150ms ease), transform var(--transition-fast, 150ms ease);
+  box-shadow: 0 4px 18px rgba(201, 112, 127, 0.4);
+  cursor: pointer;
 }
 
 .drive-link-button:hover {
-  background-color: #6f4e37;
+  opacity: 0.88;
+  transform: translateY(-1px);
 }
 
+/* ── Info box ───────────────────────────────────────────────*/
 .foton-info {
   text-align: left;
 }
 
 .foton-info h3 {
-  color: #6f4e37;
-  font-family: 'Tangerine', cursive;
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 16px;
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(18px, 3.5vw, 22px);
+  font-weight: 400;
+  color: var(--color-brown, #6f4e37);
+  margin-bottom: 12px;
 }
 
 .foton-info ul {
@@ -175,8 +170,42 @@
 }
 
 .foton-info li {
-  color: #333;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(14px, 3.5vw, 16px);
+  color: var(--color-text-dark, #3d2b1f);
   margin-bottom: 12px;
-  line-height: 1.6;
+  line-height: 1.65;
+  padding-left: 14px;
+  position: relative;
+}
+
+.foton-info li::before {
+  content: '♥';
+  position: absolute;
+  left: 0;
+  color: var(--color-rose, #d4849a);
+  font-size: 10px;
+  top: 4px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────*/
+@media (max-width: 768px) {
+  .foton-card {
+    width: 95%;
+    padding: var(--space-lg, 32px);
+    margin: 20px auto;
+  }
+
+  .instructions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .foton-card {
+    width: 100%;
+    padding: 22px 18px;
+    border-radius: var(--radius-md, 20px);
+    margin: 12px auto;
+  }
 }

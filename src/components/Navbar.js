@@ -1,35 +1,115 @@
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
+
+const navLinks = [
+  { to: '/',             label: 'Hem' },
+  { to: '/info',         label: 'Info' },
+  { to: '/schema',       label: 'Schema' },
+  { to: '/hitta-hit',    label: 'Hitta hit' },
+  { to: '/rsvp',         label: 'OSA' },
+  { to: '/foton',        label: 'Foton' },
+  { to: '/overnattning', label: 'Övernattning' },
+];
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const drawerRef = useRef(null);
+  const location = useLocation();
 
-  const handleMenuToggle = () => {
-    setMenuOpen(!menuOpen);
-  };
-
-  const handleLinkClick = () => {
+  // Close drawer on route change
+  useEffect(() => {
     setMenuOpen(false);
-  };
+  }, [location.pathname]);
+
+  // Close on click outside drawer
+  useEffect(() => {
+    if (!menuOpen) return;
+    function onPointerDown(e) {
+      if (drawerRef.current && !drawerRef.current.contains(e.target)) {
+        setMenuOpen(false);
+      }
+    }
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => document.removeEventListener('pointerdown', onPointerDown);
+  }, [menuOpen]);
+
+  // Lock body scroll when menu is open
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [menuOpen]);
 
   return (
-    <nav className="navbar">
-      <button className="hamburger" onClick={handleMenuToggle}>
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <ul className={`nav-list ${menuOpen ? 'open' : ''}`}>
-        <li><Link to="/" onClick={handleLinkClick}> Hem </Link></li>
-        <li><Link to="/info"> Info </Link></li>
-        <li><Link to="/hitta-hit" onClick={handleLinkClick}>Hitta hit</Link></li>
-        <li><Link to="/schema" onClick={handleLinkClick}>Schema</Link></li>
-        <li><Link to="/rsvp" onClick={handleLinkClick}>OSA</Link></li>
-        <li><Link to="/foton" onClick={handleLinkClick}>Foton</Link></li>
-        <li><Link to="/overnattning" onClick={handleLinkClick}>Övernattning</Link></li>
-      </ul>
-    </nav>
+    <>
+      <nav className="navbar" aria-label="Huvudnavigation">
+        {/* A♥A logo */}
+        <Link to="/" className="navbar-logo" aria-label="Till startsidan">
+          <span className="logo-a">A</span>
+          <span className="logo-heart" aria-hidden="true">♥</span>
+          <span className="logo-a">A</span>
+        </Link>
+
+        {/* Desktop links */}
+        <ul className="navbar-desktop-links">
+          {navLinks.map(({ to, label }) => (
+            <li key={to}>
+              <Link
+                to={to}
+                className={location.pathname === to ? 'active' : ''}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        {/* Hamburger – mobile only */}
+        <button
+          className={`hamburger${menuOpen ? ' open' : ''}`}
+          onClick={() => setMenuOpen(prev => !prev)}
+          aria-label={menuOpen ? 'Stäng meny' : 'Öppna meny'}
+          aria-expanded={menuOpen}
+          aria-controls="nav-drawer"
+        >
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+        </button>
+      </nav>
+
+      {/* Backdrop */}
+      <div
+        className={`drawer-backdrop${menuOpen ? ' visible' : ''}`}
+        aria-hidden="true"
+        onClick={() => setMenuOpen(false)}
+      />
+
+      {/* Slide-in drawer */}
+      <nav
+        id="nav-drawer"
+        ref={drawerRef}
+        className={`nav-drawer${menuOpen ? ' open' : ''}`}
+        aria-label="Mobil navigation"
+        aria-hidden={!menuOpen}
+      >
+        <ul className="drawer-links">
+          {navLinks.map(({ to, label }) => (
+            <li key={to}>
+              <Link
+                to={to}
+                className={location.pathname === to ? 'active' : ''}
+                onClick={() => setMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <p className="drawer-footer">A ♥ A &nbsp;·&nbsp; 8 aug 2026</p>
+      </nav>
+    </>
   );
 }
 

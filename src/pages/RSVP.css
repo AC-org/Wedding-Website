@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lavender+Essence&family=Tangerine:wght@400;700&family=Sacramento&display=swap');
+/* ── RSVP page ───────────────────────────────────────────── */
 
 .rsvp-wrapper {
   display: flex;
@@ -7,131 +7,162 @@
 }
 
 .rsvp-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    flex: 1;
-    min-height: 100vh;
-    background-image:
-      linear-gradient(
-        rgba(139, 69, 19, 0.4),
-        rgba(139, 69, 19, 0.4)
-      ),
-      url('https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/wedding-bg.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvd2VkZGluZy1iZy5qcGciLCJpYXQiOjE3NjgxNDYzODAsImV4cCI6MTc5OTY4MjM4MH0.8bydIgdiFdxWE2ksrebRIN2v8MzxrcWvxtsosXC-gG8');
-    background-size: cover;
-    background-position: center top;
-    padding-top: 80px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  min-height: calc(100vh - var(--navbar-h, 64px));
+  padding: var(--navbar-h, 64px) 20px var(--space-xl, 48px);
+  box-sizing: border-box;
+  animation: page-fadein 0.45s ease both;
+}
 
+/* ── Card ───────────────────────────────────────────────────*/
 .rsvp-card {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  padding: 48px;
+  background: var(--color-white-92, rgba(255, 255, 255, 0.92));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg, 24px);
+  box-shadow: var(--shadow-lg, 0 8px 40px rgba(111, 78, 55, 0.22));
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 40px 40px;
   width: 90%;
-  max-width: 500px;
+  max-width: 480px;
+  margin: 24px auto;
   text-align: center;
-  margin: 20px;
   box-sizing: border-box;
 }
 
-@media (max-width: 768px) {
-  .rsvp-card {
-    width: 95%;
-    padding: 32px;
-  }
+/* ── Heading ────────────────────────────────────────────────*/
+.rsvp-title {
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(36px, 8vw, 52px);
+  font-weight: 400;
+  color: var(--color-brown, #6f4e37);
+  letter-spacing: 0.06em;
+  margin: 0 0 8px 0;
 }
 
+.rsvp-subtitle {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(15px, 3.5vw, 17px);
+  color: var(--color-text-mid, #5c4030);
+  line-height: 1.65;
+  margin: 0 0 10px 0;
+}
+
+/* ── Form ───────────────────────────────────────────────────*/
+.rsvp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.rsvp-input {
+  width: 100%;
+  border: 1.5px solid rgba(212, 175, 122, 0.5);
+  border-radius: var(--radius-sm, 12px);
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: 17px;
+  color: var(--color-text-dark, #3d2b1f);
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.8);
+  transition: border-color var(--transition-fast, 150ms ease), box-shadow var(--transition-fast, 150ms ease);
+  box-sizing: border-box;
+  outline: none;
+}
+
+.rsvp-input:focus {
+  border-color: var(--color-rose, #d4849a);
+  box-shadow: 0 0 0 3px rgba(212, 132, 154, 0.18);
+}
+
+.rsvp-input:disabled {
+  background: rgba(237, 227, 212, 0.5);
+  color: var(--color-text-light, #8a6a5a);
+  cursor: not-allowed;
+  border-color: rgba(212, 175, 122, 0.25);
+}
+
+/* ── Checkbox row ───────────────────────────────────────────*/
+.rsvp-checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+}
+
+.rsvp-checkbox-label {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: 17px;
+  color: var(--color-brown, #6f4e37);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.rsvp-checkbox {
+  width: 22px;
+  height: 22px;
+  accent-color: var(--color-rose-deep, #c9707f);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* ── Submit button ──────────────────────────────────────────*/
+.rsvp-button {
+  background: linear-gradient(135deg, var(--color-rose, #d4849a), var(--color-rose-deep, #c9707f));
+  border: none;
+  border-radius: var(--radius-sm, 12px);
+  color: #fff;
+  cursor: pointer;
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 16px 32px;
+  transition: opacity var(--transition-fast, 150ms ease), transform var(--transition-fast, 150ms ease), box-shadow var(--transition-fast, 150ms ease);
+  box-shadow: 0 4px 16px rgba(201, 112, 127, 0.4);
+  margin-top: 4px;
+}
+
+.rsvp-button:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(201, 112, 127, 0.5);
+}
+
+/* ── Messages ───────────────────────────────────────────────*/
+.rsvp-success-message {
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(20px, 5vw, 26px);
+  color: var(--color-brown, #6f4e37);
+  line-height: 1.5;
+}
+
+.rsvp-error-message {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: 16px;
+  color: #8b0000;
+  margin-top: 8px;
+}
+
+/* ── Responsive ─────────────────────────────────────────────*/
 @media (max-width: 600px) {
   .rsvp-container {
-    padding-top: 70px;
+    padding-top: calc(var(--navbar-h, 64px) + 8px);
   }
 }
 
 @media (max-width: 480px) {
   .rsvp-card {
     width: 100%;
-    padding: 24px;
+    padding: 28px 22px;
+    border-radius: var(--radius-md, 20px);
+    margin: 16px auto;
   }
-}
-
-.rsvp-title {
-  color: #6f4e37; /* Dark Chocolate */
-  font-family: 'Tangerine', cursive;
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 8px;
-}
-
-.rsvp-subtitle {
-  color: #8b4513; /* Saddle Brown */
-  font-family: 'Apple Chancery', cursive;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.rsvp-form {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-.rsvp-input {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 18px;
-  font-family: 'Cormorant Garamond', serif;
-  padding: 16px;
-}
-
-.rsvp-input:disabled {
-  background-color: #f5f5f5;
-  color: #999;
-  cursor: not-allowed;
-}
-
-.rsvp-checkbox-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-}
-
-.rsvp-checkbox-label {
-  font-size: 18px;
-  color: #8b4513; /* Saddle Brown */
-  font-family: 'Cormorant Garamond', serif;
-}
-
-.rsvp-checkbox {
-  width: 24px;
-  height: 24px;
-}
-
-.rsvp-button {
-  background-color: #8b4513; /* Saddle Brown */
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  cursor: pointer;
-  font-size: 18px;
-  font-family: 'Cormorant Garamond', serif;
-  padding: 16px 32px;
-  transition: background-color 0.3s ease;
-}
-
-.rsvp-button:hover {
-  background-color: #a0522d; /* Sienna */
-}
-
-.rsvp-success-message {
-  font-size: 24px;
-  color: #8b4513; /* Saddle Brown */
-  font-family: 'Lavender Essence', cursive;
-}
-
-.rsvp-error-message {
-  font-size: 18px;
-  color: #8b0000; /* Dark Red */
-  font-family: 'Cormorant Garamond', serif;
 }

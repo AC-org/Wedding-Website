@@ -1,110 +1,225 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
-
-/* Navbar Styling */
+/* ── Navbar ────────────────────────────────────────────────── */
 .navbar {
-    font-family: 'Dancing Script', cursive;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    z-index: 3;
-    padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--navbar-h, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: var(--z-navbar, 100);
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.navbar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(4px);
-    -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
-    pointer-events: none;
-    z-index: -1;
+/* ── A♥A Logo ──────────────────────────────────────────────── */
+.navbar-logo {
+  font-family: var(--font-display, 'Dancing Script', cursive);
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  transition: opacity var(--transition-fast, 150ms ease);
+  cursor: pointer;
 }
 
+.navbar-logo:hover {
+  opacity: 0.82;
+}
+
+.logo-heart {
+  font-size: 17px;
+  color: var(--color-rose-light, #e8a4b0);
+  margin: 0 1px;
+  display: inline-block;
+  animation: logo-pulse 3.5s ease-in-out infinite;
+}
+
+@keyframes logo-pulse {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.25); }
+}
+
+/* ── Desktop nav links ─────────────────────────────────────── */
+.navbar-desktop-links {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 26px;
+}
+
+.navbar-desktop-links a {
+  font-family: var(--font-display, 'Dancing Script', cursive);
+  font-size: 21px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  transition: color var(--transition-fast, 150ms ease);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.navbar-desktop-links a:hover,
+.navbar-desktop-links a.active {
+  color: #f0d0b8;
+}
+
+/* ── Hamburger – shown on mobile only ──────────────────────── */
 .hamburger {
   display: none;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
   background: none;
   border: none;
+  border-radius: 50%;
   cursor: pointer;
-  padding: 15px 20px;
-  z-index: 4;
+  flex-shrink: 0;
+  transition: background var(--transition-fast, 150ms ease);
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .hamburger span {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 5px 0;
-  transition: 0.3s;
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #fff;
   border-radius: 2px;
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s ease;
+  transform-origin: center;
 }
 
-.nav-list {
+/* Hamburger → X */
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ── Drawer backdrop ───────────────────────────────────────── */
+.drawer-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-drawer, 200) - 1);
+  background: rgba(40, 20, 10, 0.42);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  opacity: 0;
+  transition: opacity var(--transition-drawer, 320ms cubic-bezier(0.4,0,0.2,1));
+  pointer-events: none;
+}
+
+.drawer-backdrop.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Side drawer ───────────────────────────────────────────── */
+.nav-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 75vw;
+  max-width: 310px;
+  z-index: var(--z-drawer, 200);
+  background: rgba(245, 240, 232, 0.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: -10px 0 50px rgba(111, 78, 55, 0.22);
+  border-left: 1px solid rgba(212, 175, 122, 0.25);
   display: flex;
-  justify-content: flex-end;
-  background: transparent;
-  padding: 20px 40px;
-  z-index: 3;
-  gap: 30px;
+  flex-direction: column;
+  padding: 80px 28px 36px;
+  transform: translateX(100%);
+  transition: transform var(--transition-drawer, 320ms cubic-bezier(0.4, 0, 0.2, 1));
+}
+
+.nav-drawer.open {
+  transform: translateX(0);
+}
+
+/* ── Drawer link list ──────────────────────────────────────── */
+.drawer-links {
   list-style: none;
   margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
 }
 
-.nav-list li {
-    display: inline;
-    margin: 0;
+.drawer-links li {
+  border-bottom: 1px solid rgba(212, 175, 122, 0.22);
 }
 
-.nav-list a {
-    text-decoration: none;
-    color: white;
-    font-size: 36px;
-    font-weight: bold;
-    transition: color 0.3s ease;
+.drawer-links li:last-child {
+  border-bottom: none;
 }
 
-.nav-list a:hover {
-    color: #a7846b;
+.drawer-links a {
+  font-family: var(--font-display, 'Dancing Script', cursive);
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--color-brown, #6f4e37);
+  text-decoration: none;
+  display: block;
+  padding: 11px 4px;
+  transition: color var(--transition-fast, 150ms ease), padding-left var(--transition-fast, 150ms ease);
+  cursor: pointer;
 }
 
-/* Responsive Styles */
+.drawer-links a:hover,
+.drawer-links a.active {
+  color: var(--color-rose-deep, #c9707f);
+  padding-left: 10px;
+}
+
+/* ── Drawer footer ─────────────────────────────────────────── */
+.drawer-footer {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-size: 13px;
+  color: var(--color-brown-light, #a0826d);
+  text-align: center;
+  letter-spacing: 0.12em;
+  margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(212, 175, 122, 0.3);
+}
+
+/* ── Responsive: show hamburger + drawer on mobile ─────────── */
 @media (max-width: 768px) {
-  .nav-list {
-    padding: 10px 20px;
-    gap: 20px;
-  }
-
-  .nav-list a {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 600px) {
-  .hamburger {
+  .navbar-desktop-links {
     display: none;
   }
 
-  .nav-list {
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 15px 20px;
-    gap: 20px;
+  .hamburger {
+    display: flex;
   }
 
-  .nav-list li {
+  .drawer-backdrop {
     display: block;
-    flex: 0 0 calc(33.333% - 10px);
-  }
-
-  .nav-list a {
-    font-size: 20px;
   }
 }

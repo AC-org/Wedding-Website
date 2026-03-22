@@ -1,191 +1,182 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Lora:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Lobster&display=swap');
-
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-    font-family: 'Arial, sans-serif';
-    color: #333;
+/* ── Home page ─────────────────────────────────────────────── */
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
 }
 
+/* ── Hero ──────────────────────────────────────────────────── */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Video background */
 .hero-video {
   position: absolute;
-  top: 0;
-  left: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   z-index: 1;
-  pointer-events: none; /* Add this line */
+  pointer-events: none;
 }
 
-.home-container {
-    font-family: 'Arial, sans-serif';
-    color: #333;
+/* Dark + rose gradient scrim over video */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 15, 10, 0.28) 0%,
+    rgba(50, 20, 15, 0.45) 50%,
+    rgba(60, 25, 20, 0.55) 100%
+  );
 }
 
-.hero-section {
-    font-family: 'Dancing Script', cursive;
-    height: 100vh; /* Make hero take full viewport height */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    position: relative;
-    z-index: 1; /* Set z-index to ensure it's lower than the navbar */
-    margin: 0;  /* Ensure there's no margin pushing it away from the top */
-    padding: 0; /* Ensure no padding affects layout */
-    overflow: hidden; /* Add this line */
-}
-
+/* ── Overlay content ───────────────────────────────────────── */
 .hero-overlay {
-  background: rgba(58, 29, 12, 0);
-  padding: 30px; /* Increase padding for a larger box */
   position: relative;
-  z-index: 2; /* Ensure hero overlay is above hero section but below the navbar */
-  top: 20vh; /* Adjust the position to move it lower on the page */
-  box-shadow: 0 0 10px 10px rgba(58, 29, 12, 0); /* Feathered shadow */
-  transition: all 0.3s ease-in-out; /* Smooth transition for any changes */
-}
-
-.details-section {
-    padding: 40px 20px;
-    text-align: center;
-}
-
-.image-gallery {
-    padding: 20px;
-    text-align: center;
-}
-
-.image-gallery .gallery img {
-    max-width: 30%;
-    margin: 10px;
-    border-radius: 10px;
-    /* Add responsive adjustments */
-    width: 100%;
-    height: auto;
-}
-
-.home-footer {
-    font-family: 'Dancing Script', cursive;
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 22px;
-}
-
-.rsvp-button {
-    background-color: #1d94dd;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.3s ease-in-out; /* Smooth transition for hover effect */
-}
-
-.rsvp-button:hover {
-    background-color: #1578b5;
-}
-
-.countdown-section {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding: 20px 0;
-  background-color: #f4f4f4; /* Optional: change background to match your theme */
+  padding: 24px 28px;
+  max-width: 620px;
+  width: 100%;
+  animation: hero-fadein 1s ease both;
+  animation-delay: 0.2s;
 }
 
-.countdown-timer {
-  font-family: 'Dancing Script', cursive;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #333;
+@keyframes hero-fadein {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
-.countdown-timer span {
-  margin: 0 10px;
+/* Invitation pre-text */
+.hero-pre {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-size: clamp(13px, 3vw, 16px);
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
 }
 
-.main-info {
-  font-family: 'Tangerine', cursive;
-  font-weight: 600;
-  font-size: 1.5rem;
-  text-align: center;
-  padding: 50px 50px;
+/* Couple names */
+.hero-names {
+  font-family: var(--font-display, 'Dancing Script', cursive);
+  font-size: clamp(46px, 12vw, 80px);
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 10px 0;
+  line-height: 1.05;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.45);
+  letter-spacing: 0.02em;
 }
 
-.main-info-sub {
-  font-family: 'Homemade Apple';
-  font-size: 1.2rem;
-  text-align: justify;
-  padding: 0px 10px;
+/* Date */
+.hero-date {
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(18px, 4.5vw, 28px);
+  color: var(--color-gold, #d4af7a);
+  letter-spacing: 0.12em;
+  margin: 0 0 18px 0;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+/* Body text */
+.hero-body {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(15px, 3.5vw, 18px);
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.68;
+  margin: 0 0 28px 0;
+  max-width: 480px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* ── Countdown ─────────────────────────────────────────────── */
+.hero-countdown {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 20px;
+  padding: 16px 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.countdown-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.countdown-number {
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(36px, 9vw, 52px);
+  color: var(--color-gold, #d4af7a);
+  line-height: 1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.countdown-label {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(11px, 2.5vw, 13px);
+  color: rgba(255, 255, 255, 0.75);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.countdown-sep {
+  font-size: 18px;
+  color: var(--color-rose-light, #e8a4b0);
+  opacity: 0.9;
+}
+
+.countdown-done {
+  font-family: var(--font-display, 'Dancing Script', cursive);
+  font-size: 32px;
+  color: #fff;
+  margin: 0;
+}
+
+/* ── Mobile adjustments ────────────────────────────────────── */
+@media (max-width: 480px) {
   .hero-overlay {
-    padding: 20px;
-    top: 10vh;
-    transform: scale(1);
+    padding: 20px 20px;
   }
 
-  .image-gallery .gallery img {
-    max-width: 45%;
-  }
-
-  .countdown-timer {
-    font-size: 1.8rem;
-  }
-
-  .rsvp-button {
-    font-size: 14px;
-    padding: 8px 16px;
+  .hero-countdown {
+    padding: 14px 24px;
+    gap: 16px;
   }
 }
 
-@media (max-width: 500px) {
-  .hero-section {
-    padding: 20px;
+@media (max-width: 380px) {
+  .hero-names {
+    font-size: 40px;
   }
 
-  .hero-overlay {
-    transform: scale(1);
-    padding: 20px;
-    top: 10vh;
-  }
-
-  .hero-video {
-    position: absolute;
-    top: 0;
-    left: 50%; /* Change this from 20% to 50% */
-    width: 100%; /* Change this from 120% to 100% */
-    height: 100%;
-    transform: translateX(-50%); /* Change this */
-    object-fit: cover;
-    z-index: 1;
-  }
-
-  .image-gallery .gallery img {
-    max-width: 90%;
-  }
-
-  .countdown-timer {
-    font-size: 1.5rem;
-  }
-
-  .countdown-timer span {
-    margin: 0 5px;
-  }
-
-  .rsvp-button {
-    font-size: 14px;
-    padding: 8px 16px;
+  .hero-countdown {
+    padding: 12px 18px;
+    gap: 14px;
+    border-radius: 16px;
   }
 }

@@ -57,7 +57,7 @@ function RSVP() {
           <>
             <h1 className="rsvp-title">O S A</h1>
             <p className="rsvp-subtitle">Vi är så redo att fira med er! </p>
-            <p className="rsvp-subtitle">OSA i detta formulär innan 1/5-2026. En OSA per person!</p>
+            <p className="rsvp-subtitle">OSA i detta formulär innan 1/5-2026</p>
             <form onSubmit={handleSubmit} className="rsvp-form">
               <input
                 type="text"

@@ -1,68 +1,41 @@
 import { useState, useEffect } from 'react';
 import './CountdownFooter.css';
 
-function CountdownFooter() {
-  const calculateTimeLeft = () => {
-    const weddingDate = new Date("2026-08-08T14:00:00");
-    const now = new Date();
-    const difference = weddingDate - now;
-
-    let timeLeft = {};
-
-    if (difference > 0) {
-      timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-      };
-    }
-
-    return timeLeft;
+function calcTimeLeft() {
+  const wedding = new Date('2026-08-08T14:00:00');
+  const diff = wedding - new Date();
+  if (diff <= 0) return null;
+  return {
+    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
   };
+}
 
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+function CountdownFooter() {
+  const [timeLeft, setTimeLeft] = useState(calcTimeLeft);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  });
-
-  const getSwedishLabel = (interval) => {
-    const labels = {
-      days: 'dagar',
-      hours: 'timmar',
-    };
-    return labels[interval] || interval;
-  };
-
-  const timerComponents = [];
-
-  Object.keys(timeLeft).forEach((interval) => {
-    if (!timeLeft[interval]) {
-      return;
-    }
-
-    timerComponents.push(
-      <span key={interval}>
-        {timeLeft[interval]} {getSwedishLabel(interval)}{" "}
-      </span>
-    );
+    const id = setTimeout(() => setTimeLeft(calcTimeLeft()), 1000);
+    return () => clearTimeout(id);
   });
 
   return (
-    <>
-      <section className="countdown-footer-section">
-        <div className="countdown-footer-timer">
-          {timerComponents.length ? timerComponents : <span>Bröllopsdags!</span>}
-        </div>
-      </section>
+    <section className="wedding-countdown" aria-label="Nedräkning till bröllopet">
+      <div className="wedding-countdown-inner">
+        {timeLeft ? (
+          <div className="wedding-countdown-grid">
+            <div className="wc-unit">
+              <span className="wc-number">{timeLeft.days}</span>
+              <span className="wc-label">dagar kvar</span>
+            </div>
+          </div>
+        ) : (
+          <p className="wc-done">Bröllopsdags! 💕</p>
+        )}
 
-      <footer className="countdown-footer">
-        <p>❤ Mr & Mrs Carp ❤</p>
-      </footer>
-    </>
+        <p className="wedding-countdown-names">♥ Mr &amp; Mrs Carp ♥</p>
+        <p className="wedding-countdown-date">8 Augusti 2026</p>
+      </div>
+    </section>
   );
 }
 

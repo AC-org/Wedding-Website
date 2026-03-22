@@ -1,194 +1,161 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Lavender+Essence&family=Tangerine:wght@400;700&family=Sacramento&display=swap');
+/* ── Övernattning page ───────────────────────────────────── */
 
 .overnattning-container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  flex: 1;
   min-height: 100vh;
   width: 100%;
-  background-image:
-    linear-gradient(
-      to bottom right,
-      rgba(156, 64, 18, 0.4),
-      rgba(109, 44, 4, 0.4)
-    ),
-    url('https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/wedding-bg.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvd2VkZGluZy1iZy5qcGciLCJpYXQiOjE3NjgxNDYzODAsImV4cCI6MTc5OTY4MjM4MH0.8bydIgdiFdxWE2ksrebRIN2v8MzxrcWvxtsosXC-gG8');
-  background-size: cover;
-  background-position: center top;
-  background-attachment: fixed;
-  padding: 20px;
-  padding-top: 80px;
+  padding: var(--navbar-h, 64px) 20px var(--space-xl, 48px);
   box-sizing: border-box;
-  flex: 1;
+  animation: page-fadein 0.45s ease both;
 }
 
+/* ── Content wrapper ────────────────────────────────────────*/
 .overnattning-content {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Info banner ────────────────────────────────────────────*/
+.overnattning-info {
+  background: var(--color-white-92, rgba(255, 255, 255, 0.92));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg, 24px);
+  box-shadow: var(--shadow-md, 0 4px 24px rgba(111, 78, 55, 0.14));
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 28px 32px;
+  margin-bottom: var(--space-lg, 32px);
+  margin-top: 24px;
   text-align: center;
 }
 
-.overnattning-title {
-  color: #6f4e37;
-  font-family: 'Tangerine', cursive;
-  font-size: 64px;
-  font-weight: bold;
-  margin-bottom: 8px;
-  margin-top: 40px;
-}
-
-.overnattning-subtitle {
-  color: #8b4513;
-  font-family: 'Apple Chancery', cursive;
-  font-size: 28px;
-  margin-bottom: 48px;
-}
-
-.overnattning-info {
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 16px;
-  padding: 32px;
-  margin-bottom: 40px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-}
-
 .overnattning-info-text {
-  color: #333;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
-  margin-bottom: 16px;
-  line-height: 1.8;
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(15px, 3.5vw, 17px);
+  color: var(--color-text-dark, #3d2b1f);
+  line-height: 1.72;
+  margin-bottom: 12px;
 }
 
 .overnattning-contact {
-  color: #8b4513;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 16px;
-  font-weight: bold;
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(14px, 3vw, 16px);
+  color: var(--color-brown, #6f4e37);
+  font-weight: 700;
+  margin: 0;
 }
 
+/* ── Accommodation grid ─────────────────────────────────────*/
 .accommodations-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 24px;
-  margin-top: 32px;
+  gap: 20px;
 }
 
+/* ── Accommodation card ─────────────────────────────────────*/
 .accommodation-card {
-  background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  background: var(--color-white-92, rgba(255, 255, 255, 0.92));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg, 24px);
+  box-shadow: var(--shadow-md, 0 4px 24px rgba(111, 78, 55, 0.14));
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  padding: 26px 24px;
   text-align: left;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform var(--transition-mid, 250ms ease), box-shadow var(--transition-mid, 250ms ease);
 }
 
 .accommodation-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg, 0 8px 40px rgba(111, 78, 55, 0.22));
 }
 
 .accommodation-name {
-  color: #6f4e37;
-  font-family: 'Tangerine', cursive;
-  font-size: 32px;
-  font-weight: bold;
-  margin: 0 0 8px 0;
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(20px, 4vw, 26px);
+  font-weight: 400;
+  color: var(--color-brown, #6f4e37);
+  letter-spacing: 0.03em;
+  margin: 0 0 6px 0;
 }
 
 .accommodation-description {
-  color: #8b4513;
-  font-family: 'Apple Chancery', cursive;
-  font-size: 16px;
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-size: clamp(13px, 3vw, 15px);
+  color: var(--color-text-mid, #5c4030);
   margin-bottom: 16px;
 }
 
 .accommodation-details {
-  color: #333;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 14px;
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(13px, 3vw, 15px);
+  color: var(--color-text-dark, #3d2b1f);
   line-height: 1.8;
   margin-bottom: 16px;
 }
 
 .accommodation-details p {
-  margin: 8px 0;
+  margin: 6px 0;
 }
 
 .accommodation-details-text {
   font-style: italic;
-  margin-top: 12px;
-  padding-top: 12px;
-  border-top: 1px solid #ddd;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(212, 175, 122, 0.3);
 }
 
 .accommodation-note {
   color: #8b0000;
-  margin-top: 12px;
+  margin-top: 10px;
+  font-weight: 600;
 }
 
 .accommodation-link {
   display: inline-block;
-  background-color: #8b4513;
-  color: white;
-  padding: 8px 16px;
-  border-radius: 6px;
+  background: linear-gradient(135deg, var(--color-rose, #d4849a), var(--color-rose-deep, #c9707f));
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm, 12px);
   text-decoration: none;
-  font-family: 'Cormorant Garamond', serif;
-  transition: background-color 0.3s ease;
-  margin-top: 12px;
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  transition: opacity var(--transition-fast, 150ms ease), transform var(--transition-fast, 150ms ease);
+  box-shadow: 0 4px 14px rgba(201, 112, 127, 0.35);
+  margin-top: 4px;
+  cursor: pointer;
 }
 
 .accommodation-link:hover {
-  background-color: #6f4e37;
+  opacity: 0.88;
+  transform: translateY(-1px);
 }
 
+/* ── Responsive ─────────────────────────────────────────────*/
 @media (max-width: 768px) {
-  .overnattning-title {
-    font-size: 48px;
-  }
-
-  .overnattning-subtitle {
-    font-size: 20px;
-  }
-
   .accommodations-grid {
     grid-template-columns: 1fr;
   }
-}
 
-@media (max-width: 600px) {
-  .overnattning-container {
-    padding-top: 70px;
+  .overnattning-info {
+    padding: 20px 22px;
   }
 }
 
 @media (max-width: 480px) {
   .overnattning-container {
-    padding: 10px;
-    padding-top: 70px;
-  }
-
-  .overnattning-title {
-    font-size: 36px;
-    margin-top: 20px;
-  }
-
-  .overnattning-subtitle {
-    font-size: 16px;
-    margin-bottom: 24px;
-  }
-
-  .overnattning-info {
-    padding: 16px;
-    margin-bottom: 20px;
+    padding: calc(var(--navbar-h, 64px) + 8px) 14px var(--space-lg, 32px);
   }
 
   .accommodation-card {
-    padding: 16px;
-  }
-
-  .accommodation-name {
-    font-size: 24px;
+    padding: 20px 18px;
+    border-radius: var(--radius-md, 20px);
   }
 }

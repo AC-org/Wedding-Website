@@ -27,7 +27,7 @@ Boende (tre alternativ, bokas via brudparet):
 3. Örbyhus Golfklubb vid Örbyhus slott — 795 kr/gäst/natt. OBS: dessa gäster kör själva till kyrkan, de ingår inte i bussystemet.
 
 OSA (RSVP):
-Deadline 1 maj 2026. En OSA per person. Formulär på webbsidan (/rsvp).
+Deadline 1 maj 2026. Formulär på webbsidan (/rsvp).
 Vegetariska alternativ och specialdiet bokas via OSA-formuläret.
 
 Toastmasters:

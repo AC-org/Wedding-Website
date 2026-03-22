@@ -1,33 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Cormorant+Garamond:ital@1&display=swap');
 
-/* ── Overlay: transparent so home page is visible behind ──── */
+/* ── Overlay ──────────────────────────────────────────────── */
 .envelope-overlay {
   position: fixed;
   inset: 0;
-  z-index: 9999;
+  z-index: var(--z-envelope, 9999);
   cursor: pointer;
   user-select: none;
 }
 
 /* ── Bottom panel ─────────────────────────────────────────── */
-/* Covers bottom 70% of viewport — paper beige, darker at base */
 .envelope-bottom {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 70vh;
-  /* Layered gradients: directional warmth + edge vignette for paper feel */
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(140, 100, 40, 0.10) 0%, transparent 70%),
-    radial-gradient(ellipse at 0% 100%, rgba(160, 110, 30, 0.10) 0%, transparent 60%),
-    radial-gradient(ellipse at 100% 100%, rgba(160, 110, 30, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 0%,  rgba(212, 175, 122, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse at 0%  100%, rgba(201, 160, 80,  0.10) 0%, transparent 60%),
+    radial-gradient(ellipse at 100% 100%, rgba(201, 160, 80, 0.10) 0%, transparent 60%),
     linear-gradient(to bottom,
-      #f0dab4 0%,
-      #ebD5aa 20%,
-      #e8d0a4 45%,
-      #e2c898 70%,
-      #dcc090 100%
+      #f5ead0 0%,
+      #f0e0c0 20%,
+      #edd9b8 45%,
+      #e8d0aa 70%,
+      #e2c89a 100%
     );
   transition: transform 1.3s cubic-bezier(0.76, 0, 0.24, 1);
   will-change: transform;
@@ -37,35 +35,28 @@
   transform: translateY(110vh);
 }
 
-/* ── Top panel (flap) ─────────────────────────────────────── */
-/* Triangle pointing downward, covers top 65vh.               */
-/* The two panels overlap in the middle → full viewport cover. */
+/* ── Top flap ─────────────────────────────────────────────── */
 .envelope-top {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 80vh;
-  /* Slightly cooler/lighter than bottom panel — looks like two separate sheets */
   background:
-    radial-gradient(ellipse at 50% 100%, rgba(130, 90, 30, 0.10) 0%, transparent 65%),
-    radial-gradient(ellipse at 0% 0%, rgba(255, 245, 220, 0.50) 0%, transparent 55%),
-    radial-gradient(ellipse at 100% 0%, rgba(255, 245, 220, 0.50) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 100%, rgba(180, 120, 60, 0.08) 0%, transparent 65%),
+    radial-gradient(ellipse at 0%    0%, rgba(255, 248, 230, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse at 100%  0%, rgba(255, 248, 230, 0.55) 0%, transparent 55%),
     linear-gradient(160deg,
-      #fdf8ee 0%,
-      #f8f0e0 20%,
-      #f3e9d4 45%,
-      #ede1c8 70%,
-      #e8d9be 100%
+      #fdf9f0 0%,
+      #f9f2e4 20%,
+      #f4ead8 45%,
+      #ede2cc 70%,
+      #e8dac2 100%
     );
-  /* 7-point polygon: straight sides all the way down to 52%, then
-     a wide gentle V dropping to the tip at 62%.
-     This ensures the full left/right screen edges are covered. */
   clip-path: polygon(0 0, 100% 0, 100% 52%, 58% 52%, 50% 62%, 42% 52%, 0 52%);
-  /* Strong layered shadow so the flap clearly lifts above the bottom panel */
   filter:
-    drop-shadow(10 6px 6px rgba(33, 20, 2, 0.9))
-    drop-shadow(0 16px 40px rgba(61, 41, 12, 0.8));
+    drop-shadow(0 6px 6px rgba(33, 20, 2, 0.85))
+    drop-shadow(0 16px 40px rgba(61, 41, 12, 0.75));
   transition: transform 1.3s cubic-bezier(0.76, 0, 0.24, 1);
   will-change: transform;
 }
@@ -74,7 +65,7 @@
   transform: translateY(-110vh);
 }
 
-/* ── Invitation text (inside top flap) ────────────────────── */
+/* ── Invitation text (inside top flap) ───────────────────── */
 .envelope-text {
   font-family: 'Dancing Script', cursive;
   font-weight: 600;
@@ -84,23 +75,19 @@
   line-height: 1.6;
   margin: 0;
   text-shadow: 0 1px 2px rgba(255, 240, 210, 0.7);
-  /* stays in the wide upper third of the triangle */
   max-width: 50%;
 }
 
-/* ── Wax seal stamp ────────────────────────────────────────── */
-/* Fixed-positioned so we can animate independently if needed, */
-/* but we slide it up together with the top panel on click.    */
+/* ── Wax seal stamp ───────────────────────────────────────── */
 .envelope-stamp-img {
   position: fixed;
-  /* center on the V-tip: 62% of 80vh = 49.6vh from top */
   top: calc(49.6vh - clamp(100px, 13vw, 140px));
   left: 50%;
   transform: translateX(-50%);
   width: clamp(200px, 26vw, 280px);
   height: clamp(200px, 26vw, 280px);
   object-fit: contain;
-  z-index: 10000;
+  z-index: calc(var(--z-envelope, 9999) + 1);
   pointer-events: none;
   transition: transform 1.3s cubic-bezier(0.76, 0, 0.24, 1);
   will-change: transform;
@@ -108,26 +95,24 @@
 }
 
 .envelope-overlay.opening .envelope-stamp-img {
-  /* moves up exactly with the top panel */
   transform: translateX(-50%) translateY(-110vh);
 }
 
-/* ── Click hint ────────────────────────────────────────────── */
+/* ── Click hint ───────────────────────────────────────────── */
 .envelope-hint {
   position: fixed;
-  /* just below the bottom edge of the stamp */
   top: calc(49.6vh + clamp(100px, 13vw, 140px) + 14px);
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: clamp(1rem, 1.8vw, 1.3rem);
-  color: #9a7a50;
+  color: var(--color-rose-deep, #c9707f);
   letter-spacing: 0.14em;
   white-space: nowrap;
   pointer-events: none;
   animation: hint-pulse 2.6s ease-in-out infinite;
-  z-index: 10001;
+  z-index: calc(var(--z-envelope, 9999) + 2);
   transition: opacity 0.25s;
 }
 
@@ -140,7 +125,7 @@
   50%       { opacity: 1;   }
 }
 
-/* ── Entrance fade-in ──────────────────────────────────────── */
+/* ── Entrance fade-in ─────────────────────────────────────── */
 .envelope-bottom,
 .envelope-top,
 .envelope-stamp-img,

@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
+/* ── Global video background ─────────────────────────────────
+   Fixed behind all pages. Inner pages show glass cards on top.
+   Home page has its own hero video that covers this on /.
+   ─────────────────────────────────────────────────────────── */
+
+.global-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
+.global-bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Darker overlay for inner pages so cards read clearly */
+.global-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(40, 18, 8, 0.42) 0%,
+    rgba(70, 30, 12, 0.55) 100%
+  );
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* ── Alternative: wedding-bg.jpg (swap back if preferred) ──
+.global-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(70,30,12,0.48), rgba(70,30,12,0.48)),
+    url('https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/wedding-bg.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvd2VkZGluZy1iZy5qcGciLCJpYXQiOjE3NjgxNDYzODAsImV4cCI6MTc5OTY4MjM4MH0.8bydIgdiFdxWE2ksrebRIN2v8MzxrcWvxtsosXC-gG8');
+  background-size: cover;
+  background-position: center top;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+── */

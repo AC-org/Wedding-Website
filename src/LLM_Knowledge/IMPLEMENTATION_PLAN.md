@@ -61,7 +61,6 @@ Kontakt för bokning: via bröllopsparet.
 ### OSA
 - **Deadline:** 1 maj 2026
 - **Metod:** Formulär på webbplatsen (/rsvp)
-- **En OSA per person**
 - Vegetariska alternativ och specialdietkost bokas via OSA:n
 
 ### Toastmasters

@@ -18,9 +18,9 @@ HÄR FÖLJER ALL INFORMATION OM BRÖLLOPET:
 
 ${weddingInfo}`;
 
-const WELCOME_MESSAGE = `Välkommen, vän, till kärlekens hörna
+const WELCOME_MESSAGE = `Välkommen, vän, till kärlekens hörna.
 Där svar alltid blommar som vårens törna! 
-Fråga om bröllopet, dagen, och mer
+Fråga om bröllopet, dagen, och mer.
 Din poet på rim ett svar alltid ger! 💕`;
 
 const MAX_HISTORY = 10;
@@ -128,8 +128,9 @@ function WeddingChatBot() {
         model: 'gemini-2.5-flash',
         config: {
           systemInstruction: SYSTEM_PROMPT,
-          maxOutputTokens: 512,
+          maxOutputTokens: 1024,
           temperature: 0.9,
+          thinkingConfig: { thinkingBudget: 0 },
         },
         contents: conversationHistoryRef.current,
       });

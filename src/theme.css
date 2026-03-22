@@ -1,0 +1,208 @@
+/*
+ * ============================================================
+ *  Wedding Theme – Design Tokens
+ *  Arthur & Amanda Carp · 8 augusti 2026
+ * ============================================================
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&family=Gilda+Display&display=swap');
+
+:root {
+  /* ── Colours ─────────────────────────────────────────────── */
+  --color-beige-light:   #f5f0e8;
+  --color-beige:         #ede3d4;
+  --color-beige-dark:    #ddd0bc;
+
+  --color-rose-light:    #e8a4b0;
+  --color-rose:          #d4849a;
+  --color-rose-deep:     #c9707f;
+
+  --color-white:         #ffffff;
+  --color-white-92:      rgba(255, 255, 255, 0.92);
+  --color-white-80:      rgba(255, 255, 255, 0.80);
+
+  --color-brown-light:   #a0826d;
+  --color-brown:         #6f4e37;
+  --color-brown-dark:    #8b4513;
+
+  --color-sage-light:    #8fa888;
+  --color-sage:          #6b8f5e;
+
+  --color-gold:          #d4af7a;
+  --color-gold-deep:     #c9a96e;
+
+  --color-text-dark:     #3d2b1f;
+  --color-text-mid:      #5c4030;
+  --color-text-light:    #8a6a5a;
+
+  /* ── Typography ──────────────────────────────────────────── */
+  --font-display:      'Dancing Script', cursive;
+  --font-decorative:   'Gilda Display', serif;
+  --font-body:         'Cormorant Garamond', serif;
+
+  /* ── Spacing ─────────────────────────────────────────────── */
+  --space-xs:   8px;
+  --space-sm:  12px;
+  --space-md:  20px;
+  --space-lg:  32px;
+  --space-xl:  48px;
+  --space-2xl: 64px;
+
+  /* ── Border radius ───────────────────────────────────────── */
+  --radius-sm:  12px;
+  --radius-md:  20px;
+  --radius-lg:  24px;
+  --radius-xl:  32px;
+
+  /* ── Shadows ─────────────────────────────────────────────── */
+  --shadow-sm:  0 2px 12px rgba(111, 78, 55, 0.08);
+  --shadow-md:  0 4px 24px rgba(111, 78, 55, 0.14);
+  --shadow-lg:  0 8px 40px rgba(111, 78, 55, 0.22);
+  --shadow-xl:  0 16px 64px rgba(111, 78, 55, 0.28);
+
+  /* ── Z-index scale ───────────────────────────────────────── */
+  --z-base:     1;
+  --z-content:  10;
+  --z-navbar:   100;
+  --z-drawer:   200;
+  --z-chatbot:  300;
+  --z-envelope: 9999;
+
+  /* ── Transitions ─────────────────────────────────────────── */
+  --transition-fast:   150ms ease;
+  --transition-mid:    250ms ease;
+  --transition-slow:   350ms ease;
+  --transition-drawer: 320ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ── Navbar height ───────────────────────────────────────── */
+  --navbar-h: 64px;
+}
+
+/* ── Global base resets ──────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ── Page fade-in ────────────────────────────────────────── */
+@keyframes page-fadein {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.page-fadein {
+  animation: page-fadein 0.45s ease both;
+}
+
+/* ── Shared background pattern (all non-home pages) ─────── */
+.page-bg {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(201, 112, 127, 0.28),
+      rgba(111, 78, 55, 0.38)
+    ),
+    url('https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/wedding-bg.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvd2VkZGluZy1iZy5qcGciLCJpYXQiOjE3NjgxNDYzODAsImV4cCI6MTc5OTY4MjM4MH0.8bydIgdiFdxWE2ksrebRIN2v8MzxrcWvxtsosXC-gG8');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: scroll;
+}
+
+/* ── Shared content card ─────────────────────────────────── */
+.content-card {
+  background: var(--color-white-92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  padding: var(--space-xl);
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .content-card {
+    padding: var(--space-lg);
+  }
+}
+
+@media (max-width: 480px) {
+  .content-card {
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+  }
+}
+
+/* ── Shared page title ───────────────────────────────────── */
+.page-title {
+  font-family: var(--font-decorative);
+  font-size: clamp(32px, 6vw, 52px);
+  font-weight: 400;
+  color: var(--color-brown);
+  text-align: center;
+  margin: 0 0 var(--space-lg) 0;
+  letter-spacing: 0.03em;
+}
+
+.page-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 2.5vw, 18px);
+  color: var(--color-text-mid);
+  text-align: center;
+  line-height: 1.65;
+  margin: 0 0 var(--space-lg) 0;
+}
+
+/* ── Shared section divider ──────────────────────────────── */
+.section-divider {
+  border: none;
+  border-top: 1px solid rgba(212, 175, 122, 0.35);
+  margin: var(--space-lg) 0;
+}
+
+/* ── Shared link style ───────────────────────────────────── */
+.themed-link {
+  font-family: var(--font-body);
+  font-weight: 600;
+  color: var(--color-rose-deep);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-rose-light);
+  padding-bottom: 1px;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  cursor: pointer;
+}
+
+.themed-link:hover {
+  color: var(--color-rose-deep);
+  border-color: var(--color-rose-deep);
+}
+
+/* ── Shared CTA button ───────────────────────────────────── */
+.btn-primary {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--color-rose) 0%, var(--color-rose-deep) 100%);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 14px 32px;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  text-decoration: none;
+  transition: opacity var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  box-shadow: 0 4px 16px rgba(201, 112, 127, 0.35);
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(201, 112, 127, 0.45);
+}
