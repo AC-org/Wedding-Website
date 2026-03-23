@@ -17,7 +17,7 @@ function HittaHit() {
             <p className="hittahit-subtitle">Kom och fira (festa) med oss i Örbyhus Slotts Orangeri!</p>
             <div className="hittahit-map-container">
               <iframe title="örbyhus"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2333.9624607982223!2d17.706551677512564!3d60.20000647504768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4660808ceac82f8b%3A0xaad3a038af1d656b!2s%C3%96rbyhus%20slott!5e1!3m2!1ssv!2sse!4v1725468858920!5m2!1ssv!2sse"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2470.8084398943706!2d17.706739626200605!3d60.19987882485638!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4660808d7263628d%3A0xd2a1ab33d04c1309!2s%C3%96RBYHUS%20SLOTT%20114%2C%20748%2095%20%C3%96rbyhus!5e1!3m2!1ssv!2sse!4v1774254667015!5m2!1ssv!2sse"
                 width="100%"
                 height="400"
                 style={{ border: 0 }}
