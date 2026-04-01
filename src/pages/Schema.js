@@ -3,7 +3,6 @@ import './Schema.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
 import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
-import VideoBackground from '../components/VideoBackground';
 
 function Schema() {
   const schedules = {
@@ -48,7 +47,6 @@ function Schema() {
       <Navbar />
 
       <div className="schema-container">
-        <VideoBackground />
         <div className="schema-card">
           <h1 className="schema-title">Schema för dagen</h1>
           <p className="schema-subtitle">Här är en översikt över bröllopets tidplan för både lördag och söndag. Tiderna är uppskattade och kan variera något.</p>

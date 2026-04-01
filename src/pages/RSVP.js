@@ -4,7 +4,6 @@ import './RSVP.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
 import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
-import VideoBackground from '../components/VideoBackground';
 
 function RSVP() {
   const [email, setEmail] = useState('');
@@ -51,7 +50,6 @@ function RSVP() {
   return (
     <div className="rsvp-wrapper">
       <div className="rsvp-container">
-        <VideoBackground />
         <Navbar />
 
         <div className="rsvp-card">

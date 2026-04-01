@@ -3,7 +3,6 @@ import './Foton.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
 import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
-import VideoBackground from '../components/VideoBackground';
 
 function Foton() {
   return (
@@ -11,7 +10,6 @@ function Foton() {
       <Navbar />
 
       <div className="foton-container">
-        <VideoBackground />
         <div className="foton-card">
           <h1 className="foton-title">Foton från bröllopet</h1>
           <p className="foton-subtitle">Dela era minnen från vår stora dag</p>

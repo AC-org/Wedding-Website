@@ -1,5 +1,5 @@
 const weddingInfo = `
-Brudparet heter Arthur och Amanda Carp och firar 10 år tillsammans.
+Brudparet heter Arthur och Amanda och firar 10 år tillsammans!
 Bröllopet äger rum lördagen den 8 augusti 2026.
 Ceremonin börjar klockan 15:00 i Vendels kyrka.
 Gäster samlas klockan 14:00 på Gammel Tammens grusgård i Österbybruk, därifrån avgår bussar klockan 14:15.
@@ -9,38 +9,33 @@ Klockan 16:30 är det mingel med bubbel och tårta.
 Middagen serveras klockan 18:00 med tal och underhållning.
 Klockan 22:00 börjar dans och fest!
 Sent på kvällen (vickning) kör bussar gästerna tillbaka till övernattningsboendena.
-
 Söndagen den 9 augusti:
 Klockan 10:30 checkar gästerna ut från boendena och åker till Orangeriet.
 Klockan 11:00 är det brunch utanför Orangeriet.
 Klockan 13:00 börjar hemresorna.
 OBS: Till söndagens brunch finns ingen buss — gästerna tar sig dit på egen hand.
-
 Klädkod:
 Herrar: hel kostym eller smoking, gärna i somrig ton.
 Damer: eleganta klänningar, gärna med färg och känsla.
 Alla ska känna sig riktigt festklädda!
-
 Boende (tre alternativ, bokas via brudparet):
-1. Vandrarhemmet Annexet i Österbybruk — 400 kr/gäst/natt. Budget-vänligt, lakan ingår.
-2. Wärdshuset Gammel Tammen, Österbybruks Herrgård — 850–1000 kr/gäst/natt. Historisk herrgård från 1700-talet, eget badrum, restaurant på plats.
-3. Örbyhus Golfklubb vid Örbyhus slott — 795 kr/gäst/natt. OBS: dessa gäster kör själva till kyrkan, de ingår inte i bussystemet.
-
+1. Vandrarhemmet Annexet i Österbybruk — Budget-vänligt, lakan ingår.
+2. Wärdshuset Gammel Tammen, Österbybruks Herrgård — Historisk herrgård från 1700-talet, eget badrum, restaurant på plats.
+3. Örbyhus Golfklubb vid Örbyhus slott — OBS: dessa gäster kör själva till kyrkan, de ingår inte i bussystemet.
 OSA (RSVP):
 Deadline 1 maj 2026. Formulär på webbsidan (/rsvp).
 Vegetariska alternativ och specialdiet bokas via OSA-formuläret.
-
 Toastmasters:
 Ebba Rovig och Sixten Roström hanterar tal och underhållning.
 Kontakta dem på: carparnastoastmasters@gmail.com
-
 Kontakt med brudparet:
 Arthur: arthur.ohman@gmail.com
 Amanda: amanda.carp97@gmail.com
-
 Kul fakta:
 Vendels kyrkas äldsta del är från sent 1200-talet.
 Orangeriet fick sitt namn från det franska ordet för apelsin — där vinterförvarades apelsiner och citrusfrukter förr i tiden.
+Hur Arthur och Amanda träffades:
+Arthur och Amanda träffades i gymnasiet då de började i samma klass. De växte upp i samma område, läste samma linje i gymnasiet och sedan samma program på universitetet — och jobbar nu med ungefär samma saker. Det låter nästan som samma person, men de kompletterar varandra fint. Det blev dock inte ett par förrän efter studenten 2016, då Arthur var lite svårfångad.​​​​​​​​​​​​​​​​
 `;
 
 export default weddingInfo;

@@ -39,6 +39,7 @@ function WeddingChatBot() {
   const inputRef = useRef(null);
   const floatBtnRef = useRef(null);
   const lastAiBubbleRef = useRef(null);
+  const chatWindowRef = useRef(null);
   const conversationHistoryRef = useRef([]);
 
   const getOrigin = (ref) => {
@@ -101,6 +102,37 @@ function WeddingChatBot() {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
     }
+  }, [isOpen]);
+
+  // Shrink chat window when mobile keyboard opens
+  useEffect(() => {
+    if (!isOpen) return;
+    const vv = window.visualViewport;
+    if (!vv) return;
+
+    const handleViewportChange = () => {
+      const el = chatWindowRef.current;
+      if (!el) return;
+      const keyboardHeight = window.innerHeight - vv.height - vv.offsetTop;
+      if (keyboardHeight > 50) {
+        el.style.bottom = `${keyboardHeight + 8}px`;
+        el.style.height = `${Math.min(vv.height - 16, 510)}px`;
+      } else {
+        el.style.bottom = '';
+        el.style.height = '';
+      }
+    };
+
+    vv.addEventListener('resize', handleViewportChange);
+    vv.addEventListener('scroll', handleViewportChange);
+    return () => {
+      vv.removeEventListener('resize', handleViewportChange);
+      vv.removeEventListener('scroll', handleViewportChange);
+      if (chatWindowRef.current) {
+        chatWindowRef.current.style.bottom = ''; // eslint-disable-line react-hooks/exhaustive-deps
+        chatWindowRef.current.style.height = '';
+      }
+    };
   }, [isOpen]);
 
   const sendMessage = async () => {
@@ -200,7 +232,7 @@ function WeddingChatBot() {
       </button>
 
       {isOpen && (
-        <div className="chatbot-window" role="dialog" aria-label="Kärlekspoeten chattfönster">
+        <div ref={chatWindowRef} className="chatbot-window" role="dialog" aria-label="Kärlekspoeten chattfönster">
           <div className="chatbot-header">
             <span className="chatbot-header-title">❤ Kärlekspoeten ❤</span>
             <button

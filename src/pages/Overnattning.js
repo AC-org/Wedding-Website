@@ -2,7 +2,6 @@ import './Overnattning.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
 import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
-import VideoBackground from '../components/VideoBackground';
 
 function Overnattning() {
   const accommodations = [
@@ -14,7 +13,7 @@ function Overnattning() {
       phone: '076-025 43 48',
       email: 'annexet.osterbybruk@outlook.com',
       details: '10 standardrum á 2 gäster + 2 attefallshus. Lakan och handduk ingår.',
-      image: 'vandrarhemmetannexet.png'
+      image: 'https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/vandrarhemmetannexet.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvdmFuZHJhcmhlbW1ldGFubmV4ZXQucG5nIiwiaWF0IjoxNzc1MDU0MjU1LCJleHAiOjE4MDY1OTAyNTV9.qphobnbTkOdsUoz35qrJiuOU73E44-I1yZGz9-ZFxxo'
     },
     {
       id: 2,
@@ -24,7 +23,7 @@ function Overnattning() {
       phone: '0295-212 00',
       email: 'info@gammeltammen.se',
       details: '14 dubbelrum + 1 trippelrum. Eget badrum. Restaurant på plats.',
-      image: 'gammeltammen.png'
+      image: 'https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/gammeltammen.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvZ2FtbWVsdGFtbWVuLnBuZyIsImlhdCI6MTc3NTA1NDI0NCwiZXhwIjoxODA2NTkwMjQ0fQ.27po-hmrNriPJv3T4McuarSGVEXr6iNWb-ThZiLfsGg'
     },
     {
       id: 3,
@@ -34,7 +33,7 @@ function Overnattning() {
       phone: '070-931 71 47',
       email: 'info@orbyhusgolf.se',
       details: '10 tvåbäddsrum (vissa med extrabädd). Eget badrum, delad dusch.',
-      image: 'orbyhusgolfklubb.png'
+      image: 'https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/orbyhusgolfklubb.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvb3JieWh1c2dvbGZrbHViYi5wbmciLCJpYXQiOjE3NzUwNTQyNjUsImV4cCI6MTgwNjU5MDI2NX0.QOzgDormYl39Sxm3vIsyXoTKR_xyZgbHS-AqVK9aE4o'
     }
   ];
 
@@ -71,7 +70,7 @@ function Overnattning() {
               <div key={accommodation.id} className="accommodation-card">
                 {accommodation.image && (
                   <img
-                    src={`${process.env.PUBLIC_URL}/${accommodation.image}`}
+                    src={accommodation.image}
                     alt=""
                     aria-hidden="true"
                     className="accommodation-bg-img"

@@ -3,7 +3,6 @@ import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
 import { Link } from 'react-router-dom';
 import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
-import VideoBackground from '../components/VideoBackground';
 
 function Info() {
   return (
@@ -11,7 +10,6 @@ function Info() {
       <Navbar />
 
       <div className="info-container">
-        <VideoBackground />
         <div className="info-card">
           <h1 className="info-title">Praktisk Information</h1>
 

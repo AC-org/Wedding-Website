@@ -3,13 +3,11 @@ import './HITTAHIT.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
 import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
-import VideoBackground from '../components/VideoBackground';
 
 function HittaHit() {
   return (
     <div className="hittahit-wrapper">
       <div className="hittahit-container">
-        <VideoBackground />
         <Navbar />
       
       <div className="hittahit-content">

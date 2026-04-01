@@ -266,5 +266,7 @@
     right: 4vw;
     bottom: 88px;
     border-radius: var(--radius-md, 20px);
+    transition: bottom 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+                height 0.28s cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
