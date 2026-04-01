@@ -46,7 +46,7 @@ function Navbar() {
         {/* A♥A logo */}
         <Link to="/" className="navbar-logo" aria-label="Till startsidan">
           <span className="logo-a">A</span>
-          <span className="logo-heart" aria-hidden="true">♥</span>
+          <span className="logo-heart" aria-hidden="true">{"♥\uFE0E"}</span>
           <span className="logo-a">A</span>
         </Link>
 
@@ -107,7 +107,7 @@ function Navbar() {
           ))}
         </ul>
 
-        <p className="drawer-footer">A ♥ A &nbsp;·&nbsp; 8 aug 2026</p>
+        <p className="drawer-footer">A {"♥\uFE0E"} A &nbsp;·&nbsp; 8 aug 2026</p>
       </nav>
     </>
   );

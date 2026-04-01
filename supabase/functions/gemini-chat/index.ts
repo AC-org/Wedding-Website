@@ -25,13 +25,15 @@ serve(async (req) => {
           generationConfig: {
             maxOutputTokens: 1024,
             temperature: 0.9,
+            thinkingConfig: { thinkingBudget: 0 },
           },
         }),
       }
     );
 
     const data = await response.json();
-    const text = data.candidates?.[0]?.content?.parts?.[0]?.text;
+    const parts = data.candidates?.[0]?.content?.parts ?? [];
+    const text = parts.find((p: { thought?: boolean; text?: string }) => !p.thought)?.text;
 
     if (!text) throw new Error('Empty response from Gemini');
 

@@ -216,7 +216,7 @@ function WeddingChatBot() {
             '--start-y': `${heart.startY}px`,
           }}
         >
-          ♥
+          {"♥\uFE0E"}
         </span>
       ))}
 
@@ -227,13 +227,13 @@ function WeddingChatBot() {
         aria-label="Öppna Kärlekspoeten"
         title="Kärlekspoeten 💕"
       >
-        ♥
+        {"♥\uFE0E"}
       </button>
 
       {isOpen && (
         <div ref={chatWindowRef} className="chatbot-window" role="dialog" aria-label="Kärlekspoeten chattfönster">
           <div className="chatbot-header">
-            <span className="chatbot-header-title">❤ Kärlekspoeten ❤</span>
+            <span className="chatbot-header-title">{"❤\uFE0E"} Kärlekspoeten {"❤\uFE0E"}</span>
             <button
               className="chatbot-close-btn"
               onClick={() => setIsOpen(false)}
