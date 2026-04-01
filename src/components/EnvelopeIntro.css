@@ -251,3 +251,384 @@
     white-space: nowrap;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   MOBILE — Luxury floating envelope on sparkle background
+   Classic sealed envelope (downward flap) that opens on tap.
+   Background and envelope fade independently from the video.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Scene ────────────────────────────────────────────────── */
+.mob-env-scene {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-envelope, 9999);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  animation: mob-scene-fadein 0.65s ease both;
+}
+
+.mob-env-scene:not(.phase-idle) {
+  cursor: default;
+  pointer-events: none;
+}
+
+/* Re-enable click in idle only */
+.mob-env-scene.phase-idle {
+  pointer-events: auto;
+}
+
+@keyframes mob-scene-fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ── Dark luxury background ─────────────────────────────────
+   Separate element so it fades out independently during zoom
+   while the video card stays fully opaque.                  */
+.mob-env-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 65% 55% at 50% 48%,
+      rgba(90, 50, 18, 0.55) 0%,
+      transparent 70%
+    ),
+    radial-gradient(circle at 50% 50%,
+      #2e1a0e 0%,
+      #1a0c06 55%,
+      #0d0702 100%
+    );
+  pointer-events: none;
+  transition: opacity 1.2s ease;
+}
+
+.mob-env-scene.phase-zooming .mob-env-bg,
+.mob-env-scene.phase-fading  .mob-env-bg {
+  opacity: 0;
+}
+
+/* ── Luxury sparkles ────────────────────────────────────────
+   20 gold-white stars with individual twinkle timings.      */
+.mob-sparkles {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  transition: opacity 0.8s ease;
+}
+
+.mob-env-scene.phase-zooming .mob-sparkles,
+.mob-env-scene.phase-fading  .mob-sparkles {
+  opacity: 0;
+}
+
+.mob-sparkle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    #ffffff 0%,
+    rgba(220, 185, 120, 0.75) 40%,
+    transparent 100%
+  );
+  animation: mob-sparkle-twinkle var(--d, 2.2s) var(--delay, 0s) ease-in-out infinite;
+}
+
+.mob-sparkle:nth-child(1)  { width:3px; height:3px; top: 5%;  left: 8%;  --d:2.1s; --delay:0.00s; }
+.mob-sparkle:nth-child(2)  { width:4px; height:4px; top:11%;  left:83%;  --d:1.8s; --delay:0.40s; }
+.mob-sparkle:nth-child(3)  { width:2px; height:2px; top:19%;  left:23%;  --d:2.6s; --delay:0.70s; }
+.mob-sparkle:nth-child(4)  { width:3px; height:3px; top:24%;  left:69%;  --d:2.3s; --delay:1.10s; }
+.mob-sparkle:nth-child(5)  { width:5px; height:5px; top: 7%;  left:53%;  --d:1.6s; --delay:0.20s; }
+.mob-sparkle:nth-child(6)  { width:2px; height:2px; top:33%;  left: 9%;  --d:2.9s; --delay:0.90s; }
+.mob-sparkle:nth-child(7)  { width:3px; height:3px; top:38%;  left:91%;  --d:2.0s; --delay:1.30s; }
+.mob-sparkle:nth-child(8)  { width:4px; height:4px; top:73%;  left:13%;  --d:1.9s; --delay:0.50s; }
+.mob-sparkle:nth-child(9)  { width:2px; height:2px; top:79%;  left:78%;  --d:2.5s; --delay:0.80s; }
+.mob-sparkle:nth-child(10) { width:3px; height:3px; top:87%;  left:44%;  --d:2.1s; --delay:1.50s; }
+.mob-sparkle:nth-child(11) { width:5px; height:5px; top:91%;  left:71%;  --d:1.7s; --delay:0.10s; }
+.mob-sparkle:nth-child(12) { width:2px; height:2px; top:59%;  left: 4%;  --d:2.7s; --delay:0.60s; }
+.mob-sparkle:nth-child(13) { width:4px; height:4px; top:54%;  left:89%;  --d:2.2s; --delay:1.00s; }
+.mob-sparkle:nth-child(14) { width:2px; height:2px; top: 2%;  left:34%;  --d:1.9s; --delay:1.40s; }
+.mob-sparkle:nth-child(15) { width:3px; height:3px; top:15%;  left:61%;  --d:2.4s; --delay:0.30s; }
+.mob-sparkle:nth-child(16) { width:4px; height:4px; top:69%;  left:37%;  --d:1.8s; --delay:1.20s; }
+.mob-sparkle:nth-child(17) { width:2px; height:2px; top:43%;  left:48%;  --d:2.5s; --delay:0.00s; }
+.mob-sparkle:nth-child(18) { width:3px; height:3px; top:29%;  left:41%;  --d:2.0s; --delay:0.75s; }
+.mob-sparkle:nth-child(19) { width:5px; height:5px; top:81%;  left:59%;  --d:1.6s; --delay:1.60s; }
+.mob-sparkle:nth-child(20) { width:2px; height:2px; top:48%;  left:94%;  --d:2.3s; --delay:0.50s; }
+
+@keyframes mob-sparkle-twinkle {
+  0%, 100% { opacity: 0.07; transform: scale(0.65); }
+  50%       { opacity: 1.00; transform: scale(1.40); }
+}
+
+/* ── Video photo card ───────────────────────────────────────
+   z-index relative to scene (stacking context):
+     idle            → z:1  (behind wrapper z:2 = invisible)
+     flap-opening    → z:3  (above wrapper; fades in at body)
+     card-out        → z:3  (rises above envelope)
+     card-cover/+    → z:5  (in front of everything)
+     fading          → z:5  (fades out over 3 s)             */
+.mob-env-photo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 280px;
+  height: 215px;
+  overflow: hidden;
+  border-radius: 4px;
+  transform: translate(-50%, calc(-50% + 40px));
+  opacity: 0;
+  z-index: 1;
+  transition: none;
+  pointer-events: none;
+  box-shadow: 0 14px 55px rgba(0, 0, 0, 0.90);
+}
+
+.mob-env-photo video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Flap rotating — video fades in inside the envelope body   */
+.mob-env-scene.phase-flap-opening .mob-env-photo {
+  opacity: 0.85;
+  z-index: 3;
+  transform: translate(-50%, calc(-50% + 40px));
+  transition: opacity 0.5s ease 0.35s;
+}
+
+/* Video rises out of the open envelope — springy            */
+.mob-env-scene.phase-card-out .mob-env-photo {
+  opacity: 1;
+  z-index: 3;
+  transform: translate(-50%, calc(-50% - 175px));
+  border-radius: 8px;
+  transition:
+    transform 0.90s cubic-bezier(0.34, 1.18, 0.64, 1),
+    opacity   0.25s ease;
+}
+
+/* Video descends to screen centre, moves in front           */
+.mob-env-scene.phase-card-cover .mob-env-photo {
+  opacity: 1;
+  z-index: 5;
+  transform: translate(-50%, -50%);
+  border-radius: 6px;
+  transition:
+    transform     0.85s cubic-bezier(0.25, 0.1, 0.25, 1),
+    border-radius 0.40s ease;
+}
+
+/* Video zooms to fill screen — background fades behind it   */
+.mob-env-scene.phase-zooming .mob-env-photo {
+  opacity: 1;
+  z-index: 5;
+  transform: translate(-50%, -50%) scale(5.5);
+  border-radius: 0;
+  transition:
+    transform     1.35s cubic-bezier(0.4, 0, 0.15, 1),
+    border-radius 0.60s ease;
+}
+
+/* Video fades out over 3 s — homepage is visible beneath    */
+.mob-env-scene.phase-fading .mob-env-photo {
+  opacity: 0;
+  z-index: 5;
+  transform: translate(-50%, -50%) scale(5.5);
+  border-radius: 0;
+  transition: opacity 3s ease;
+}
+
+/* ── Envelope wrapper ───────────────────────────────────────
+   z-index: 2 — above background/sparkles, below active card.
+   Floats gently in idle state.                              */
+.mob-env-wrapper {
+  position: relative;
+  z-index: 2;
+  width: 280px;
+  height: 215px;
+  flex-shrink: 0;
+  animation: mob-env-float 3.2s ease-in-out infinite;
+  will-change: transform, opacity;
+  transition: opacity 0.75s ease;
+}
+
+@keyframes mob-env-float {
+  0%,  100% { transform: translateY(0px);   }
+  50%       { transform: translateY(-10px); }
+}
+
+/* Stop float on click */
+.mob-env-scene.phase-flap-opening .mob-env-wrapper,
+.mob-env-scene.phase-card-out     .mob-env-wrapper {
+  animation: none;
+}
+
+/* Fade out wrapper as card settles over it                  */
+.mob-env-scene.phase-card-cover .mob-env-wrapper,
+.mob-env-scene.phase-zooming    .mob-env-wrapper,
+.mob-env-scene.phase-fading     .mob-env-wrapper {
+  animation: none;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* ── Envelope body ──────────────────────────────────────────
+   Parchment rectangle. Bottom 135 px of wrapper (y=80–215). */
+.mob-env-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 135px;
+  background: linear-gradient(
+    158deg,
+    #fdf8ee 0%,
+    #f6e9d2 35%,
+    #eedab5 68%,
+    #e6cfa0 100%
+  );
+  border-radius: 3px 3px 8px 8px;
+  box-shadow:
+    0 14px 45px rgba(6, 2, 0, 0.78),
+    0  3px 10px rgba(6, 2, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.50);
+  z-index: 0;
+  transition: opacity 0.55s ease;
+}
+
+/* Subtle inner X fold-line pattern */
+.mob-env-body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom right,
+      transparent 49.6%, rgba(160, 120, 65, 0.09) 50%, transparent 50.4%),
+    linear-gradient(to bottom left,
+      transparent 49.6%, rgba(160, 120, 65, 0.09) 50%, transparent 50.4%);
+}
+
+/* Body fades when video rises out */
+.mob-env-scene.phase-card-out .mob-env-body {
+  opacity: 0;
+}
+
+/* ── Flap ───────────────────────────────────────────────────
+   INITIAL: downward-pointing triangle = classic SEALED envelope.
+   polygon(0 0, 100% 0, 50% 100%): base at top, tip at bottom.
+
+   transform-origin: 50% 100% → pivot at bottom of element
+   = the fold line (y = 80 px in wrapper).
+
+   rotateX(-180deg): base swings backward away from viewer;
+   tip stays on fold line. backface-visibility: hidden makes
+   it vanish after 90° = clean letter-opening motion.        */
+.mob-env-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background: linear-gradient(
+    175deg,
+    #fefcf6 0%,
+    #f9edd8 42%,
+    #f1e0c3 78%,
+    #e8d3b2 100%
+  );
+  transform-origin: 50% 100%;
+  transform: perspective(700px) rotateX(0deg);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transition: transform 0.80s cubic-bezier(0.4, 0, 0.2, 1);
+  filter:
+    drop-shadow(0 -4px 10px rgba(10, 4, 0, 0.50))
+    drop-shadow(0  2px  6px rgba(10, 4, 0, 0.35));
+  z-index: 1;
+}
+
+/* Flap opens — rotates backward around fold-line base       */
+.mob-env-scene.phase-flap-opening .mob-env-flap,
+.mob-env-scene.phase-card-out     .mob-env-flap,
+.mob-env-scene.phase-card-cover   .mob-env-flap,
+.mob-env-scene.phase-zooming      .mob-env-flap,
+.mob-env-scene.phase-fading       .mob-env-flap {
+  transform: perspective(700px) rotateX(-180deg);
+}
+
+/* ── Wax seal stamp ─────────────────────────────────────────
+   Centred on the fold line (y = 80 px). z-index: 2 keeps it
+   above both body (z:0) and flap (z:1).
+   Fades out immediately when flap starts rotating.          */
+.mob-env-stamp {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width:  clamp(86px, 25vw, 108px);
+  height: clamp(86px, 25vw, 108px);
+  object-fit: contain;
+  z-index: 2;
+  pointer-events: none;
+  filter:
+    drop-shadow(0 3px 9px  rgba(60, 28, 5, 0.55))
+    drop-shadow(0 1px 3px  rgba(60, 28, 5, 0.35));
+  transition: opacity 0.30s ease;
+}
+
+.mob-env-scene.phase-flap-opening .mob-env-stamp,
+.mob-env-scene.phase-card-out     .mob-env-stamp,
+.mob-env-scene.phase-card-cover   .mob-env-stamp,
+.mob-env-scene.phase-zooming      .mob-env-stamp,
+.mob-env-scene.phase-fading       .mob-env-stamp {
+  opacity: 0;
+}
+
+/* ── Click hint ─────────────────────────────────────────────
+   Warm-gold italic text just below the wrapper.             */
+.mob-env-hint {
+  position: absolute;
+  top: calc(50% + 115px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: clamp(0.82rem, 3.6vw, 1.05rem);
+  color: rgba(212, 175, 122, 0.78);
+  letter-spacing: 0.16em;
+  white-space: nowrap;
+  pointer-events: none;
+  margin: 0;
+  padding: 0;
+  animation: mob-hint-pulse 2.8s ease-in-out infinite;
+}
+
+.mob-env-scene.phase-flap-opening .mob-env-hint,
+.mob-env-scene.phase-card-out     .mob-env-hint,
+.mob-env-scene.phase-card-cover   .mob-env-hint,
+.mob-env-scene.phase-zooming      .mob-env-hint,
+.mob-env-scene.phase-fading       .mob-env-hint {
+  opacity: 0;
+  transition: opacity 0.22s ease;
+}
+
+@keyframes mob-hint-pulse {
+  0%, 100% { opacity: 0.20; }
+  50%       { opacity: 0.85; }
+}
