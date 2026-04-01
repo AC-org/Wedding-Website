@@ -2,7 +2,7 @@
   "name": "wedding-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://arthuramanda.se",  
+  "homepage": "https://arthuramanda.se",
   "dependencies": {
     "@google/genai": "^1.45.0",
     "@supabase/supabase-js": "^2.45.3",
@@ -17,6 +17,7 @@
     "react-dom": "^18.3.1",
     "react-router-dom": "^6.26.1",
     "react-scripts": "5.0.1",
+    "supabase": "^2.84.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

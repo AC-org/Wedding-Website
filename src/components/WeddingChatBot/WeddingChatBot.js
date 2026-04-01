@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './WeddingChatBot.css';
 import weddingInfo from '../../LLM_Knowledge/weddingInfoText';
-import { GoogleGenAI } from '@google/genai';
 
 const SYSTEM_PROMPT = `Du är Kärlekspoeten — en charmig, romantisk och lätt skämtsam assistent på Arthur & Amandas bröllopssida.
 
@@ -154,21 +153,21 @@ function WeddingChatBot() {
     }
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.REACT_APP_GEMINI_API_KEY });
+      const response = await fetch(
+        'https://cjczonwdytdhubxxwqle.supabase.co/functions/v1/gemini-chat',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            history: conversationHistoryRef.current,
+            systemPrompt: SYSTEM_PROMPT,
+          }),
+        }
+      );
 
-      const response = await ai.models.generateContent({
-        model: 'gemini-2.5-flash',
-        config: {
-          systemInstruction: SYSTEM_PROMPT,
-          maxOutputTokens: 1024,
-          temperature: 0.9,
-          thinkingConfig: { thinkingBudget: 0 },
-        },
-        contents: conversationHistoryRef.current,
-      });
-
-      const replyText = response.text;
-      if (!replyText) throw new Error('Tomt svar från API');
+      const data = await response.json();
+      if (!data.text) throw new Error('Tomt svar från API');
+      const replyText = data.text;
 
       conversationHistoryRef.current = [
         ...conversationHistoryRef.current,
