@@ -41,12 +41,32 @@
   margin-bottom: 12px;
 }
 
-.overnattning-contact {
+.overnattning-info-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(212, 175, 122, 0.35);
+  text-align: left;
+}
+
+.overnattning-info-bullets p {
   font-family: var(--font-body, 'Cormorant Garamond', serif);
-  font-size: clamp(14px, 3vw, 16px);
-  color: var(--color-brown, #6f4e37);
-  font-weight: 700;
+  font-size: clamp(14px, 3.2vw, 16px);
+  color: var(--color-text-mid, #5c4030);
+  line-height: 1.65;
   margin: 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.info-bullet-icon {
+  color: var(--color-gold, #d4af7a);
+  font-size: 11px;
+  flex-shrink: 0;
+  margin-top: 5px;
 }
 
 /* ── Accommodation grid ─────────────────────────────────────*/
@@ -58,6 +78,8 @@
 
 /* ── Accommodation card ─────────────────────────────────────*/
 .accommodation-card {
+  position: relative;
+  overflow: hidden;
   background: var(--color-white-92, rgba(255, 255, 255, 0.92));
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -67,6 +89,19 @@
   padding: 26px 24px;
   text-align: left;
   transition: transform var(--transition-mid, 250ms ease), box-shadow var(--transition-mid, 250ms ease);
+}
+
+.accommodation-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center bottom;
+  opacity: 0.35;
+  pointer-events: none;
+  border-radius: inherit;
+  mix-blend-mode: multiply;
 }
 
 .accommodation-card:hover {
@@ -114,28 +149,6 @@
   color: #8b0000;
   margin-top: 10px;
   font-weight: 600;
-}
-
-.accommodation-link {
-  display: inline-block;
-  background: linear-gradient(135deg, var(--color-rose, #d4849a), var(--color-rose-deep, #c9707f));
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: var(--radius-sm, 12px);
-  text-decoration: none;
-  font-family: var(--font-body, 'Cormorant Garamond', serif);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  transition: opacity var(--transition-fast, 150ms ease), transform var(--transition-fast, 150ms ease);
-  box-shadow: 0 4px 14px rgba(201, 112, 127, 0.35);
-  margin-top: 4px;
-  cursor: pointer;
-}
-
-.accommodation-link:hover {
-  opacity: 0.88;
-  transform: translateY(-1px);
 }
 
 /* ── Responsive ─────────────────────────────────────────────*/

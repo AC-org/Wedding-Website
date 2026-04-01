@@ -3,20 +3,22 @@ import './Schema.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
 import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
+import VideoBackground from '../components/VideoBackground';
 
 function Schema() {
   const schedules = {
     lördag: [
-      { time: '14:00', event: 'Vi möts på Gammel Tammens grusgård i Österbybruk' },
+      { time: '14:00', event: 'Vi möts på Gammel Tammens grusgård i Österbybruk (för er som bor på Gammel Tammen och Annexet)' },
       { time: '14:15', event: 'Busshämtning från Gammel Tammens grusgård' },
+      { time: '14:30', event: 'Busshämtning från Örbyhus Golfklubb' },
       { time: '14:40', event: 'Ankomst till Vendels kyrka' },
       { time: '15:00', event: 'Ceremoni börjar' },
       { time: '16:00', event: 'Busshämtning från Vendels kyrka' },
       { time: '16:30', event: 'Ankomst & mingel med bubbel & tårta'},
       { time: '18:00', event: 'Middag serveras, tal och underhållning'},
-      { time: '22:00', event: 'Dans och fest!' },
+      { time: '22:00', event: 'Dans och fest till småtimmarna!' },
       { time: 'Sent', event: 'Vickning' },
-      { time: 'Senare', event: 'Bussar kör hem till övernattningsboenden' }
+      { time: ' Senare', event: 'Bussar kör hem till övernattningsboenden' }
     ],
     söndag: [
       { time: '10:30', event: 'Checkout från övernattningsboenden. Åk till Orangeriet' },
@@ -46,6 +48,7 @@ function Schema() {
       <Navbar />
 
       <div className="schema-container">
+        <VideoBackground />
         <div className="schema-card">
           <h1 className="schema-title">Schema för dagen</h1>
           <p className="schema-subtitle">Här är en översikt över bröllopets tidplan för både lördag och söndag. Tiderna är uppskattade och kan variera något.</p>

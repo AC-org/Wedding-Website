@@ -55,6 +55,10 @@ function Home() {
           ) : (
             <p className="countdown-done">Bröllopsdags! 💕</p>
           )}
+          <p className="hero-body-note">
+            Läs gärna igenom denna hemsida noggrant för att ta del av all information inför bröllopet, och tveka inte att höra av dig om du har några frågor!
+            OSA även via formuläret på sidan "OSA" så snart som möjligt, dock senast 1 juni 2026.
+          </p>
         </div>
       </section>
     </div>

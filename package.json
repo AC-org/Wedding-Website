@@ -2,7 +2,7 @@
   "name": "wedding-website",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ac-org.github.io/Wedding-Website/",
+  "homepage": "https://arthuramanda.se",  
   "dependencies": {
     "@google/genai": "^1.45.0",
     "@supabase/supabase-js": "^2.45.3",

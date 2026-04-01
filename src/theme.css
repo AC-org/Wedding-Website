@@ -103,6 +103,7 @@ html, body {
 /* ── Shared background pattern (all non-home pages) ─────── */
 .page-bg {
   min-height: 100vh;
+  /* wedding-bg.jpg (swap back if preferred):
   background-image:
     linear-gradient(
       to bottom,
@@ -113,6 +114,7 @@ html, body {
   background-size: cover;
   background-position: center top;
   background-attachment: scroll;
+  */
 }
 
 /* ── Shared content card ─────────────────────────────────── */
@@ -214,6 +216,9 @@ html, body {
 .hittahit-container,
 .overnattning-container,
 .foton-container {
+  position: relative;
+  overflow: hidden;
+  /* wedding-bg.jpg (swap back if preferred):
   background-image:
     linear-gradient(
       to bottom,
@@ -224,4 +229,41 @@ html, body {
   background-size: cover;
   background-position: center top;
   background-attachment: scroll;
+  */
+}
+
+/* ── Shared video background (inner pages) ───────────────── */
+.page-video-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.page-video-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 15, 10, 0.28) 0%,
+    rgba(50, 20, 15, 0.45) 50%,
+    rgba(60, 25, 20, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+/* Lift all inner-page content above the video + overlay */
+.info-container > *:not(.page-video-bg):not(.page-video-overlay),
+.schema-container > *:not(.page-video-bg):not(.page-video-overlay),
+.rsvp-container > *:not(.page-video-bg):not(.page-video-overlay),
+.hittahit-container > *:not(.page-video-bg):not(.page-video-overlay),
+.overnattning-container > *:not(.page-video-bg):not(.page-video-overlay),
+.foton-container > *:not(.page-video-bg):not(.page-video-overlay) {
+  position: relative;
+  z-index: 2;
 }

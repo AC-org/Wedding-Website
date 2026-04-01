@@ -4,6 +4,7 @@ import './RSVP.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
 import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
+import VideoBackground from '../components/VideoBackground';
 
 function RSVP() {
   const [email, setEmail] = useState('');
@@ -50,6 +51,7 @@ function RSVP() {
   return (
     <div className="rsvp-wrapper">
       <div className="rsvp-container">
+        <VideoBackground />
         <Navbar />
 
         <div className="rsvp-card">
@@ -57,7 +59,7 @@ function RSVP() {
           <>
             <h1 className="rsvp-title">O S A</h1>
             <p className="rsvp-subtitle">Vi är så redo att fira med er! </p>
-            <p className="rsvp-subtitle">OSA i detta formulär innan 1/5-2026</p>
+            <p className="rsvp-subtitle">OSA i detta formulär innan 1/6-2026</p>
             <form onSubmit={handleSubmit} className="rsvp-form">
               <input
                 type="text"

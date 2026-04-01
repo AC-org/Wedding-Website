@@ -150,6 +150,18 @@
   opacity: 0.9;
 }
 
+/* Secondary body text – below countdown */
+.hero-body-note {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-size: clamp(14px, 3.2vw, 17px);
+  color: rgba(212, 175, 122, 0.82);
+  line-height: 1.68;
+  margin: 28px 0 0 0;
+  max-width: 480px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
 .countdown-done {
   font-family: var(--font-display, 'Dancing Script', cursive);
   font-size: 32px;
