@@ -3,6 +3,7 @@ import './Schema.css';
 import Navbar from '../components/Navbar';
 import CountdownFooter from '../components/CountdownFooter';
 import WeddingChatBot from '../components/WeddingChatBot/WeddingChatBot';
+import VideoBackground from '../components/VideoBackground';
 
 function Schema() {
   const schedules = {
@@ -44,6 +45,7 @@ function Schema() {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+      <VideoBackground />
       <Navbar />
 
       <div className="schema-container">

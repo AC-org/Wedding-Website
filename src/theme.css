@@ -208,6 +208,7 @@ html, body {
 }
 
 /* ── Page background – applied to all inner-page containers ── */
+/* To revert to static image, restore the background-image below:
 .info-container,
 .schema-container,
 .rsvp-container,
@@ -224,4 +225,13 @@ html, body {
   background-size: cover;
   background-position: center top;
   background-attachment: scroll;
+}
+*/
+.info-container,
+.schema-container,
+.rsvp-container,
+.hittahit-container,
+.overnattning-container,
+.foton-container {
+  background-image: none;
 }
