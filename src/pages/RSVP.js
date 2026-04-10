@@ -119,7 +119,12 @@ function RSVP() {
             {errorMessage && <p className="rsvp-error-message">{errorMessage}</p>}
           </>
         ) : (
-          <p className="rsvp-success-message">Tack, hoppas vi ses i augusti!!</p>
+          <>
+            <p className="rsvp-success-message">Tack, vi ses i augusti!!</p>
+            <p className="rsvp-success-note">
+              Vi önskar att ni läser igenom hemsidan noggrant för att ta del av all information. Vi ser så fram emot att fira med Er!
+            </p>
+          </>
         )}
         </div>
       </div>

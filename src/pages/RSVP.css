@@ -137,11 +137,24 @@
 }
 
 /* ── Messages ───────────────────────────────────────────────*/
+
 .rsvp-success-message {
   font-family: var(--font-decorative, 'Gilda Display', serif);
-  font-size: clamp(20px, 5vw, 26px);
+  font-size: clamp(22px, 5vw, 28px);
   color: var(--color-brown, #6f4e37);
   line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.rsvp-success-note {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(15px, 3.5vw, 17px);
+  color: var(--color-brown, #6f4e37);
+  line-height: 1.75;
+  font-style: italic;
+  border-top: 1px solid rgba(111, 78, 55, 0.2);
+  padding-top: 20px;
+  margin: 0;
 }
 
 .rsvp-error-message {
