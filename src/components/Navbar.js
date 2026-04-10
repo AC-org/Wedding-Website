@@ -10,6 +10,7 @@ const navLinks = [
   { to: '/rsvp',         label: 'OSA' },
   { to: '/foton',        label: 'Foton' },
   { to: '/overnattning', label: 'Övernattning' },
+  { to: '/gavor',        label: 'Gåvor' },
 ];
 
 function Navbar() {

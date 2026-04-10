@@ -232,6 +232,7 @@ html, body {
 .rsvp-container,
 .hittahit-container,
 .overnattning-container,
-.foton-container {
+.foton-container,
+.gavor-container {
   background-image: none;
 }

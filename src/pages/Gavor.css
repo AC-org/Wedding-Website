@@ -1,0 +1,424 @@
+/* ══════════════════════════════════════════════════════
+   Gåvor – Japanese-themed gifts page
+   Arthur & Amanda · 8 aug 2026
+   ══════════════════════════════════════════════════════ */
+
+/* ── Container ──────────────────────────────────────── */
+.gavor-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex: 1;
+  min-height: 100vh;
+  width: 100%;
+  padding: calc(var(--navbar-h, 64px) + 16px) 20px var(--space-xl, 48px);
+  box-sizing: border-box;
+  animation: page-fadein 0.45s ease both;
+}
+
+.gavor-content {
+  width: 100%;
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Hero ────────────────────────────────────────────── */
+.gavor-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+  padding-bottom: 8px;
+}
+
+/* Torii gate SVG */
+.gavor-torii-svg {
+  width: clamp(80px, 18vw, 130px);
+  height: auto;
+  margin-bottom: 10px;
+  opacity: 0.88;
+  filter: drop-shadow(0 2px 8px rgba(181, 53, 62, 0.22));
+}
+
+/* Japanese kanji above title */
+.gavor-kana {
+  font-family: 'Hiragino Mincho Pro', 'Yu Mincho', 'MS Mincho', 'Noto Serif JP', serif;
+  font-size: clamp(22px, 5vw, 30px);
+  color: var(--color-brown-light, #a0826d);
+  letter-spacing: 0.18em;
+  margin: 0 0 4px;
+  opacity: 0.72;
+  font-weight: 400;
+}
+
+/* Page title */
+.gavor-title {
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(36px, 8vw, 58px);
+  font-weight: 400;
+  color: var(--color-brown, #6f4e37);
+  letter-spacing: 0.06em;
+  margin: 0 0 8px;
+}
+
+/* Page subtitle */
+.gavor-subtitle {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-style: italic;
+  font-size: clamp(16px, 3.5vw, 20px);
+  color: var(--color-text-mid, #5c4030);
+  margin: 0 0 16px;
+  letter-spacing: 0.03em;
+}
+
+/* ── Sakura row ─────────────────────────────────────── */
+.gavor-sakura-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gavor-sakura-row--closing {
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.sakura-svg {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
+.sakura-svg.sakura-lg {
+  width: 44px;
+  height: 44px;
+}
+
+.sakura-svg.sakura-sm {
+  width: 22px;
+  height: 22px;
+}
+
+/* ── Cards ──────────────────────────────────────────── */
+.gavor-card {
+  position: relative;
+  background: var(--color-white-92, rgba(255, 255, 255, 0.92));
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: var(--radius-lg, 24px);
+  box-shadow: var(--shadow-md, 0 4px 24px rgba(111, 78, 55, 0.14));
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  padding: 32px 36px;
+  overflow: hidden;
+}
+
+/* Japanese corner marks – small diamond flourishes */
+.gavor-corner-deco {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 28 28' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='10' y='1' width='10' height='10' rx='1.5' fill='%23b5353e' transform='rotate(45 14 14)'/%3E%3C/svg%3E");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.gavor-corner-tl { top: 14px; left: 14px; }
+.gavor-corner-tr { top: 14px; right: 14px; }
+
+/* Card heading */
+.gavor-card-heading {
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(22px, 4.5vw, 30px);
+  font-weight: 400;
+  color: var(--color-brown, #6f4e37);
+  letter-spacing: 0.04em;
+  margin: 0 0 20px;
+  text-align: center;
+  position: relative;
+}
+
+/* Subtle red underline on card headings */
+.gavor-card-heading::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #b5353e 40%, transparent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+  opacity: 0.55;
+}
+
+/* Card body text */
+.gavor-card-text {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(15px, 3.5vw, 17px);
+  color: var(--color-text-dark, #3d2b1f);
+  line-height: 1.78;
+  margin: 0 0 16px;
+}
+
+.gavor-card-text:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Intro line (smaller) */
+.gavor-card-intro {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(14px, 3vw, 16px);
+  color: var(--color-text-mid, #5c4030);
+  text-align: center;
+  font-style: italic;
+  margin: 0 0 24px;
+}
+
+/* ── Fuji silhouette ─────────────────────────────────── */
+.gavor-fuji-wrap {
+  margin-top: 20px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0 0 var(--radius-lg, 24px) var(--radius-lg, 24px);
+  margin-bottom: -32px;
+  margin-left: -36px;
+  width: calc(100% + 72px);
+}
+
+.fuji-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ── Swish / payment card ───────────────────────────── */
+.gavor-swish-card {
+  /* Seigaiha (wave scale) subtle background pattern */
+  background-image:
+    radial-gradient(circle at 50% 0, rgba(212,175,122,0.08) 0%, transparent 70%),
+    var(--color-white-92, rgba(255, 255, 255, 0.92));
+}
+
+.gavor-swish-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='18' fill='none' stroke='rgba(181,53,62,0.045)' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-size: 40px 40px;
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* Payment grid – two columns on wide, stack on mobile */
+.gavor-payment-grid {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+}
+
+.gavor-payment-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px 16px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-md, 20px);
+  border: 1px solid rgba(212, 175, 122, 0.3);
+}
+
+.gavor-payment-label {
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(14px, 3vw, 16px);
+  color: var(--color-text-light, #8a6a5a);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.gavor-payment-value {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(20px, 4.5vw, 26px);
+  font-weight: 600;
+  color: var(--color-brown, #6f4e37);
+  letter-spacing: 0.04em;
+}
+
+.gavor-payment-note {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(12px, 2.5vw, 13px);
+  color: var(--color-text-light, #8a6a5a);
+  font-style: italic;
+}
+
+/* Separator between payment options */
+.gavor-payment-sep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 12px;
+  flex-shrink: 0;
+}
+
+.gavor-payment-sep span {
+  display: block;
+  width: 1px;
+  flex: 1;
+  background: rgba(212, 175, 122, 0.4);
+  min-height: 20px;
+}
+
+/* ── Parents card ───────────────────────────────────── */
+.gavor-parents-grid {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-top: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.55);
+  border-radius: var(--radius-md, 20px);
+  border: 1px solid rgba(212, 175, 122, 0.3);
+}
+
+.gavor-parent-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.gavor-parent-name {
+  font-family: var(--font-decorative, 'Gilda Display', serif);
+  font-size: clamp(15px, 3.5vw, 17px);
+  color: var(--color-brown, #6f4e37);
+  letter-spacing: 0.03em;
+}
+
+.gavor-parent-email {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(13px, 3vw, 15px);
+  color: var(--color-rose-deep, #c9707f);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-rose-light, #e8a4b0);
+  padding-bottom: 1px;
+  transition: color var(--transition-fast, 150ms ease), border-color var(--transition-fast, 150ms ease);
+  cursor: pointer;
+  word-break: break-word;
+}
+
+.gavor-parent-email:hover {
+  color: var(--color-rose, #d4849a);
+  border-color: var(--color-rose, #d4849a);
+}
+
+/* Vertical divider between parents */
+.gavor-parents-divider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(212, 175, 122, 0.4);
+  margin: 0 16px;
+  flex-shrink: 0;
+  min-height: 40px;
+}
+
+/* ── Closing section ────────────────────────────────── */
+.gavor-closing {
+  text-align: center;
+  padding: 16px 0 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.gavor-closing-text {
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: clamp(16px, 3.5vw, 19px);
+  font-style: italic;
+  color: var(--color-text-mid, #5c4030);
+  line-height: 1.75;
+  margin: 0 0 10px;
+}
+
+.gavor-closing-names {
+  font-family: var(--font-display, 'Dancing Script', cursive);
+  font-size: clamp(22px, 5vw, 30px);
+  color: var(--color-brown, #6f4e37);
+  margin: 0 0 8px;
+}
+
+/* Japanese closing text (arigatou gozaimasu) */
+.gavor-closing-kana {
+  font-family: 'Hiragino Mincho Pro', 'Yu Mincho', 'MS Mincho', 'Noto Serif JP', serif;
+  font-size: clamp(13px, 3vw, 15px);
+  color: var(--color-text-light, #8a6a5a);
+  letter-spacing: 0.2em;
+  opacity: 0.7;
+  margin: 0;
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 640px) {
+  .gavor-card {
+    padding: 24px 22px;
+  }
+
+  .gavor-fuji-wrap {
+    margin-left: -22px;
+    width: calc(100% + 44px);
+    margin-bottom: -24px;
+  }
+
+  /* Stack payment items vertically on small screens */
+  .gavor-payment-grid {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .gavor-payment-sep {
+    flex-direction: row;
+    padding: 0;
+    gap: 8px;
+  }
+
+  .gavor-payment-sep span {
+    height: 1px;
+    width: auto;
+    flex: 1;
+    min-height: auto;
+  }
+
+  /* Stack parents vertically */
+  .gavor-parents-grid {
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+  }
+
+  .gavor-parents-divider {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    min-height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .gavor-container {
+    padding: calc(var(--navbar-h, 64px) + 8px) 14px var(--space-lg, 32px);
+  }
+
+  .gavor-card {
+    border-radius: var(--radius-md, 20px);
+  }
+}
