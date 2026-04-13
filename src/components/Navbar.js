@@ -4,13 +4,12 @@ import './Navbar.css';
 
 const navLinks = [
   { to: '/',             label: 'Hem' },
+  { to: '/rsvp',         label: 'OSA' },
   { to: '/info',         label: 'Info' },
   { to: '/schema',       label: 'Schema' },
   { to: '/hitta-hit',    label: 'Hitta hit' },
-  { to: '/rsvp',         label: 'OSA' },
+  { to: '/overnattning', label: 'Boende' },
   { to: '/foton',        label: 'Foton' },
-  { to: '/overnattning', label: 'Övernattning' },
-  { to: '/gavor',        label: 'Gåvor' },
 ];
 
 function Navbar() {

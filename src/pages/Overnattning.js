@@ -47,7 +47,8 @@ function Overnattning() {
         <div className="overnattning-content">
           <div className="overnattning-info">
             <p className="overnattning-info-text">
-              Vi har ordnat boende alla gäster så ni behöver inte boka något själva!
+              Vi har ordnat boende till alla gäster så ni behöver inte boka något själva!
+              
               Vi tar hand om allt det praktiska och meddelar er vilket boende ni är tilldelade
               i god tid innan bröllopet.
             </p>
@@ -62,7 +63,7 @@ function Overnattning() {
               </p>
               <p>
                 <span className="info-bullet-icon">✦</span>
-                Planerar du att inte övernatta? Ange det i ditt OSA-svar så ordnar det sig, annars utgår vi från att alla stannar.
+                Planerar du att inte övernatta? Ange det i ditt OSA-svar så ordnar det sig, annars utgår vi från att alla stannar. Vi uppskattar verkligen att alla stannar och firar med oss även på söndagen om möjligt!
               </p>
             </div>
           </div>

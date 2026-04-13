@@ -16,9 +16,20 @@ function Info() {
           <h1 className="info-title">Praktisk Information</h1>
 
           <div className="info-section">
+            <h2 className="info-section-title">OSA</h2>
+            <p className="info-text">
+              Läs gärna igenom denna hemsida noggrant för att ta del av all information inför bröllopet, och tveka inte att höra av dig om du har några frågor!
+            OSA även via formuläret på sidan "OSA" så snart som möjligt, dock senast <strong>1 juni 2026</strong>.
+            </p>
+            <Link to="/rsvp" className="info-link">
+              Till OSA →
+            </Link>
+          </div>
+          
+          <div className="info-section">
             <h2 className="info-section-title">Klädkod</h2>
             <p className="info-text">
-              Vi önskar att ni klär er fint för dagen. Herrar i mörk kostym eller smoking, och damer i fin klänning eller annan festklädsel. Eftersom vi firar i sommaren är det varmt välkommet att ta in lite av årstiden i outfiten. Glada färger och somriga toner hyllas!
+              Vi önskar att våra gäster klär sig i <strong>mörk kostym</strong>. För herrar innebär det en mörk kostym (till exempel mörkblå, mörkgrön, mörkgrå) med skjorta och slips eller fluga. Damer väljer med fördel en klänning eller ett matchande set i valfri färg.
             </p>
           </div>
 
@@ -30,7 +41,7 @@ function Info() {
             <div className="info-highlight">
               <p className="info-text" style={{ margin: 0 }}>
                 <strong>Ebba Rovig & Sixten Roström</strong><br />
-                Mail: <em>carparnastoastmasters@gmail.com</em>
+                Mail: <em>arthuramanda.toastmasters@gmail.com</em>
               </p>
             </div>
           </div>
@@ -44,31 +55,38 @@ function Info() {
               Sent på natten kör bussarna tillbaka till boendena.
             </p>
             <p className="info-text">
-              På söndagen kommer det ej köras bussar, så ni tar er till <strong>Örbyhus slottsträdgård</strong> på egen hand. Det finns parkeringsmöjligheter nära Orangerietför den som kör bil.
+              På söndagen kommer det ej köras bussar, så ni tar er till <strong>Orangeriet på Örbyhus slott</strong> på egen hand. Det finns parkeringsmöjligheter nära Orangerietför den som kör bil. Se mer om schema längre ner.
             </p>
           </div>
 
           <div className="info-section">
             <h2 className="info-section-title">Boende</h2>
             <p className="info-text">
-              Vi har ordnat boende i närheten så att vi kan festa utan att oroas för hemfärden. Information om var ni bor och hur detta bokas hittar ni på boende-sidan.
+              Vi har ordnat boende i närheten så att vi kan fira utan att oroas för hemfärden. Information om var ni bor och hur detta bokas hittar ni på boende-sidan.
             </p>
             <Link to="/overnattning" className="info-link">
-              Till boende-sidan →
+              Till boendet →
             </Link>
           </div>
 
-          <div className="info-section" style={{ borderBottom: 'none', marginBottom: 0, paddingBottom: 0 }}>
-            <h2 className="info-section-title">Schema & Söndagen</h2>
+          <div className="info-section">
+            <h2 className="info-section-title">Gåvor</h2>
             <p className="info-text">
-              Nyfiken på hur dagen ser ut? På schema-sidan hittar ni upplägget för lördagen — från ceremoni till fest.
+              Om ni vill ge oss något är vi otroligt tacksamma för bidrag till vår bröllopsresa. Vi ska nämligen till Japan på smekmånad!
+            </p>
+            <p className="info-text">
+              Skulle ni vilja ge något annat, kontakta gärna <em>arthuramanda.toastmasters@gmail.com</em>.
+            </p>
+          </div>
+
+          <div className="info-section" style={{ borderBottom: 'none', marginBottom: 0, paddingBottom: 0 }}>
+            <h2 className="info-section-title">Schema</h2>
+            <p className="info-text">
+              Nyfiken på hur dagarna kommer se ut? På schema-sidan hittar ni upplägget för både lördagen och söndagen!
             </p>
             <Link to="/schema" className="info-link">
               Till schemat →
             </Link>
-            <p className="info-text" style={{ marginTop: '16px' }}>
-              Vi ses även på <strong>söndagen den 9 augusti</strong> i <strong>Örbyhus slottsträdgård</strong> för en avslappnad dag-efter-samling. OBS: hit bussas ni inte — ni tar er dit på egen hand. Mer info hittar ni på schema-sidan.
-            </p>
           </div>
         </div>
       </div>

@@ -8,7 +8,6 @@ import HITTAHIT from './pages/HITTAHIT';
 import Overnattning from './pages/Overnattning';
 import Schema from './pages/Schema';
 import Foton from './pages/Foton';
-import Gavor from './pages/Gavor';
 import EnvelopeIntro from './components/EnvelopeIntro';
 
 function App() {
@@ -46,7 +45,6 @@ function App() {
           <Route path="/overnattning" element={<Overnattning />} />
           <Route path="/schema" element={<Schema />} />
           <Route path="/foton" element={<Foton />} />
-          <Route path="/gavor" element={<Gavor />} />
         </Routes>
       </Router>
     </>

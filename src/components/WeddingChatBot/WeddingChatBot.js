@@ -18,7 +18,7 @@ HÄR FÖLJER ALL INFORMATION OM BRÖLLOPET:
 ${weddingInfo}`;
 
 const WELCOME_MESSAGE = `Välkommen, vän, till kärlekens hörna.
-Där svar alltid blommar som vårens törna! 
+Chatta med mig, låt orden ej törna!
 Fråga om bröllopet, dagen, och mer.
 Din poet på rim ett svar alltid ger! 💕`;
 
