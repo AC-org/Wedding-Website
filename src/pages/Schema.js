@@ -17,7 +17,7 @@ function Schema() {
       { time: '16:30', event: 'Ankomst & mingel med bubbel & tårta'},
       { time: '18:00', event: 'Middag serveras, tal och underhållning'},
       { time: '22:00', event: 'Dans och fest till småtimmarna!' },
-      { time: 'Sent', event: 'Vickning' },
+      { time: 'Sent', event: 'Vickning och mer fest!' },
       { time: ' Senare', event: 'Bussar kör hem till övernattningsboenden' }
     ],
     söndag: [

@@ -48,7 +48,7 @@ function HittaHit() {
               ></iframe>
             </div>
             <p className="hittahit-info">
-            <strong>Fun fact: </strong>Vendels kyrkas äldsta del är från sent 1200-talet!
+            <strong>Fun fact: </strong>Vendels kyrkas äldsta del är från sent 1200-tal!
             </p>
           </div>
         </div>

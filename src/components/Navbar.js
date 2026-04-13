@@ -9,7 +9,7 @@ const navLinks = [
   { to: '/schema',       label: 'Schema' },
   { to: '/hitta-hit',    label: 'Hitta hit' },
   { to: '/overnattning', label: 'Boende' },
-  { to: '/foton',        label: 'Foton' },
+  // { to: '/foton',        label: 'Foton' },
 ];
 
 function Navbar() {

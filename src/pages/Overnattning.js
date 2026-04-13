@@ -9,31 +9,31 @@ function Overnattning() {
     {
       id: 1,
       name: 'Vandrarhemmet Annexet',
-      description: 'Budget-vänligt alternativ med egen dusch/toa',
+      description: 'Ombonat och välkomnande, med allt du behöver för en skön övernattning',
       address: 'Herrgårdsvägen 21, 748 32 Österbybruk',
       phone: '076-025 43 48',
       email: 'annexet.osterbybruk@outlook.com',
-      details: '10 standardrum á 2 gäster + 2 attefallshus. Lakan och handduk ingår.',
+      details: '10 standardrum á 2 gäster + 2 attefallshus.',
       image: 'https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/vandrarhemmetannexet.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvdmFuZHJhcmhlbW1ldGFubmV4ZXQucG5nIiwiaWF0IjoxNzc1MDU0MjU1LCJleHAiOjE4MDY1OTAyNTV9.qphobnbTkOdsUoz35qrJiuOU73E44-I1yZGz9-ZFxxo'
     },
     {
       id: 2,
       name: 'Wärdshuset Gammel Tammen',
-      description: 'Historisk herrgård med charm från 1700-talet',
+      description: 'Tidlös charm i en herrgård från 1700-talet, med historia i varje hörn',
       address: 'Herrgårdsvägen 1, 748 32 Österbybruk',
       phone: '0295-212 00',
       email: 'info@gammeltammen.se',
-      details: '14 dubbelrum + 1 trippelrum. Eget badrum. Restaurant på plats.',
+      details: '14 dubbelrum + 1 trippelrum.',
       image: 'https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/gammeltammen.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvZ2FtbWVsdGFtbWVuLnBuZyIsImlhdCI6MTc3NTA1NDI0NCwiZXhwIjoxODA2NTkwMjQ0fQ.27po-hmrNriPJv3T4McuarSGVEXr6iNWb-ThZiLfsGg'
     },
     {
       id: 3,
       name: 'Örbyhus Golfklubb',
-      description: 'Bekväma tvåbäddsrum vid Örbyhus slott',
+      description: 'Fridfull miljö i det vackra landskapet kring Örbyhus slott',
       address: 'Örbyhus Slott, 748 95 Örbyhus',
       phone: '070-931 71 47',
       email: 'info@orbyhusgolf.se',
-      details: '10 tvåbäddsrum (vissa med extrabädd). Eget badrum, delad dusch.',
+      details: '10 tvåbäddsrum varav vissa med extrabädd.',
       image: 'https://cjczonwdytdhubxxwqle.supabase.co/storage/v1/object/sign/images/orbyhusgolfklubb.png?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV8yYjQ5OWQxMy01MzJjLTRhYjgtOTY0NS1mMDdlM2EzZmZkMTUiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJpbWFnZXMvb3JieWh1c2dvbGZrbHViYi5wbmciLCJpYXQiOjE3NzUwNTQyNjUsImV4cCI6MTgwNjU5MDI2NX0.QOzgDormYl39Sxm3vIsyXoTKR_xyZgbHS-AqVK9aE4o'
     }
   ];
@@ -55,15 +55,15 @@ function Overnattning() {
             <div className="overnattning-info-bullets">
               <p>
                 <span className="info-bullet-icon">✦</span>
+                Boendekostnaden står ni för själva.
+              </p>
+              <p>
+                <span className="info-bullet-icon">✦</span>
                 Kort efter OSA-datumet kontaktar vi er med betalningsinformation (Swish).
               </p>
               <p>
                 <span className="info-bullet-icon">✦</span>
-                Vi bjuder på bröllopet och festen. Boendekostnaden står ni för själva.
-              </p>
-              <p>
-                <span className="info-bullet-icon">✦</span>
-                Planerar du att inte övernatta? Ange det i ditt OSA-svar så ordnar det sig, annars utgår vi från att alla stannar. Vi uppskattar verkligen att alla stannar och firar med oss även på söndagen om möjligt!
+                Planerar ni att inte övernatta? Ange det i ditt OSA-svar så ordnar det sig, annars utgår vi från att alla stannar. Vi hade verkligen uppskattat om ni har möjlighet att bo över, då vi planerar att ses på brunch dagen efter för att sammanfatta gårdagens bravader!
               </p>
             </div>
           </div>
@@ -71,23 +71,26 @@ function Overnattning() {
           <div className="accommodations-grid">
             {accommodations.map((accommodation) => (
               <div key={accommodation.id} className="accommodation-card">
-                {accommodation.image && (
-                  <img
-                    src={accommodation.image}
-                    alt=""
-                    aria-hidden="true"
-                    className="accommodation-bg-img"
-                  />
-                )}
-                <h2 className="accommodation-name">{accommodation.name}</h2>
-                <p className="accommodation-description">{accommodation.description}</p>
+                <div className="accommodation-text">
+                  <h2 className="accommodation-name">{accommodation.name}</h2>
+                  <p className="accommodation-description">{accommodation.description}</p>
 
-                <div className="accommodation-details">
-                  <p><strong>Adress:</strong> {accommodation.address}</p>
-                  {accommodation.phone && <p><strong>Telefon:</strong> {accommodation.phone}</p>}
-                  {accommodation.email && <p><strong>E-post:</strong> {accommodation.email}</p>}
-                  {accommodation.details && <p className="accommodation-details-text">{accommodation.details}</p>}
+                  <div className="accommodation-details">
+                    <p><strong>Adress:</strong> {accommodation.address}</p>
+                    {accommodation.phone && <p><strong>Telefon:</strong> {accommodation.phone}</p>}
+                    {accommodation.email && <p><strong>E-post:</strong> {accommodation.email}</p>}
+                    {accommodation.details && <p className="accommodation-details-text">{accommodation.details}</p>}
+                  </div>
                 </div>
+                {accommodation.image && (
+                  <div className="accommodation-image-wrapper">
+                    <img
+                      src={accommodation.image}
+                      alt={accommodation.name}
+                      className="accommodation-bg-img"
+                    />
+                  </div>
+                )}
               </div>
             ))}
           </div>
