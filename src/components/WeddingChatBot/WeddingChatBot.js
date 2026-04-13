@@ -124,12 +124,13 @@ function WeddingChatBot() {
 
     vv.addEventListener('resize', handleViewportChange);
     vv.addEventListener('scroll', handleViewportChange);
+    const chatWindow = chatWindowRef.current;
     return () => {
       vv.removeEventListener('resize', handleViewportChange);
       vv.removeEventListener('scroll', handleViewportChange);
-      if (chatWindowRef.current) {
-        chatWindowRef.current.style.bottom = ''; // eslint-disable-line react-hooks/exhaustive-deps
-        chatWindowRef.current.style.height = '';
+      if (chatWindow) {
+        chatWindow.style.bottom = '';
+        chatWindow.style.height = '';
       }
     };
   }, [isOpen]);
