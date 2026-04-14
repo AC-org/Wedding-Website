@@ -1,4 +1,4 @@
-/* ── Wedding Countdown Section ─────────────────────────────── */
+/* ── Wedding Footer Section ─────────────────────────────────── */
 .wedding-countdown {
   background: var(--color-brown, #6f4e37);
   padding: 28px 20px;
@@ -17,60 +17,6 @@
   text-align: center;
 }
 
-.wedding-countdown-pre {
-  font-family: var(--font-body, 'Cormorant Garamond', serif);
-  font-style: italic;
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
-  margin: 0 0 16px 0;
-}
-
-/* ── Number grid ───────────────────────────────────────────── */
-.wedding-countdown-grid {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.wc-unit {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1px;
-}
-
-.wc-number {
-  font-family: var(--font-decorative, 'Gilda Display', serif);
-  font-size: clamp(28px, 6vw, 36px);
-  color: var(--color-gold, #d4af7a);
-  line-height: 1;
-}
-
-.wc-label {
-  font-family: var(--font-body, 'Cormorant Garamond', serif);
-  font-size: 11px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.wc-sep {
-  font-size: 20px;
-  color: var(--color-rose-light, #e8a4b0);
-  opacity: 0.85;
-  margin-bottom: 18px;
-}
-
-.wc-done {
-  font-family: var(--font-display, 'Dancing Script', cursive);
-  font-size: 36px;
-  color: #fff;
-  margin: 0 0 20px 0;
-}
-
 /* ── Names & date ──────────────────────────────────────────── */
 .wedding-countdown-names {
   font-family: var(--font-display, 'Dancing Script', cursive);
@@ -78,6 +24,11 @@
   color: #fff;
   margin: 0 0 2px 0;
   letter-spacing: 0.04em;
+}
+
+.wc-heart {
+  color: var(--color-rose-light, #e8a4b0);
+  font-style: normal;
 }
 
 .wedding-countdown-date {
