@@ -157,8 +157,8 @@
   font-size: clamp(14px, 3.2vw, 17px);
   color: rgba(212, 175, 122, 0.82);
   line-height: 1.68;
-  margin: 28px 0 0 0;
-  max-width: 480px;
+  margin: 10px 0 0 0;
+  max-width: 560px;
   text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
 
