@@ -14,8 +14,8 @@ function Schema() {
       { time: '14:40', event: 'Ankomst till Vendels kyrka' },
       { time: '15:00', event: 'Ceremoni börjar' },
       { time: '16:00', event: 'Busshämtning från Vendels kyrka' },
-      { time: '16:30', event: 'Ankomst & mingel med bubbel & tårta'},
-      { time: '18:00', event: 'Middag serveras, tal och underhållning'},
+      { time: '16:30', event: 'Ankomst & mingel'},
+      { time: '18:00', event: 'Middag'},
       { time: '22:00', event: 'Dans och fest till småtimmarna!' },
       { time: 'Sent', event: 'Vickning och mer fest!' },
       { time: ' Senare', event: 'Bussar kör hem till övernattningsboenden' }
@@ -51,7 +51,7 @@ function Schema() {
       <div className="schema-container">
         <div className="schema-card">
           <h1 className="schema-title">Schema för dagen</h1>
-          <p className="schema-subtitle">Här är en översikt över bröllopets tidplan för både lördag och söndag. Tiderna är uppskattade och kan variera något.</p>
+          <p className="schema-subtitle">Här är en översikt över bröllopets tidplan för både lördag och söndag.</p>
 
           {Object.entries(schedules).map(([day, events]) => renderSchedule(day, events))}
 
