@@ -26,6 +26,16 @@ function Info() {
               Till OSA →
             </Link>
           </div>
+
+          <div className="info-section">
+            <h2 className="info-section-title">Schema</h2>
+            <p className="info-text">
+              Nyfiken på hur dagarna kommer se ut? På schema-sidan hittar ni upplägget för både lördagen och söndagen!
+            </p>
+            <Link to="/schema" className="info-link">
+              Till schemat →
+            </Link>
+          </div>
           
           <div className="info-section">
             <h2 className="info-section-title">Klädkod</h2>
@@ -48,19 +58,6 @@ function Info() {
           </div>
 
           <div className="info-section">
-            <h2 className="info-section-title">Transport & Bussar</h2>
-            <p className="info-text">
-              Ni behöver inte tänka på transport mellan kyrka, festlokal och boende då vi anordnar med bussar. Bussarna avgår från boendena, kör er till <strong>Vendels kyrka</strong> för ceremonin och sedan vidare till <strong>Orangeriet på Örbyhus slott</strong> för middagen och festen.
-            </p>
-            <p className="info-text">
-              Efter kvällens bravader kör bussarna tillbaka till boendena.
-            </p>
-            <p className="info-text">
-              På söndagen kommer det ej köras bussar, så ni tar er till <strong>Orangeriet på Örbyhus slott</strong> på egen hand. Det finns parkeringsmöjligheter nära Orangeriet. Ett förslag är att samåka så det inte behövs så många förare. Bilresan tar 10 minuter. Se mer om schema längre ner.
-            </p>
-          </div>
-
-          <div className="info-section">
             <h2 className="info-section-title">Boende</h2>
             <p className="info-text">
               Vi har ordnat boende i närheten så att vi kan fira utan att oroas för hemfärden. Information om var ni bor hittar ni på boende-sidan.
@@ -71,12 +68,15 @@ function Info() {
           </div>
 
           <div className="info-section">
-            <h2 className="info-section-title">Gåvor</h2>
+            <h2 className="info-section-title">Transport & Bussar</h2>
             <p className="info-text">
-              Om ni vill ge oss något är vi otroligt tacksamma för bidrag till vår bröllopsresa. Vi ska nämligen till Japan på smekmånad!
+              Ni behöver inte tänka på transport mellan kyrka, festlokal och boende då vi anordnar med bussar. Bussarna avgår från boendena, kör er till <strong>Vendels kyrka</strong> för ceremonin och sedan vidare till <strong>Orangeriet på Örbyhus slott</strong> för middagen och festen.
             </p>
             <p className="info-text">
-              Skulle ni vilja ge något annat, kontakta gärna <em>arthuramanda.toastmasters@gmail.com</em>.
+              Efter kvällens bravader kör bussarna tillbaka till boendena.
+            </p>
+            <p className="info-text">
+              På söndagen kommer det ej köras bussar, så ni tar er till <strong>Orangeriet på Örbyhus slott</strong> på egen hand. Det finns parkeringsmöjligheter nära Orangeriet. Ett förslag är att samåka så det inte behövs så många förare. Bilresan tar 10 minuter.
             </p>
           </div>
 
@@ -88,14 +88,14 @@ function Info() {
           </div>
 
           <div className="info-section" style={{ borderBottom: 'none', marginBottom: 0, paddingBottom: 0 }}>
-            <h2 className="info-section-title">Schema</h2>
+            <h2 className="info-section-title">Gåvor</h2>
             <p className="info-text">
-              Nyfiken på hur dagarna kommer se ut? På schema-sidan hittar ni upplägget för både lördagen och söndagen!
+              Om ni vill ge oss något är vi otroligt tacksamma för bidrag till vår bröllopsresa. Vi ska nämligen till Japan på smekmånad!
             </p>
-            <Link to="/schema" className="info-link">
-              Till schemat →
-            </Link>
-          </div>
+            <p className="info-text">
+              Skulle ni vilja ge något annat, kontakta gärna <em>arthuramanda.toastmasters@gmail.com</em>.
+            </p>
+          </div>     
 
         </div>
       </div>
