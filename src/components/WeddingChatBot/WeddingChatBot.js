@@ -34,6 +34,8 @@ function WeddingChatBot() {
   const [hasOpened, setHasOpened] = useState(false);
   const [hearts, setHearts] = useState([]);
   const [pendingAIHeart, setPendingAIHeart] = useState(false);
+  const [tooltipVisible, setTooltipVisible] = useState(false);
+  const [tooltipFading, setTooltipFading] = useState(false);
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
   const floatBtnRef = useRef(null);
@@ -76,6 +78,25 @@ function WeddingChatBot() {
       setHasOpened(true);
     }
   }, [isOpen, hasOpened]);
+
+  useEffect(() => {
+    const isFirstTime = !sessionStorage.getItem('chatbotTooltipShown');
+    const delay = isFirstTime ? 5000 : 60000;
+    const showTimer = setTimeout(() => {
+      setTooltipVisible(true);
+      if (isFirstTime) sessionStorage.setItem('chatbotTooltipShown', '1');
+    }, delay);
+    return () => clearTimeout(showTimer);
+  }, []);
+
+  useEffect(() => {
+    if (!tooltipVisible) return;
+    const hideTimer = setTimeout(() => {
+      setTooltipFading(true);
+      setTimeout(() => { setTooltipVisible(false); setTooltipFading(false); }, 400);
+    }, 5000);
+    return () => clearTimeout(hideTimer);
+  }, [tooltipVisible]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -221,10 +242,16 @@ function WeddingChatBot() {
         </span>
       ))}
 
+      {tooltipVisible && (
+        <div className={`chatbot-tooltip${tooltipFading ? ' chatbot-tooltip--fade-out' : ''}`}>
+          Hej! Fråga mig om bröllopet 💕
+        </div>
+      )}
+
       <button
         ref={floatBtnRef}
         className="chatbot-float-btn"
-        onClick={() => setIsOpen(prev => !prev)}
+        onClick={() => { setTooltipVisible(false); setTooltipFading(false); setIsOpen(prev => !prev); }}
         aria-label="Öppna Kärlekspoeten"
         title="Kärlekspoeten 💕"
       >

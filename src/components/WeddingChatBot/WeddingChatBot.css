@@ -1,3 +1,62 @@
+/* ===== TOOLTIP ============================================== */
+.chatbot-tooltip {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  z-index: var(--z-envelope, 9999);
+  background: var(--color-beige-light, #f5f0e8);
+  border: 1px solid rgba(212, 175, 122, 0.55);
+  border-radius: var(--radius-sm, 12px);
+  padding: 10px 16px;
+  font-family: var(--font-body, 'Cormorant Garamond', serif);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--color-text-dark, #3d2b1f);
+  box-shadow: 0 4px 20px rgba(111, 78, 55, 0.18);
+  white-space: nowrap;
+  pointer-events: none;
+  animation: tooltipFadeIn 0.4s ease-out forwards;
+}
+
+.chatbot-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -9px;
+  right: 29px;
+  width: 0;
+  height: 0;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-top: 9px solid rgba(212, 175, 122, 0.55);
+}
+
+.chatbot-tooltip::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  right: 30px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--color-beige-light, #f5f0e8);
+}
+
+.chatbot-tooltip--fade-out {
+  animation: tooltipFadeOut 0.4s ease-in forwards;
+}
+
+@keyframes tooltipFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tooltipFadeOut {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(6px); }
+}
+
 /* ===== FLOAT BUTTON ========================================= */
 .chatbot-float-btn {
   position: fixed;
