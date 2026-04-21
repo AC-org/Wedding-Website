@@ -15,11 +15,12 @@ function Info() {
         <div className="info-card">
           <h1 className="info-title">Praktisk Information</h1>
 
+          <p className="info-text2">Läs gärna igenom denna hemsida noggrant för att ta del av all information inför bröllopet och tveka inte att höra av dig om du har några frågor!</p>
+
           <div className="info-section">
             <h2 className="info-section-title">OSA</h2>
             <p className="info-text">
-              Läs gärna igenom denna hemsida noggrant för att ta del av all information inför bröllopet, och tveka inte att höra av dig om du har några frågor!
-            OSA även via formuläret på sidan "OSA" så snart som möjligt, dock senast <strong>1 juni 2026</strong>.
+            OSA via formuläret på sidan "OSA" så snart som möjligt, dock senast <strong>1 juni 2026</strong>.
             </p>
             <Link to="/rsvp" className="info-link">
               Till OSA →
@@ -36,7 +37,7 @@ function Info() {
           <div className="info-section">
             <h2 className="info-section-title">Tal, musik & annat</h2>
             <p className="info-text">
-              Vill du hålla tal, framföra något, spela musik eller hitta på något kul under middagen? Hör av dig till våra toastmasters Ebba Rovig och Sixten Roström i god tid innan bröllopet. De hjälper till att koordinera och se till att allt flyter på under kvällen!
+              Vill du hålla tal, framföra något, spela musik eller hitta på något kul under middagen är det <em>mer</em> än välkommet! Hör av dig till våra toastmasters Ebba Rovig och Sixten Roström i god tid innan bröllopet. De hjälper till att koordinera och se till att allt flyter på under kvällen!
             </p>
             <div className="info-highlight">
               <p className="info-text" style={{ margin: 0 }}>
@@ -49,20 +50,20 @@ function Info() {
           <div className="info-section">
             <h2 className="info-section-title">Transport & Bussar</h2>
             <p className="info-text">
-              Vi ordnar buss för er. Bussarna avgår från boendena, kör er till <strong>Vendels kyrka</strong> för ceremonin och sedan vidare till <strong>Orangeriet på Örbyhus slott</strong> för middagen och festen.
+              Ni behöver inte tänka på transport mellan kyrka, festlokal och boende då vi anordnar med bussar. Bussarna avgår från boendena, kör er till <strong>Vendels kyrka</strong> för ceremonin och sedan vidare till <strong>Orangeriet på Örbyhus slott</strong> för middagen och festen.
             </p>
             <p className="info-text">
-              Sent på natten kör bussarna tillbaka till boendena.
+              Efter kvällens bravader kör bussarna tillbaka till boendena.
             </p>
             <p className="info-text">
-              På söndagen kommer det ej köras bussar, så ni tar er till <strong>Orangeriet på Örbyhus slott</strong> på egen hand. Det finns parkeringsmöjligheter nära Orangerietför den som kör bil. Se mer om schema längre ner.
+              På söndagen kommer det ej köras bussar, så ni tar er till <strong>Orangeriet på Örbyhus slott</strong> på egen hand. Det finns parkeringsmöjligheter nära Orangeriet. Ett förslag är att samåka så det inte behövs så många förare. Bilresan tar 10 minuter. Se mer om schema längre ner.
             </p>
           </div>
 
           <div className="info-section">
             <h2 className="info-section-title">Boende</h2>
             <p className="info-text">
-              Vi har ordnat boende i närheten så att vi kan fira utan att oroas för hemfärden. Information om var ni bor och hur detta bokas hittar ni på boende-sidan.
+              Vi har ordnat boende i närheten så att vi kan fira utan att oroas för hemfärden. Information om var ni bor hittar ni på boende-sidan.
             </p>
             <Link to="/overnattning" className="info-link">
               Till boendet →
@@ -79,6 +80,13 @@ function Info() {
             </p>
           </div>
 
+          <div className="info-section">
+            <h2 className="info-section-title">Barn</h2>
+            <p className="info-text">
+              Vi hoppas ni kan lämna de små hemma och fira med oss!
+            </p>
+          </div>
+
           <div className="info-section" style={{ borderBottom: 'none', marginBottom: 0, paddingBottom: 0 }}>
             <h2 className="info-section-title">Schema</h2>
             <p className="info-text">
@@ -88,6 +96,7 @@ function Info() {
               Till schemat →
             </Link>
           </div>
+
         </div>
       </div>
 

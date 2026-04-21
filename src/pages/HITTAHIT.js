@@ -48,7 +48,7 @@ function HittaHit() {
               ></iframe>
             </div>
             <p className="hittahit-info">
-            <strong>Fun fact: </strong>Vendels kyrkas äldsta del är från sent 1200-tal!
+            <strong>Fun fact: </strong>Vendels kyrkas äldsta del är från sent 1200-tal! I kyrkogårdsmuren hittade man på 1800-talet 14 vikingatida båtgravar. "Vendeltiden" (500–800 e.Kr.) fick sitt namn just härifrån.
             </p>
           </div>
         </div>

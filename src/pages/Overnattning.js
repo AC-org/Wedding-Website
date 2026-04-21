@@ -77,8 +77,8 @@ function Overnattning() {
 
                   <div className="accommodation-details">
                     <p><strong>Adress:</strong> {accommodation.address}</p>
-                    {accommodation.phone && <p><strong>Telefon:</strong> {accommodation.phone}</p>}
-                    {accommodation.email && <p><strong>E-post:</strong> {accommodation.email}</p>}
+                    {/* {accommodation.phone && <p><strong>Telefon:</strong> {accommodation.phone}</p>}
+                    {accommodation.email && <p><strong>E-post:</strong> {accommodation.email}</p>} */}
                     {accommodation.details && <p className="accommodation-details-text">{accommodation.details}</p>}
                   </div>
                 </div>

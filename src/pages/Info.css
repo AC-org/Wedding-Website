@@ -63,6 +63,15 @@
   margin: 0 0 12px 0;
 }
 
+.info-text2 {
+  font-family: var(--font-display, 'Dancing Script', cursive);
+  font-size: clamp(15px, 3.5vw, 17px);
+  color: #7c5f4c;
+  line-height: 1.72;
+  text-align: center;
+  margin: 0 0 12px 0;
+}
+
 /* ── Highlight block ────────────────────────────────────────*/
 .info-highlight {
   background: rgba(212, 175, 122, 0.12);

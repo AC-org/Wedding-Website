@@ -16,14 +16,14 @@ function Schema() {
       { time: '16:00', event: 'Busshämtning från Vendels kyrka' },
       { time: '16:30', event: 'Ankomst & mingel'},
       { time: '18:00', event: 'Middag'},
-      { time: '22:00', event: 'Dans och fest till småtimmarna!' },
+      { time: 'ca 22:00', event: 'Dans och fest till småtimmarna!' },
       { time: 'Sent', event: 'Vickning och mer fest!' },
-      { time: ' Senare', event: 'Bussar kör hem till övernattningsboenden' }
+      { time: 'Senare', event: 'Bussar kör hem till övernattningsboenden' }
     ],
     söndag: [
       { time: '10:30', event: 'Checkout från övernattningsboenden. Åk till Orangeriet' },
-      { time: '11:00', event: 'Brunch utanför Orangeriet'},
-      { time: '13:00', event: 'Hemresor'}
+      { time: 'ca 11:00', event: 'Brunch utanför Orangeriet'},
+      { time: 'ca 13:00', event: 'Hemresor'}
     ]
   };
 

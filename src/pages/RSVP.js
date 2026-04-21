@@ -63,7 +63,7 @@ function RSVP() {
             <form onSubmit={handleSubmit} className="rsvp-form">
               <input
                 type="text"
-                placeholder="Namn"
+                placeholder="Namn på samtliga som kommer"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
@@ -105,7 +105,7 @@ function RSVP() {
               />
               <div className="rsvp-checkbox-container">
                 <label className="rsvp-checkbox-label">
-                  Jag kommer:
+                  Jag/Vi kommer:
                   <input
                     type="checkbox"
                     checked={attending}
@@ -120,10 +120,10 @@ function RSVP() {
           </>
         ) : (
           <>
-            <p className="rsvp-success-message">Tack, vi ses i augusti!!</p>
-            <p className="rsvp-success-note">
+            <p className="rsvp-success-message">Tack, vi ses i augusti!</p>
+            {/* <p className="rsvp-success-note">
               Vi önskar att ni läser igenom hemsidan noggrant för att ta del av all information. Vi ser så fram emot att fira med Er!
-            </p>
+            </p> */}
           </>
         )}
         </div>

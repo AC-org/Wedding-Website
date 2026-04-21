@@ -4,9 +4,9 @@ import './Navbar.css';
 
 const navLinks = [
   { to: '/',             label: 'Hem' },
-  { to: '/rsvp',         label: 'OSA' },
-  { to: '/info',         label: 'Info' },
   { to: '/schema',       label: 'Schema' },
+  { to: '/info',         label: 'Info' },
+  { to: '/rsvp',         label: 'OSA' },
   { to: '/hitta-hit',    label: 'Hitta hit' },
   { to: '/overnattning', label: 'Boende' },
   // { to: '/foton',        label: 'Foton' },

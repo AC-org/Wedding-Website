@@ -1,6 +1,6 @@
 import './App.css';
-import { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Info from './pages/Info';
 import RSVP from './pages/RSVP';
@@ -9,6 +9,12 @@ import Overnattning from './pages/Overnattning';
 import Schema from './pages/Schema';
 import Foton from './pages/Foton';
 import EnvelopeIntro from './components/EnvelopeIntro';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
 
 function App() {
   const [showEnvelope, setShowEnvelope] = useState(
@@ -37,6 +43,7 @@ function App() {
 
       {showEnvelope && <EnvelopeIntro onComplete={handleEnvelopeComplete} />}
       <Router basename={process.env.PUBLIC_URL}>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/info" element={<Info />} />
