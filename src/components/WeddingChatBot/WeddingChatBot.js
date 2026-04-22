@@ -79,14 +79,31 @@ function WeddingChatBot() {
     }
   }, [isOpen, hasOpened]);
 
+  // One-time 5s tooltip on first visit ever
   useEffect(() => {
-    const isFirstTime = !sessionStorage.getItem('chatbotTooltipShown');
-    const delay = isFirstTime ? 5000 : 60000;
-    const showTimer = setTimeout(() => {
+    if (sessionStorage.getItem('chatbotTooltipShown')) return;
+    const timer = setTimeout(() => {
       setTooltipVisible(true);
-      if (isFirstTime) sessionStorage.setItem('chatbotTooltipShown', '1');
-    }, delay);
-    return () => clearTimeout(showTimer);
+      sessionStorage.setItem('chatbotTooltipShown', '1');
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  // Recurring 60s tooltip, timer persists across page navigations
+  useEffect(() => {
+    let timeoutId;
+    const scheduleNext = () => {
+      const stored = sessionStorage.getItem('chatbotIntervalStart');
+      const start = stored ? parseInt(stored, 10) : Date.now();
+      if (!stored) sessionStorage.setItem('chatbotIntervalStart', String(start));
+      const delay = 60000 - ((Date.now() - start) % 60000);
+      timeoutId = setTimeout(() => {
+        setTooltipVisible(true);
+        scheduleNext();
+      }, delay);
+    };
+    scheduleNext();
+    return () => clearTimeout(timeoutId);
   }, []);
 
   useEffect(() => {
