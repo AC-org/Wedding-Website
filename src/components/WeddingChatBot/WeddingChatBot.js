@@ -174,7 +174,7 @@ function WeddingChatBot() {
       conversationHistoryRef.current = conversationHistoryRef.current.slice(-MAX_HISTORY);
     }
 
-    try {
+    const fetchWithRetry = async (retries = 1) => {
       const response = await fetch(
         'https://cjczonwdytdhubxxwqle.supabase.co/functions/v1/gemini-chat',
         {
@@ -186,9 +186,19 @@ function WeddingChatBot() {
           }),
         }
       );
-
       const data = await response.json();
-      if (!data.text) throw new Error('Tomt svar från API');
+      if (!data.text) {
+        if (retries > 0) {
+          await new Promise(res => setTimeout(res, 1500));
+          return fetchWithRetry(retries - 1);
+        }
+        throw new Error('Tomt svar från API');
+      }
+      return data;
+    };
+
+    try {
+      const data = await fetchWithRetry();
       const replyText = data.text;
 
       conversationHistoryRef.current = [

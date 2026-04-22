@@ -50,7 +50,7 @@ function Schema() {
 
       <div className="schema-container">
         <div className="schema-card">
-          <h1 className="schema-title">Schema för dagen</h1>
+          <h1 className="schema-title">Schema</h1>
           <p className="schema-subtitle">Här är en översikt över bröllopets tidplan för både lördag och söndag.</p>
 
           {Object.entries(schedules).map(([day, events]) => renderSchedule(day, events))}
