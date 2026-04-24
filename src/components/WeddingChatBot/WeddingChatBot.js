@@ -191,27 +191,29 @@ function WeddingChatBot() {
       conversationHistoryRef.current = conversationHistoryRef.current.slice(-MAX_HISTORY);
     }
 
-    const fetchWithRetry = async (retries = 1) => {
-      const response = await fetch(
-        'https://cjczonwdytdhubxxwqle.supabase.co/functions/v1/gemini-chat',
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            history: conversationHistoryRef.current,
-            systemPrompt: SYSTEM_PROMPT,
-          }),
-        }
-      );
-      const data = await response.json();
-      if (!data.text) {
+    const fetchWithRetry = async (retries = 2) => {
+      try {
+        const response = await fetch(
+          'https://cjczonwdytdhubxxwqle.supabase.co/functions/v1/gemini-chat',
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              history: conversationHistoryRef.current,
+              systemPrompt: SYSTEM_PROMPT,
+            }),
+          }
+        );
+        const data = await response.json();
+        if (!data.text) throw new Error('Tomt svar från API');
+        return data;
+      } catch (err) {
         if (retries > 0) {
-          await new Promise(res => setTimeout(res, 1500));
+          await new Promise(res => setTimeout(res, 2000));
           return fetchWithRetry(retries - 1);
         }
-        throw new Error('Tomt svar från API');
+        throw err;
       }
-      return data;
     };
 
     try {
