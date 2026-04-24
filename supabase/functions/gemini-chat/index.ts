@@ -23,7 +23,7 @@ serve(async (req) => {
           system_instruction: { parts: [{ text: systemPrompt }] },
           contents: history,
           generationConfig: {
-            maxOutputTokens: 1024,
+            maxOutputTokens: 350,
             temperature: 0.9,
             thinkingConfig: { thinkingBudget: 0 },
           },
