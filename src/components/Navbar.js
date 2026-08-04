@@ -6,7 +6,7 @@ const navLinks = [
   { to: '/',             label: 'Hem' },
   { to: '/schema',       label: 'Schema' },
   { to: '/info',         label: 'Info' },
-  { to: '/rsvp',         label: 'OSA' },
+  // { to: '/rsvp',         label: 'OSA' },
   { to: '/hitta-hit',    label: 'Hitta hit' },
   { to: '/overnattning', label: 'Boende' },
   // { to: '/foton',        label: 'Foton' },

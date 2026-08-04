@@ -18,7 +18,7 @@ function Schema() {
       { time: '18:00', event: 'Middag'},
       { time: 'ca 22:00', event: 'Dans och fest till småtimmarna!' },
       { time: 'Sent', event: 'Vickning och mer fest!' },
-      { time: 'Senare', event: 'Bussar kör hem till övernattningsboenden' }
+      { time: '02:00', event: 'Bussar kör hem till övernattningsboenden' }
     ],
     söndag: [
       { time: '10:30', event: 'Checkout från övernattningsboenden. Åk till Orangeriet' },

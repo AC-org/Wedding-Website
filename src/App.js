@@ -1,6 +1,6 @@
 import './App.css';
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Info from './pages/Info';
 import RSVP from './pages/RSVP';
@@ -47,7 +47,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/info" element={<Info />} />
-          <Route path="/rsvp" element={<RSVP />} />
+          <Route path="/rsvp" element={<Navigate to="/" replace />} />
           <Route path="/hitta-hit" element={<HITTAHIT />} />
           <Route path="/overnattning" element={<Overnattning />} />
           <Route path="/schema" element={<Schema />} />

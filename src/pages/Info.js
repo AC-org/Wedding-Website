@@ -90,7 +90,10 @@ function Info() {
           <div className="info-section" style={{ borderBottom: 'none', marginBottom: 0, paddingBottom: 0 }}>
             <h2 className="info-section-title">Gåvor</h2>
             <p className="info-text">
-              Om ni vill ge oss något är vi otroligt tacksamma för bidrag till vår bröllopsresa. Vi ska nämligen till Japan på smekmånad!
+              Om ni skulle vilja ge oss något, skulle vi vara otroligt tacksamma för bidrag till vår bröllopsresa. Vi ska nämligen till Japan i oktober! 
+            </p>
+            <p className="info-text">
+              Om ni önskar, kan bidragen samlas in via Swish av vår toastmadame Ebba Rovig (073 595 92 91). Hon kommer att dela det med oss och berätta från vilka gåvorna är ifrån strax efter bröllopet. Var vänlig och ange namn när ni swishar.
             </p>
             <p className="info-text">
               Skulle ni vilja ge något annat, kontakta gärna <em>arthuramanda.toastmasters@gmail.com</em>.
